@@ -1,3 +1,28 @@
+@font-face {
+    font-family: 'Space'; /* Le nom que vous choisissez d'utiliser dans votre code */
+    src: url('../assets/fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype'); /* Le chemin vers le fichier */
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Space'; /* Le nom que vous choisissez d'utiliser dans votre code */
+    src: url('../assets/fonts/Space_Mono/SpaceMono-Bold.ttf') format('truetype'); /* Le chemin vers le fichier */
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Space'; /* Le nom que vous choisissez d'utiliser dans votre code */
+    src: url('../assets/fonts/Space_Mono/SpaceMono-Italic.ttf') format('truetype'); /* Le chemin vers le fichier */
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Space'; /* Le nom que vous choisissez d'utiliser dans votre code */
+    src: url('../assets/fonts/Space_Mono/SpaceMono-BoldItalic.ttf') format('truetype'); /* Le chemin vers le fichier */
+    font-weight: bold;
+    font-style: italic;
+}
+
 body {
     background-color: #121212;
     color: #E0E0E0;
@@ -5,33 +30,64 @@ body {
     margin: 0;
     padding: 0;
 
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-family: Space, monospace;
 }
+h1 {
+    font-size: 2rem;
+    margin: 0.75rem 0;
+    padding: 0.75rem 0;
+}
+h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+}
+h3 {
+    font-size: 1.25rem;
+    margin: 0.25rem 0;
+    padding: 0.25rem 0;
+}
+p {
+    font-size: 1rem; 
+    margin: 0.125rem 0;
+    padding: 0.125rem 0;
+}
+.details {
+    font-style: italic;
+    font-size: 0.75rem;
+    margin: 0.0625rem 0;
+    padding: 0.0625rem 0;
+}
+a {
+    color: #4A90E2;
+    text-decoration: none;
+    font-size: 1rem; 
+    margin: 0.25rem 0;
+    padding: 0.25rem 0;
+}
+img {
+    width: 50%;
+    height: auto;
+}
+
+
+/* HEADER */
 header  {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     align-content: flex-start;
 
     position: sticky;
     top: 0;
-
-    /* background-color: #1E1E1E; */
-    color: #E0E0E0;
+    z-index: 1000;
 
     background-color: #121212;
-    border-bottom: solid #1E1E1E 0.1rem;
-}
-header > h1 {
-    padding:0.5rem;
-    margin: 0.5rem;
-    font-size: 2rem;
+    border-bottom: solid #1E1E1E 0.125rem;
 }
 header > nav {
-    padding:0.5rem;
-    margin: 0.5rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -40,84 +96,75 @@ header > nav {
     align-content: flex-start;
 }
 header > nav > a {
-    padding:0.5rem;
+    padding: 0.5rem;
     margin: 0.5rem;
-    font-size: 1rem;
-
-    /* Fausse bordure */
-    border: solid transparent 0.1rem; 
-    border-radius: 0.5rem;
-
-    text-decoration: none;
-}
-header > nav > a:hover {
-    border: solid #4A90E2 0.1rem;
-    border-radius:0.5rem;
-    box-shadow:
-    0 0 0.5rem #4A90E2,
-    inset 0 0 0.5rem #4A90E2;
 }
 
 
+/* MAIN */
 main {
     width: 95%;
     margin: 2rem auto;
 }
-a {
-    color: #4A90E2;
-    text-decoration: none;
-}
-.code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-}
+
 .hero {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
 }
-#actus {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-}
-section {
-    text-align: center;
-    width: 30%;
-}
-
-
-footer  {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-content: flex-start;
-
-    /* background-color: #1E1E1E; */
-    color: #E0E0E0;
-
-    background-color: #121212;
-    border-top: solid #1E1E1E 0.1rem;
-}
-footer > div {
-    padding:1rem;
-    margin: 1rem;
-
+.item {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+
+    width: 75%;
+}
+.item-titre {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-items: center;
     align-content: flex-start;
+    color: #4A90E2;
+    width: 100%;
 }
-footer > div > p {
-    padding: 0;
-    margin: 0;
+
+
+/* FOOTER */
+footer  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    align-content: flex-start;
+
+    border-top: solid #1E1E1E 0.125rem;
 }
-footer > div > h2 {
+footer > div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+footer > div > ul {
+    list-style: none;
     padding: 0;
-    margin: 0;
+}
+footer > div > ul > li {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+footer > div > ul > li > i, p , a {
+    margin: 0 0.25rem;
 }
