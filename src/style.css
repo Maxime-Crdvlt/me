@@ -38,19 +38,24 @@ h1 {
     padding: 0.75rem 0;
 }
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     margin: 0.5rem 0;
     padding: 0.5rem 0;
 }
 h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin: 0.25rem 0;
     padding: 0.25rem 0;
 }
-p {
-    font-size: 1rem; 
+h4 {
+    font-size: 1.25rem;
     margin: 0.125rem 0;
     padding: 0.125rem 0;
+}
+p {
+    font-size: 1rem; 
+    margin: 0.0625rem 0;
+    padding: 0.0625rem 0;
 }
 .details {
     font-style: italic;
@@ -68,6 +73,12 @@ a {
 img {
     width: 50%;
     height: auto;
+}
+i {
+    display: flex;
+}
+ul {
+    margin: 0.0625rem;
 }
 
 
@@ -87,6 +98,11 @@ header  {
     background-color: #121212;
     border-bottom: solid #1E1E1E 0.125rem;
 }
+header > h1 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem 0;
+}
 header > nav {
     display: flex;
     flex-direction: row;
@@ -103,7 +119,7 @@ header > nav > a {
 
 /* MAIN */
 main {
-    width: 95%;
+    width: 90%;
     margin: 2rem auto;
 }
 
@@ -114,17 +130,15 @@ main {
     justify-content: space-around;
     align-items: center;
 }
-.item {
+.cards-histoire {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: stretch;
-    align-content: flex-start;
-
-    width: 75%;
+    gap: 1rem;
 }
-.item-titre {
+.card-title-histoire {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -134,7 +148,69 @@ main {
     color: #4A90E2;
     width: 100%;
 }
-
+.cards-skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: #1E1E1E;
+    border: solid #333333 0.0625rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    gap: 1rem;
+}
+.card-title {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+    color: #4A90E2;
+    width: 100%;
+}
+.card-title > h2,
+.card-title > i {
+    line-height: 1;
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+}
+.card-categorie {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+}
+.skills {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: flex-start;
+}
+.skill {
+    background-color: #2A2A2A;
+    color: #E0E0E0;
+    border-radius: 1rem;
+    font-family: 'Space', monospace;
+    border: solid #444444 0.0625rem;
+    margin: 0.25rem;
+    padding: 0.125rem 0.25rem;
+}
+.card-details {
+    border-top: solid #444444 0.0625rem;
+    font-style: italic;
+    font-size: 0.75rem;
+    margin: 0.0625rem 0;
+    padding: 0.0625rem 0;
+    width: 100%;
+}
 
 /* FOOTER */
 footer  {
@@ -146,6 +222,8 @@ footer  {
     align-content: flex-start;
 
     border-top: solid #1E1E1E 0.125rem;
+
+    padding: 0.5rem;
 }
 footer > div {
     display: flex;
@@ -165,6 +243,8 @@ footer > div > ul > li {
     justify-content: flex-start;
     align-items: center;
 }
-footer > div > ul > li > i, p , a {
+footer > div > ul > li > i, 
+footer > div > ul >li > p , 
+footer > div > ul > li > a {
     margin: 0 0.25rem;
 }
