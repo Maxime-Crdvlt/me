@@ -1,24 +1,35 @@
 @font-face {
-    font-family: 'Space'; /* Le nom que vous choisissez d'utiliser dans votre code */
-    src: url('../assets/fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype'); /* Le chemin vers le fichier */
+    font-family: 'Space';
+    /* Le nom que vous choisissez d'utiliser dans votre code */
+    src: url('../assets/fonts/Space_Mono/SpaceMono-Regular.ttf') format('truetype');
+    /* Le chemin vers le fichier */
     font-weight: normal;
     font-style: normal;
 }
+
 @font-face {
-    font-family: 'Space'; /* Le nom que vous choisissez d'utiliser dans votre code */
-    src: url('../assets/fonts/Space_Mono/SpaceMono-Bold.ttf') format('truetype'); /* Le chemin vers le fichier */
+    font-family: 'Space';
+    /* Le nom que vous choisissez d'utiliser dans votre code */
+    src: url('../assets/fonts/Space_Mono/SpaceMono-Bold.ttf') format('truetype');
+    /* Le chemin vers le fichier */
     font-weight: bold;
     font-style: normal;
 }
+
 @font-face {
-    font-family: 'Space'; /* Le nom que vous choisissez d'utiliser dans votre code */
-    src: url('../assets/fonts/Space_Mono/SpaceMono-Italic.ttf') format('truetype'); /* Le chemin vers le fichier */
+    font-family: 'Space';
+    /* Le nom que vous choisissez d'utiliser dans votre code */
+    src: url('../assets/fonts/Space_Mono/SpaceMono-Italic.ttf') format('truetype');
+    /* Le chemin vers le fichier */
     font-weight: normal;
     font-style: italic;
 }
+
 @font-face {
-    font-family: 'Space'; /* Le nom que vous choisissez d'utiliser dans votre code */
-    src: url('../assets/fonts/Space_Mono/SpaceMono-BoldItalic.ttf') format('truetype'); /* Le chemin vers le fichier */
+    font-family: 'Space';
+    /* Le nom que vous choisissez d'utiliser dans votre code */
+    src: url('../assets/fonts/Space_Mono/SpaceMono-BoldItalic.ttf') format('truetype');
+    /* Le chemin vers le fichier */
     font-weight: bold;
     font-style: italic;
 }
@@ -26,64 +37,74 @@
 body {
     background-color: #121212;
     color: #E0E0E0;
-    
+
     margin: 0;
     padding: 0;
 
     font-family: Space, monospace;
 }
+
 h1 {
     font-size: 2rem;
     margin: 0.75rem 0;
     padding: 0.75rem 0;
 }
+
 h2 {
     font-size: 1.75rem;
     margin: 0.5rem 0;
     padding: 0.5rem 0;
 }
+
 h3 {
     font-size: 1.5rem;
     margin: 0.25rem 0;
     padding: 0.25rem 0;
 }
+
 h4 {
     font-size: 1.25rem;
     margin: 0.125rem 0;
     padding: 0.125rem 0;
 }
+
 p {
-    font-size: 1rem; 
+    font-size: 1rem;
     margin: 0.0625rem 0;
     padding: 0.0625rem 0;
 }
+
 .details {
     font-style: italic;
     font-size: 0.75rem;
     margin: 0.0625rem 0;
     padding: 0.0625rem 0;
 }
+
 a {
     color: #4A90E2;
     text-decoration: none;
-    font-size: 1rem; 
+    font-size: 1rem;
     margin: 0.25rem 0;
     padding: 0.25rem 0;
 }
+
 img {
     width: 50%;
     height: auto;
 }
+
 i {
     display: flex;
 }
+
 ul {
     margin: 0.0625rem;
 }
 
 
 /* HEADER */
-header  {
+header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -98,12 +119,14 @@ header  {
     background-color: #121212;
     border-bottom: solid #1E1E1E 0.125rem;
 }
-header > h1 {
+
+header>h1 {
     font-size: 2rem;
     margin: 0.5rem 0;
     padding: 0.5rem 0;
 }
-header > nav {
+
+header>nav {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -111,7 +134,8 @@ header > nav {
     align-items: center;
     align-content: flex-start;
 }
-header > nav > a {
+
+header>nav>a {
     padding: 0.5rem;
     margin: 0.5rem;
     font-size: 1.25rem;
@@ -131,6 +155,7 @@ main {
     justify-content: space-around;
     align-items: center;
 }
+
 .cards-histoire {
     display: flex;
     flex-direction: column;
@@ -139,6 +164,7 @@ main {
     align-items: stretch;
     gap: 1rem;
 }
+
 .card-title-histoire {
     display: flex;
     flex-direction: row;
@@ -149,11 +175,13 @@ main {
     color: #4A90E2;
     width: 100%;
 }
+
 .cards-skills {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
 }
+
 .card {
     display: flex;
     flex-direction: column;
@@ -166,6 +194,7 @@ main {
     padding: 1rem;
     gap: 1rem;
 }
+
 .card-title {
     display: flex;
     flex-direction: row;
@@ -176,17 +205,20 @@ main {
     color: #4A90E2;
     width: 100%;
 }
-.card-title > h2,
-.card-title > i {
+
+.card-title>h2,
+.card-title>i {
     line-height: 1;
     margin: 0 0.5rem;
     font-size: 1.5rem;
 }
+
 .card-categorie {
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: auto;
 }
+
 .skills {
     display: flex;
     flex-direction: row;
@@ -195,6 +227,7 @@ main {
     align-items: center;
     align-content: flex-start;
 }
+
 .skill {
     background-color: #2A2A2A;
     color: #E0E0E0;
@@ -204,6 +237,7 @@ main {
     margin: 0.25rem;
     padding: 0.125rem 0.25rem;
 }
+
 .card-details {
     border-top: solid #444444 0.0625rem;
     font-style: italic;
@@ -213,8 +247,116 @@ main {
     width: 100%;
 }
 
+fieldset {
+    width: 75%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    border: solid #333333 0.0625rem;
+}
+
+legend {
+    font-size: 2rem;
+    margin: 0.75rem auto;
+    padding: 0.75rem 0;
+}
+
+form>fieldset>div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 0.5rem;
+}
+
+form>fieldset>.identity>div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex: 1;
+    margin-bottom: 0.5rem;
+}
+
+form>fieldset>div>label,
+form>fieldset>.identity>div>label {
+    font-size: 1rem;
+    margin: 0.125rem 0;
+    padding: 0.25rem;
+}
+
+form>fieldset>div>input,
+form>fieldset>.identity>div>input {
+    font-size: 1rem;
+    padding: 0.25rem;
+    margin: 0.125rem 0;
+    width: 100%;
+    height: 2rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    font-family: Space, monospace;
+}
+
+form>fieldset>div>textarea {
+    font-size: 1rem;
+    padding: 0.25rem;
+    margin: 0.125rem 0;
+    width: 100%;
+    height: 16rem;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    font-family: Space, monospace;
+    resize: vertical;
+}
+
+.identity {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: flex-start;
+    gap: 0.5rem;
+}
+
+form>fieldset>button {
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 0.25rem;
+    margin: 0.125rem 0;
+    background-color: #4A90E2;
+    color: #E0E0E0;
+    width: 100%;
+    height: 2rem;
+    box-sizing: border-box;
+    border: solid #444444 0.0625rem;
+    border-radius: 0.5rem;
+    font-family: Space, monospace;
+    cursor: pointer;
+    /* Transforme la souris en petite main */
+    transition: background-color 0.3s ease;
+    /* Rend le changement de couleur fluide */
+}
+
+form>fieldset>button:hover {
+    background-color: #357ABD;
+    /* Un bleu un peu plus foncé au survol */
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border: solid #4A90E2 0.125rem;
+}
+
 /* FOOTER */
-footer  {
+footer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -226,26 +368,30 @@ footer  {
 
     padding: 0.5rem;
 }
-footer > div {
+
+footer>div {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: flex-start;
 }
-footer > div > ul {
+
+footer>div>ul {
     list-style: none;
     padding: 0;
 }
-footer > div > ul > li {
+
+footer>div>ul>li {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
 }
-footer > div > ul > li > i, 
-footer > div > ul >li > p , 
-footer > div > ul > li > a {
+
+footer>div>ul>li>i,
+footer>div>ul>li>p,
+footer>div>ul>li>a {
     margin: 0 0.25rem;
 }
