@@ -248,7 +248,7 @@ main {
 }
 
 fieldset {
-    width: 75%;
+    width: 60%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -258,13 +258,11 @@ fieldset {
     border: solid #333333 0.0625rem;
     border-radius: 0.5rem;
 }
-
 legend {
     font-size: 2rem;
     margin: 0.75rem auto;
     padding: 0.75rem 0;
 }
-
 form>fieldset>div {
     display: flex;
     flex-direction: column;
@@ -274,7 +272,6 @@ form>fieldset>div {
     width: 100%;
     margin-bottom: 0.5rem;
 }
-
 form>fieldset>.identity>div {
     display: flex;
     flex-direction: column;
@@ -284,38 +281,36 @@ form>fieldset>.identity>div {
     flex: 1;
     margin-bottom: 0.5rem;
 }
-
 form>fieldset>div>label,
 form>fieldset>.identity>div>label {
     font-size: 1rem;
     margin: 0.125rem 0;
     padding: 0.25rem;
 }
-
 form>fieldset>div>input,
 form>fieldset>.identity>div>input {
     font-size: 1rem;
-    padding: 0.25rem;
+    padding: 0.5rem;
     margin: 0.125rem 0;
     width: 100%;
-    height: 2rem;
+    /*height: 2rem;*/
     box-sizing: border-box;
+    border: solid #333333 0.125rem;
     border-radius: 0.5rem;
     font-family: Space, monospace;
 }
-
 form>fieldset>div>textarea {
     font-size: 1rem;
-    padding: 0.25rem;
+    padding: 0.5rem;
     margin: 0.125rem 0;
     width: 100%;
     height: 16rem;
     box-sizing: border-box;
+    border: solid #333333 0.125rem;
     border-radius: 0.5rem;
     font-family: Space, monospace;
     resize: vertical;
 }
-
 .identity {
     width: 100%;
     display: flex;
@@ -325,16 +320,15 @@ form>fieldset>div>textarea {
     align-content: flex-start;
     gap: 0.5rem;
 }
-
 form>fieldset>button {
     font-size: 1rem;
     font-weight: bold;
-    padding: 0.25rem;
+    padding: 0.5rem;
     margin: 0.125rem 0;
     background-color: #4A90E2;
     color: #E0E0E0;
     width: 100%;
-    height: 2rem;
+    /*height: 2.5rem;*/
     box-sizing: border-box;
     border: solid #444444 0.0625rem;
     border-radius: 0.5rem;
@@ -344,13 +338,10 @@ form>fieldset>button {
     transition: background-color 0.3s ease;
     /* Rend le changement de couleur fluide */
 }
-
 form>fieldset>button:hover {
     background-color: #357ABD;
-    /* Un bleu un peu plus foncé au survol */
 }
-
-form input:focus,
+form > fieldset > .identity > div > input:focus,
 form textarea:focus {
     outline: none;
     border: solid #4A90E2 0.125rem;
