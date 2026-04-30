@@ -256,6 +256,7 @@ fieldset {
     justify-content: flex-start;
     align-items: center;
     border: solid #333333 0.0625rem;
+    border-radius: 0.5rem;
 }
 
 legend {
