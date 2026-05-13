@@ -10,6 +10,7 @@
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-bold-rounded/css/uicons-bold-rounded.css'>
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-chubby/css/uicons-solid-chubby.css'>
 </head>
 
 <body>
@@ -27,7 +28,7 @@
 
     <main>
         <h2 class="form-title">CONTACTEZ-MOI</h2>
-        <form action="ton_script_backend" method="POST" enctype="multipart/form-data">
+        <form action="ton_script_backend" method="POST">
             <div class="identity">
                 <div>
                     <label for="name">Nom</label>
@@ -40,7 +41,13 @@
             </div>
             <div>
                 <label for="message">Message</label>
-                <textarea id="message" name="user_message" required placeholder="Ecrivez votre message"></textarea>
+                <textarea id="message" name="user_message" required placeholder="Ecrivez votre message..."></textarea>
+            </div>
+            <div class="TextIcon">
+                <i class="fi fi-sc-information"></i>
+                <a href="mentions.html" class="details"> Consultez les mentions légales pour plus
+                    d'informations concernant la collecte, le stockage et le
+                    traitement de vos données personnelles.</a>
             </div>
             <button type="submit">Envoyer</button>
         </form>
