@@ -85,13 +85,6 @@ ul {
 
 /* HEADER */
 header {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    align-content: flex-start;
-
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -99,12 +92,23 @@ header {
     background-color: #121212;
     border-bottom: solid #1E1E1E 0.125rem;
 }
-header>h1 {
+header>div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: flex-start;
+
+    width: 90%;
+    margin: 0 auto;
+}
+header>div>h1 {
     font-size: 2rem;
     margin: 0.5rem 0;
     padding: 0.5rem 0;
 }
-header>nav {
+header>div>nav {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -112,7 +116,7 @@ header>nav {
     align-items: center;
     align-content: flex-start;
 }
-header>nav>a {
+header>div>nav>a {
     padding: 0.5rem;
     margin: 0.5rem;
     font-size: 1.25rem;
@@ -313,37 +317,39 @@ form textarea:focus {
 
 /* FOOTER */
 footer {
+    border-top: solid #1E1E1E 0.125rem;
+}
+footer>div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: flex-start;
     align-content: flex-start;
 
-    border-top: solid #1E1E1E 0.125rem;
-
-    padding: 0.5rem;
+    width: 90%;
+    margin: 0 auto;
 }
-footer>div {
+footer>div>div {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: flex-start;
 }
-footer>div>ul {
+footer>div>div>ul {
     list-style: none;
     padding: 0;
 }
-footer>div>ul>li {
+footer>div>div>ul>li {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
 }
-footer>div>ul>li>i,
-footer>div>ul>li>p,
-footer>div>ul>li>a {
+footer>div>div>ul>li>i,
+footer>div>div>ul>li>p,
+footer>div>div>ul>li>a {
     margin: 0 0.25rem;
 }
