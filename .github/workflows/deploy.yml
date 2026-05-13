@@ -1,4 +1,4 @@
-name: Deploy to VPS
+name: Deploy Portfolio to VPS
 
 on:
   push:
@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Déploiement via SSH
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Connexion au VPS et déploiement
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          # Les commandes qui seront exécutées sur votre VPS
+          password: ${{ secrets.PASSWORD }}
           script: |
-            cd /var/www/maxime-portfolio/html
+            cd /var/www/html
             git pull origin main
+            sudo systemctl reload nginx
