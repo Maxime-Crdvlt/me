@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Connexion au VPS et déploiement
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.HOST }}
           username: ${{ secrets.USERNAME }}
@@ -19,4 +19,3 @@ jobs:
           script: |
             cd /var/www/html
             git pull origin main
-            sudo systemctl reload nginx
