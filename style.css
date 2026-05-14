@@ -62,7 +62,6 @@ p {
     margin: 0.0625rem 0;
     padding: 0.0625rem 0;
 }
-
 a {
     color: #4A90E2;
     text-decoration: none;
@@ -81,6 +80,18 @@ i {
 
 ul {
     margin: 0.0625rem;
+}
+
+.TextIcon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.TextIcon>p,
+.TextIcon>i {
+    margin: 0 0.25rem;
 }
 
 /* HEADER */
