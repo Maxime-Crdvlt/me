@@ -25,7 +25,7 @@ try {
 if (!empty($name) && !empty($email) && !empty($message)) {
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         try {
-            $sql = "INSERT INTO contacts (name, email, message, envoi) VALUES (:name, :email, :message, NOW())";
+            $sql = "INSERT INTO contacts (name, email, message, sent) VALUES (:name, :email, :message, NOW())";
             $stmt = $connexionDB->prepare($sql);
             $stmt->execute([
                 ':name' => $name,
