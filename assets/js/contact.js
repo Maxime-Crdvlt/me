@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const popupIcon = document.getElementById('popup-icon');
+    const overlay = document.getElementById('popup-overlay');
 
     if (formulaire) {
         formulaire.addEventListener('submit', (evenement) => {
@@ -24,27 +25,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 popup.classList.remove('popup-cache');
                 popup.classList.add('popup-visible');
+                overlay.classList.remove('overlay-cache');
+                overlay.classList.add('overlay-visible');
+                document.body.classList.add('bloquer-scroll');
             })
             .catch(erreur => {
                 console.error("Erreur serveur :", erreur);
                 popupMessage.textContent = "Erreur de connexion au serveur.";
                 popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
+                
                 popup.classList.remove('popup-cache');
                 popup.classList.add('popup-visible');
-                setTimeout(() => {
-                    popup.classList.remove('popup-visible');
-                    popup.classList.add('popup-cache');
-                }, 4000);
+                overlay.classList.remove('overlay-cache');
+                overlay.classList.add('overlay-visible');
+                document.body.classList.add('bloquer-scroll');
             });
         })
     }
 
-    document.addEventListener('click', (evenement) => {
-        const popupEstVisible = popup.classList.contains('popup-visible');
-        const clicEnDehors = !popup.contains(evenement.target);
-        if (popupEstVisible && clicEnDehors) {
+    if (overlay) {
+        overlay.addEventListener('click', () => {
             popup.classList.remove('popup-visible');
             popup.classList.add('popup-cache');
-        }
-    })
+            overlay.classList.remove('overlay-visible');
+            overlay.classList.add('overlay-cache');
+            document.body.classList.remove('bloquer-scroll');
+        });
+    }
 })

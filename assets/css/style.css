@@ -342,6 +342,26 @@ form textarea:focus {
     border: 0.0625rem solid  #FFFFFF;
     width: 100%;
 }
+
+/* POPUP */
+#popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(0.5rem);
+    z-index: 800;
+}
+.overlay-cache {
+    opacity: 0;
+    pointer-events: none;
+}
+.overlay-visible {
+    opacity: 1;
+    pointer-events: auto;
+}
 .popup {
     display: flex;
     flex-direction: column;
@@ -352,10 +372,8 @@ form textarea:focus {
     border: solid #333333 0.0625rem;
     border-radius: 0.5rem;
     padding: 1rem;
-    width: 30%;
-    /*margin: 0 auto;*/
+    width: auto;
     text-align: center;
-
     position: fixed;
     top: 50%;
     left: 50%;
@@ -370,15 +388,17 @@ form textarea:focus {
     opacity: 1;
 }
 .popup-icon {
-    font-size: 4rem;
+    font-size: 2rem;
     margin: 1rem 0;
-    /*Succès: class="fi fi-br-check" - Erreur : class="fi fi-br-cross"*/
 }
 .icon-succes {
     color: #4ae29c;
 }
 .icon-erreur {
     color: #e24a90;
+}
+.bloquer-scroll {
+    overflow: hidden;
 }
 
 /* FOOTER */
