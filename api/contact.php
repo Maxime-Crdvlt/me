@@ -1,6 +1,17 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
 
+// CONNEXION A LA BASE DE DONNEES
+require_once 'config_portfolio.php'; //import $dsn, $user, $password
+try {
+    $connexionDB = new PDO($dsn, $user, $password);
+    $connexionDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    error_log("[Erreur] Echec de la connexion : " . $e->getMessage() . "...");
+    echo json_encode(['statut' => "erreur", 'message' => "Echec de la connexion à la base de données..."]);
+    exit;
+}
+
 // RECUPERATION DES DONNEES DU FORMULAIRE
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['user_name'] ?? '';
@@ -10,18 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     error_log("[Erreur] Aucun formulaire soumis...");
     echo json_encode(['statut' => "erreur", 'message' => "Aucun formulaire reçu..."]);
-    exit;
-}
-
-// CONNEXION A LA BASE DE DONNEES
-require_once 'config_portfolio.php'; //import $dsn, $user, $password
-try {
-    $connexionDB = new PDO($dsn, $user, $password);
-    $connexionDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    error_log("[$name - $email] [Succes] Connexion a la base de donnees reussie !");
-} catch (PDOException $e) {
-    error_log("[$name - $email] [Erreur] Echec de la connexion : " . $e->getMessage() . "...");
-    echo json_encode(['statut' => "erreur", 'message' => "Echec de la connexion à la base de données..."]);
     exit;
 }
 
@@ -36,7 +35,6 @@ if (!empty($name) && !empty($email) && !empty($message)) {
                 ':email' => $email,
                 ':message' => $message
             ]);
-            error_log("[$name - $email] [Succes] Votre message a bien ete envoye !");
             echo json_encode(['statut' => "succes", 'message' => "Merci ! Votre message a bien été reçu !"]);
         } catch (PDOException $e) {
             error_log("[$name - $email] [Erreur] Echec de l'insertion : " . $e->getMessage() . "...");
