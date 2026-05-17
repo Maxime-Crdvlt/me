@@ -230,7 +230,7 @@ main {
 }
 
 form {
-    width: 75%;
+    width: 60%;
     margin: 0 auto;
     padding: 1rem;
     display: flex;
@@ -333,7 +333,7 @@ form textarea:focus {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
-    width: 75%;
+    width: 60%;
     margin: 1rem auto;
 }
 .ou>hr,
