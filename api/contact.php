@@ -1,7 +1,6 @@
 <?php
 // CONNEXION A LA BASE DE DONNEES
 require_once 'config_portfolio.php';
-$dsn = "mysql:host=$host;dbname=$name;charset=$charset";
 $connexionDB = new PDO($dsn, $user, $password);
 
 // RECUPERATION DES DONNEES DU FORMULAIRE

@@ -90,7 +90,8 @@ ul {
     align-items: center;
 }
 .TextIcon>a,
-.TextIcon>i {
+.TextIcon>i,
+.TextIcon>p {
     margin: 0 0.25rem;
     color: #E0E0E0;
 }
@@ -229,7 +230,7 @@ main {
 }
 
 form {
-    width: 60%;
+    width: 75%;
     margin: 0 auto;
     padding: 1rem;
     display: flex;
@@ -323,8 +324,26 @@ form textarea:focus {
     outline: none;
     border: solid #4A90E2 0.125rem;
 }
-.form-title {
+.text-center {
     text-align: center;
+}
+.ou {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    margin: 1rem auto;
+}
+.ou>hr,
+.ou>p {
+    margin: 0 0.25rem;
+    color: #FFFFFF;
+}
+.ou>hr {
+    border: 0.0625rem solid  #FFFFFF;
+    width: 100%;
 }
 
 /* FOOTER */
