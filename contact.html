@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Maxime Crdvlt - Contact</title>
     <link rel="icon" href="assets/img/personne.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="assets/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
@@ -28,7 +28,7 @@
 
     <main>
         <h2 class="text-center">CONTACTEZ-MOI</h2>
-        <form action="/api/contact.php" method="POST">
+        <form id="form-contact" action="/api/contact.php" method="POST">
             <div class="identity">
                 <div>
                     <label for="name">Nom</label>
@@ -96,6 +96,12 @@
             </div>
         </div>
     </footer>
+
+    <div id="popup" class="popup popup-cache">
+        <i id="popup-icon" class="fi fi-br-check popup-icon icon-succes"></i>
+        <p id="popup-message" class="popup-message"></p>
+    </div>
+    <script src="assets/js/contact.js" defer></script>
 </body>
 
 </html>
