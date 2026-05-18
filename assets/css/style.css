@@ -32,42 +32,39 @@ body {
 }
 
 h1 {
+    font-size: 4rem;
+    margin: 2rem 0;
+    padding: 2rem 0;
+}
+h2 {
     font-size: 2rem;
     margin: 1rem 0;
     padding: 1rem 0;
 }
-h2 {
+h3 {
     font-size: 1.75rem;
     margin: 0.75rem 0;
     padding: 0.75rem 0;
 }
-h3 {
+h4 {
     font-size: 1.5rem;
     margin: 0.5rem 0;
     padding: 0.5rem 0;
 }
-h4 {
-    font-size: 1.25rem;
-    margin: 0.25rem 0;
-    padding: 0.25rem 0;
-}
 p {
     font-size: 1rem;
-    margin: 0.125rem 0;
-    padding: 0.125rem 0;
+    margin: 0.25rem 0;
+    padding: 0.25rem 0;
 }
 .details {
     font-style: italic;
     font-size: 0.75rem;
-    margin: 0.0625rem 0;
-    padding: 0.0625rem 0;
+    margin: 0.125rem 0;
+    padding: 0.125rem 0;
 }
 a {
     color: #4A90E2;
     text-decoration: none;
-    font-size: 1rem;
-    margin: 0.25rem 0;
-    padding: 0.25rem 0;
 }
 img {
     width: 50%;
@@ -77,7 +74,7 @@ i {
     display: flex;
 }
 ul {
-    margin: 0.0625rem;
+    margin: 0.25rem 0;
 }
 
 .TextIcon {
@@ -176,9 +173,8 @@ main {
     align-items: flex-start;
     background-color: #1E1E1E;
     border: solid #333333 0.0625rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     padding: 1rem;
-    gap: 1rem;
 }
 .card-title {
     display: flex;
@@ -237,7 +233,7 @@ form {
     justify-content: flex-start;
     align-items: center;
     border: solid #333333 0.0625rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
 }
 form>div {
     display: flex;
@@ -272,7 +268,7 @@ form>.identity>div>input {
     /*height: 2rem;*/
     box-sizing: border-box;
     border: solid #333333 0.125rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     font-family: Space, monospace;
 }
 form>div>textarea {
@@ -283,7 +279,7 @@ form>div>textarea {
     height: 16rem;
     box-sizing: border-box;
     border: solid #333333 0.125rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     font-family: Space, monospace;
     resize: vertical;
 }
@@ -307,7 +303,7 @@ form>button {
     /*height: 2.5rem;*/
     box-sizing: border-box;
     border: solid #444444 0.0625rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     font-family: Space, monospace;
     cursor: pointer;
 }
@@ -368,7 +364,7 @@ form textarea:focus {
     align-items: center;
     background-color: #1E1E1E;
     border: solid #333333 0.0625rem;
-    border-radius: 0.5rem;
+    border-radius: 1rem;
     padding: 1rem;
     width: auto;
     text-align: center;
@@ -436,4 +432,9 @@ footer>div>div>ul>li>i,
 footer>div>div>ul>li>p,
 footer>div>div>ul>li>a {
     margin: 0 0.25rem;
+}
+footer>div>div>h2 {
+    font-size: 1.5rem;
+    margin: 0.25rem 0;
+    padding: 0.25rem 0;
 }
