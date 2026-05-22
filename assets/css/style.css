@@ -247,7 +247,6 @@ main {
     align-items: center;
     align-content: flex-start;
     width: 100%;
-    color: var(--primary-color);
 }
 .card-subtitle {
     color: var(--text-secondary);
