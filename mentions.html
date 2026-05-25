@@ -3,15 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-
     <title>Maxime Courdavault - Développeur junior</title>
     <meta name="description" content="Etudiant et développeur junior mobile, web et logiciel. Découvrez mes projets.">
     <link rel="canonical" href="https://maximecourdavault.fr/mentions" />
-
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
@@ -20,20 +17,28 @@
 
 <body>
     <header>
-        <div>
+        <div class="container">
             <h1>Maxime Courdavault</h1>
-            <nav>
-                <a href="index.html">Accueil</a>
-                <a href="about.html">A propos de moi</a>
-                <a href="projects.html">Mes projets</a>
-                <a href="contact.html">Contact</a>
+            <button id="button-nav" aria-label="Ouvrir le menu">
+                <i class="fi fi-br-menu-burger" id="icon-button-nav"></i>
+            </button>
+            <nav id="nav" class="nav-hidden">
+                <ul class="actions">
+                    <li><a href="index.html" class="current-page">Accueil</a></li>
+                    <li><a href="about.html">A propos de moi</a></li>
+                    <li><a href="projects.html">Mes projets</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </nav>
         </div>
+        <script src="assets/js/nav.js" defer></script>
     </header>
 
-    <main>
+    <main class="container">
         <h2>Mentions légales</h2>
-        <article>
+        <p>Conformément à l'article 6 III de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie
+            numérique (LCEN).</p>
+        <section>
             <h3>1. Editeur du site internet</h3>
             <p>Le présent site, accessible à l'URL <a
                     href="https://maximecourdavault.fr">https://maximecourdavault.fr</a> ou <a
@@ -41,15 +46,15 @@
                 publié et détenu par :</p>
             <ul>
                 <li>Éditeur et Directeur de la publication : Maxime Courdavault</li>
-                <li>Contact email : courdavaultmaxime@gmail.com</li>
+                <li>Contact email : <a href="mailto:courdavaultmaxime@gmail.com">courdavaultmaxime@gmail.com</a></li>
             </ul>
             <p class="details">À titre non professionnel, en application de l'article 6, de la loi n° 2004-575 du 21
                 juin 2004 pour
                 la confiance dans l'économie numérique, j'ai fait le choix de conserver l'anonymat de mon
                 adresse personnelle. Mes coordonnées exactes ont été transmises de façon réglementaire à
                 l'hébergeur qui suit.</p>
-        </article>
-        <article>
+        </section>
+        <section>
             <h3>2. Hébergeur du site internet</h3>
             <p>Le présent site, accessible à l'URL <a
                     href="https://maximecourdavault.fr">https://maximecourdavault.fr</a> ou <a
@@ -60,22 +65,22 @@
                 <li>Téléphone : 1007</li>
                 <li>Site internet : <a href="https://www.ovhcloud.com">https://www.ovhcloud.com</a></li>
             </ul>
-        </article>
-        <article>
+        </section>
+        <section>
             <h3>3. Propriété intellectuelle</h3>
             <p>L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et
                 la propriété intellectuelle. Tous les droits de reproduction sont réservés, y compris pour les
                 documents téléchargeables et les représentations iconographiques et photographiques. La reproduction
                 de tout ou partie de ce site sur un support électronique quel qu'il soit est formellement interdite
                 sauf autorisation expresse de l'éditeur.</p>
-        </article>
-        <article>
+        </section>
+        <section>
             <h3>4. Données personnelles</h3>
             <p>Dans le cadre de l'utilisation de ce site, et notamment via le formulaire de contact, je suis amené à
                 collecter et traiter certaines de vos données. Soucieux de la protection de votre vie privée, je
                 m'engage à ce que cette collecte soit transparente et respecte le Règlement Général sur la Protection
                 des Données (RGPD).</p>
-            <p><b>Quelles données sont collectées ?</b></p>
+            <h4>Quelles données sont collectées ?</h4>
             <p>Lorsque vous utilisez le formulaire de contact, vous transmettez uniquement les informations suivantes :
             </p>
             <ul>
@@ -83,64 +88,73 @@
                 <li>Votre Adresse e-mail (pour pouvoir vous répondre)</li>
                 <li>Votre Message (pour comprendre votre demande)</li>
             </ul>
-            <p><b>Pourquoi ces données sont-elles collectées ?</b></p>
+            <h4>Pourquoi ces données sont-elles collectées ?</h4>
             <p>Ces informations me servent exclusivement à répondre à vos messages et échanger avec vous suite à votre
                 démarche. Vos données ne seront jamais vendues, partagées à des tiers, ni utilisées pour de la
                 prospection commerciale (pas de newsletters cachées !).</p>
-            <p><b>Où sont stockées vos données et combien de temps ?</b></p>
+            <h4>Où sont stockées vos données et combien de temps ?</h4>
             <p>Vos données sont stockées de manière sécurisée directement sur le serveur
                 privé virtuel (VPS) qui héberge ce portfolio, au sein d'une base de données protégée. Ce serveur est
                 situé en France.</p>
             <p>Vos données sont conservées uniquement le temps nécessaire pour répondre à votre
                 demande et échanger avec vous (au maximum 2 ans après notre dernier contact), puis elles sont
                 définitivement supprimées.</p>
-            <p><b>Vos droits (C'est votre vie privée !)</b></p>
+            <h4>Vos droits, vos données !</h4>
             <p>Conformément à la réglementation, vous gardez un contrôle total sur vos données. Vous disposez d’un droit
                 d’accès, de modification et de suppression de vos informations personnelles.</p>
             <p>Pour exercer ce droit ou pour toute question sur le traitement de vos données, il vous suffit de
                 m'envoyer un message directement via le formulaire de contact ou par e-mail à l'adresse suivante :
-                courdavaultmaxime@gmail.com.</p>
-        </article>
-        <article>
+                <a href="mailto:courdavaultmaxime@gmail.com">courdavaultmaxime@gmail.com</a>.
+            </p>
+        </section>
+        <section>
             <h3>5. Crédits</h3>
             <p>Uicons par <a href="https://www.flaticon.com/uicons">Flaticon</a>.</p>
-        </article>
+        </section>
     </main>
 
-
     <footer>
-        <div>
+        <div class="container">
             <div>
                 <h2>Maxime Courdavault</h2>
                 <p>&copy; 2026 Maxime Courdavault. Tous droits réservés.</p>
                 <a href="mentions.html">Mentions légales</a>
             </div>
             <div>
-                <p><b>Me contacter</b></p>
-                <ul>
-                    <li><a href="contact.html" class="text-icon"><i class="fi fi-sr-browser"></i> Page Contact</a></li>
-                    <li>
-                        <p class="text-icon"><i class="fi fi-sr-envelope"></i> courdavaultmaxime@gmail.com</p>
-                    </li>
-                    <li>
-                        <p class="text-icon"><i class="fi fi-sr-phone-flip"></i> 06 48 97 81 03</p>
-                    </li>
-                    <li>
-                        <p class="text-icon"><i class="fi fi-sr-marker"></i> Île-de-France, France</p>
-                    </li>
-                </ul>
+                <h3>Me contacter</h3>
+                <address>
+                    <ul>
+                        <li><a href="contact.html" class="text-icon"><i class="fi fi-sr-browser"></i> Page Contact</a>
+                        </li>
+                        <li>
+                            <a href="mailto:courdavaultmaxime@gmail.com" class="text-icon"><i
+                                    class="fi fi-sr-envelope"></i>
+                                courdavaultmaxime@gmail.com</a>
+                        </li>
+                        <li>
+                            <a href="tel:+33648978103" class="text-icon"><i class="fi fi-sr-phone-flip"></i> 06 48 97 81
+                                03</a>
+                        </li>
+                        <li class="text-icon">
+                            <i class="fi fi-sr-marker"></i> Île-de-France, France
+                        </li>
+                    </ul>
+                </address>
             </div>
             <div>
-                <p><b>Liens externes</b></p>
+                <h3>Liens externes</h3>
                 <ul>
-                    <li><a href="https://github.com/Maxime-Crdvlt" target="_blank" class="text-icon"><i
-                                class="fi fi-brands-github"></i> Mon
-                            GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/maxime-crdvlt" target="_blank" class="text-icon"><i
-                                class="fi fi-brands-linkedin"></i> Mon LinkedIn</a></li>
-                    <li><a href="assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" class="text-icon"><i
-                                class="fi fi-sr-resume"></i> Mon
-                            Curriculum Vitae</a>
+                    <li>
+                        <a href="https://github.com/Maxime-Crdvlt" target="_blank" class="text-icon">
+                            <i class="fi fi-brands-github"></i> Mon GitHub</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/maxime-crdvlt" target="_blank" class="text-icon"><i
+                                class="fi fi-brands-linkedin"></i> Mon LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" class="text-icon"><i
+                                class="fi fi-sr-resume"></i> Mon Curriculum Vitae</a>
                     </li>
                 </ul>
             </div>

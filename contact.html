@@ -3,15 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-
     <title>Maxime Courdavault - Développeur junior</title>
     <meta name="description" content="Etudiant et développeur junior mobile, web et logiciel. Découvrez mes projets.">
-    <link rel="canonical" href="https://maximecourdavault.fr/contact" />
-
+    <link rel="canonical" href="https://maximecourdavault.fr/contact">
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
@@ -21,85 +18,102 @@
 
 <body>
     <header>
-        <div>
+        <div class="container">
             <h1>Maxime Courdavault</h1>
-            <nav>
-                <a href="index.html">Accueil</a>
-                <a href="about.html">A propos de moi</a>
-                <a href="projects.html">Mes projets</a>
-                <a href="contact.html" class="current-page">Contact</a>
+            <button id="button-nav" aria-label="Ouvrir le menu">
+                <i class="fi fi-br-menu-burger" id="icon-button-nav"></i>
+            </button>
+            <nav id="nav" class="nav-hidden">
+                <ul class="actions">
+                    <li><a href="index.html" class="current-page">Accueil</a></li>
+                    <li><a href="about.html">A propos de moi</a></li>
+                    <li><a href="projects.html">Mes projets</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </nav>
         </div>
+        <script src="assets/js/nav.js" defer></script>
     </header>
 
-    <main>
-        <h2 class="text-center">CONTACTEZ-MOI</h2>
-        <form id="form-contact" action="/api/contact.php" method="POST">
-            <div class="identity">
-                <div>
-                    <label for="name">Nom</label>
-                    <input type="text" id="name" name="user_name" placeholder="Prénom Nom" required />
+    <main class="container">
+        <section>
+            <h2 class="text-center">CONTACTEZ-MOI</h2>
+            <form id="form-contact" action="/api/contact.php" method="POST">
+                <div class="identity">
+                    <div>
+                        <label for="name">Nom</label>
+                        <input type="text" id="name" name="user_name" placeholder="Prénom Nom" required />
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="user_email" placeholder="courdavaultmaxime@gmail.com"
+                            required />
+                    </div>
                 </div>
                 <div>
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="user_email" placeholder="courdavaultmaxime@gmail.com"
-                        required />
+                    <label for="message">Message</label>
+                    <textarea id="message" name="user_message" required
+                        placeholder="Ecrivez votre message..."></textarea>
                 </div>
+                <a href="mentions.html" class="details text-icon"><i class="fi fi-sc-information"></i> Consultez les
+                    mentions légales pour plus d'informations concernant la collecte, le stockage et le traitement de
+                    vos données personnelles.</a>
+                <button type="submit" class="button-primary">Envoyer</button>
+            </form>
+
+            <div class="ou">
+                <hr>
+                <p>OU</p>
+                <hr>
             </div>
-            <div>
-                <label for="message">Message</label>
-                <textarea id="message" name="user_message" required placeholder="Ecrivez votre message..."></textarea>
-            </div>
-            <a href="mentions.html" class="details text-icon"><i class="fi fi-sc-information"></i> Consultez les
-                mentions
-                légales pour plus
-                d'informations concernant la collecte, le stockage et le
-                traitement de vos données personnelles.</a>
-            <button type="submit">Envoyer</button>
-        </form>
-        <div class="ou">
-            <hr>
-            <p>OU</p>
-            <hr>
-        </div>
-        <p class="text-center">Appelez-moi au
-            <b>06 48 97 81 03</b>
-        </p>
+
+            <p class="text-center">Appelez-moi au <a href="tel:+33648978103"><strong>06 48 97 81 03</strong></a>
+            </p>
+        </section>
     </main>
 
     <footer>
-        <div>
+        <div class="container">
             <div>
                 <h2>Maxime Courdavault</h2>
                 <p>&copy; 2026 Maxime Courdavault. Tous droits réservés.</p>
                 <a href="mentions.html">Mentions légales</a>
             </div>
             <div>
-                <p><b>Me contacter</b></p>
-                <ul>
-                    <li><a href="contact.html" class="text-icon"><i class="fi fi-sr-browser"></i> Page Contact</a></li>
-                    <li>
-                        <p class="text-icon"><i class="fi fi-sr-envelope"></i> courdavaultmaxime@gmail.com</p>
-                    </li>
-                    <li>
-                        <p class="text-icon"><i class="fi fi-sr-phone-flip"></i> 06 48 97 81 03</p>
-                    </li>
-                    <li>
-                        <p class="text-icon"><i class="fi fi-sr-marker"></i> Île-de-France, France</p>
-                    </li>
-                </ul>
+                <h3>Me contacter</h3>
+                <address>
+                    <ul>
+                        <li><a href="contact.html" class="text-icon"><i class="fi fi-sr-browser"></i> Page Contact</a>
+                        </li>
+                        <li>
+                            <a href="mailto:courdavaultmaxime@gmail.com" class="text-icon"><i
+                                    class="fi fi-sr-envelope"></i>
+                                courdavaultmaxime@gmail.com</a>
+                        </li>
+                        <li>
+                            <a href="tel:+33648978103" class="text-icon"><i class="fi fi-sr-phone-flip"></i> 06 48 97 81
+                                03</a>
+                        </li>
+                        <li class="text-icon">
+                            <i class="fi fi-sr-marker"></i> Île-de-France, France
+                        </li>
+                    </ul>
+                </address>
             </div>
             <div>
-                <p><b>Liens externes</b></p>
+                <h3>Liens externes</h3>
                 <ul>
-                    <li><a href="https://github.com/Maxime-Crdvlt" target="_blank" class="text-icon"><i
-                                class="fi fi-brands-github"></i> Mon
-                            GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/maxime-crdvlt" target="_blank" class="text-icon"><i
-                                class="fi fi-brands-linkedin"></i> Mon LinkedIn</a></li>
-                    <li><a href="assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" class="text-icon"><i
-                                class="fi fi-sr-resume"></i> Mon
-                            Curriculum Vitae</a>
+                    <li>
+                        <a href="https://github.com/Maxime-Crdvlt" target="_blank" class="text-icon">
+                            <i class="fi fi-brands-github"></i> Mon GitHub</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/maxime-crdvlt" target="_blank" class="text-icon"><i
+                                class="fi fi-brands-linkedin"></i> Mon LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" class="text-icon"><i
+                                class="fi fi-sr-resume"></i> Mon Curriculum Vitae</a>
                     </li>
                 </ul>
             </div>

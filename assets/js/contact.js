@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay = document.getElementById('popup-overlay');
 
     if (formulaire) {
-        formulaire.addEventListener('submit', (evenement) => {
+        formulaire.addEventListener('submit', (event) => {
             evenement.preventDefault();
             const formData = new FormData(formulaire);
             fetch('api/contact.php', {

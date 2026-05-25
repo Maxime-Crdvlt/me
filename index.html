@@ -3,15 +3,12 @@
 
 <head>
     <meta charset="UTF-8">
-
     <title>Maxime Courdavault - Développeur junior</title>
     <meta name="description" content="Etudiant et développeur junior mobile, web et logiciel. Découvrez mes projets.">
-    <link rel="canonical" href="https://maximecourdavault.fr/" />
-
+    <link rel="canonical" href="https://maximecourdavault.fr/">
     <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
-
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
@@ -20,72 +17,87 @@
 
 <body>
     <header>
-        <div>
+        <div class="container">
             <h1>Maxime Courdavault</h1>
-            <nav>
-                <a href="index.html" class="current-page">Accueil</a>
-                <a href="about.html">A propos de moi</a>
-                <a href="projects.html">Mes projets</a>
-                <a href="contact.html">Contact</a>
+            <button id="button-nav" aria-label="Ouvrir le menu">
+                <i class="fi fi-br-menu-burger" id="icon-button-nav"></i>
+            </button>
+            <nav id="nav" class="nav-hidden">
+                <ul class="actions">
+                    <li><a href="index.html" class="current-page">Accueil</a></li>
+                    <li><a href="about.html">A propos de moi</a></li>
+                    <li><a href="projects.html">Mes projets</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
             </nav>
         </div>
+        <script src="assets/js/nav.js" defer></script>
     </header>
 
-    <main>
-        <article class="hero">
+    <main class="container">
+        <section class="hero">
             <div>
                 <h2>Je suis étudiant et développeur junior</h2>
                 <p>Je m’appelle Maxime Courdavault, j’ai 19 ans et je suis actuellement étudiant en 2ème année de BUT
                     Informatique. J’étudie actuellement à l’Université Paris Cité dans l’IUT de Paris - Rives de Seine
                     dans le parcours réalisation d'applications : conception, développement, validation.</p>
-                <div class="actions">
-                    <a href="about.html" class="button-primary">A propos de moi</a>
-                    <a href="contact.html" class="button-secondary">Me contacter</a>
-                    <a href="assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank">Télécharger mon CV</a>
-                </div>
+                <ul class="actions">
+                    <li><a href="about.html" class="button-primary">A propos de moi</a></li>
+                    <li><a href="contact.html" class="button-secondary">Me contacter</a></li>
+                    <li><a href="assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank"
+                            class="button-tertiary">Télécharger mon CV</a></li>
+                </ul>
             </div>
-            <img src="assets/images/moi.png" alt="Photo portrait de Maxime" width="512" height="512">
-        </article>
-
-        <article>
+            <img src="assets/images/moi.png" alt="Photo portrait de Maxime" class="profile-pic" width="1344"
+                height="1338">
+        </section>
+        <section>
             <h2>Mes dernières actualités</h2>
-        </article>
+        </section>
     </main>
 
-
     <footer>
-        <div>
+        <div class="container">
             <div>
                 <h2>Maxime Courdavault</h2>
                 <p>&copy; 2026 Maxime Courdavault. Tous droits réservés.</p>
                 <a href="mentions.html">Mentions légales</a>
             </div>
             <div>
-                <p><b>Me contacter</b></p>
-                <ul>
-                    <li><a href="contact.html" class="text-icon"><i class="fi fi-sr-browser"></i> Page Contact</a></li>
-                    <li>
-                        <p class="text-icon"><i class="fi fi-sr-envelope"></i> courdavaultmaxime@gmail.com</p>
-                    </li>
-                    <li>
-                        <p class="text-icon"><i class="fi fi-sr-phone-flip"></i> 06 48 97 81 03</p>
-                    </li>
-                    <li>
-                        <p class="text-icon"><i class="fi fi-sr-marker"></i> Île-de-France, France</p>
-                    </li>
-                </ul>
+                <h3>Me contacter</h3>
+                <address>
+                    <ul>
+                        <li><a href="contact.html" class="text-icon"><i class="fi fi-sr-browser"></i> Page Contact</a>
+                        </li>
+                        <li>
+                            <a href="mailto:courdavaultmaxime@gmail.com" class="text-icon"><i
+                                    class="fi fi-sr-envelope"></i>
+                                courdavaultmaxime@gmail.com</a>
+                        </li>
+                        <li>
+                            <a href="tel:+33648978103" class="text-icon"><i class="fi fi-sr-phone-flip"></i> 06 48 97 81
+                                03</a>
+                        </li>
+                        <li class="text-icon">
+                            <i class="fi fi-sr-marker"></i> Île-de-France, France
+                        </li>
+                    </ul>
+                </address>
             </div>
             <div>
-                <p><b>Liens externes</b></p>
+                <h3>Liens externes</h3>
                 <ul>
-                    <li><a href="https://github.com/Maxime-Crdvlt" target="_blank" class="text-icon"><i
-                                class="fi fi-brands-github"></i> Mon
-                            GitHub</a></li>
-                    <li><a href="https://www.linkedin.com/in/maxime-crdvlt" target="_blank" class="text-icon"><i
-                                class="fi fi-brands-linkedin"></i> Mon LinkedIn</a></li>
-                    <li><a href="assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" class="text-icon"><i
-                                class="fi fi-sr-resume"></i> Mon
-                            Curriculum Vitae</a>
+                    <li>
+                        <a href="https://github.com/Maxime-Crdvlt" target="_blank" class="text-icon">
+                            <i class="fi fi-brands-github"></i> Mon GitHub</a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/in/maxime-crdvlt" target="_blank" class="text-icon"><i
+                                class="fi fi-brands-linkedin"></i> Mon LinkedIn</a>
+                    </li>
+                    <li>
+                        <a href="assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" class="text-icon"><i
+                                class="fi fi-sr-resume"></i> Mon Curriculum Vitae</a>
                     </li>
                 </ul>
             </div>
