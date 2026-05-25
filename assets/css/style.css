@@ -247,6 +247,7 @@ header>div>button {
 }
 header>div>nav>ul>li>a {
     color: var(--text-primary);
+    display: inline-block;
     padding: var(--padding-button-mobile);
 }
 .current-page {
