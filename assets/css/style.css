@@ -267,7 +267,7 @@ main {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: flex-start;
-    gap: var(--gap-secondary);
+    gap: var(--gap);
 }
 .profile-pic {
     width: 0%;
@@ -349,7 +349,6 @@ main {
     text-align: center;
 }
 form {
-    padding: var(--padding-element);
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
