@@ -76,7 +76,7 @@ body {
     font-size: var(--text-body);
     line-height: var(--lg-body);
     background-color: var(--bg-primary);
-    /*overflow-x: hidden;*/
+    overflow-x: hidden;
 }
 .container {
     width: 90%;
@@ -159,6 +159,11 @@ img {
     border: var(--border-size) solid transparent;
     border-radius: var(--border-radius);
     background-color: transparent;
+}
+@media (min-width: 62rem) {
+    .button-primary, .button-secondary, .button-tertiary, .button-primary:hover, .button-secondary:hover, .button-tertiary:hover {
+        padding: var(--padding-button);
+    }
 }
 .button-primary {
     background-color: var(--primary-color);
@@ -247,6 +252,20 @@ header>div>nav>ul>li>a {
 .current-page {
     color: var(--primary-color);
 }
+@media (min-width: 62rem) {
+    header>div>nav>ul>li>a {
+        padding: var(--padding-button);
+    }
+    header>div>.nav-hidden {
+        display: flex;
+    }
+    header>div>.nav-visible {
+        display: flex;
+    }
+    header>div>button {
+        display: none;
+    }
+}
 
 /* MAIN */
 main {
@@ -259,7 +278,6 @@ main {
     justify-content: flex-start;
     align-items: center;
     gap: var(--gap);
-    border-bottom: solid var(--border-color) var(--border-size);
 }
 .hero > div {
     display: flex;
@@ -271,6 +289,21 @@ main {
 }
 .profile-pic {
     width: 0%;
+}
+@media (min-width: 62rem) {
+    .hero {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: var(--gap);
+    }
+    .profile-pic {
+        width: 33%;
+        margin-right: calc(50% - 50vw);
+        align-self: flex-end;
+    }
 }
 
 /* CARDS */
@@ -289,11 +322,6 @@ main {
     justify-content: flex-start;
     align-items: stretch;
     gap: var(--gap);
-    /*
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--gap);
-    */
 }
 .card {
     display: flex;
@@ -325,6 +353,7 @@ main {
     justify-content: flex-start;
     align-items: stretch;
     gap: var(--gap-secondary);
+    flex: 1 1 auto;
 }
 .skills {
     display: flex;
@@ -344,6 +373,16 @@ main {
 }
 .card-details {
     border-top: solid var(--border-color) var(--border-size);
+}
+@media (min-width: 62rem) {
+    .grid-cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--gap);
+    }
+    .grid-cards > li > .card {
+        height: 100%;
+    }
 }
 .text-center {
     text-align: center;
@@ -420,6 +459,16 @@ form>button {
 .ou>hr {
     border: var(--border-size) solid  var(--text-primary);
     width: 100%;
+}
+@media (min-width: 62rem) {
+    form {
+        width: 75%;
+        margin: 0 auto;
+    }
+    .ou {
+        width: 75%;
+        margin: 1rem auto;
+    }
 }
 
 /* POPUP */
@@ -512,4 +561,14 @@ footer>div>div {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: flex-start;
+}
+@media (min-width: 62rem) {
+    footer>div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: var(--gap);
+    }
 }
