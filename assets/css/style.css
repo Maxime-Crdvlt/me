@@ -290,6 +290,7 @@ main {
 }
 .profile-pic {
     width: 0%;
+    height: auto;
 }
 @media (min-width: 62rem) {
     .hero {
@@ -302,6 +303,7 @@ main {
     }
     .profile-pic {
         width: 25%;
+        height: auto;
         margin-right: calc(50% - 50vw);
         align-self: flex-end;
     }
