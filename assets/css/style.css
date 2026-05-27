@@ -55,7 +55,7 @@
 
   --padding-element: 1.5rem;
   --padding-button-mobile: 0.75rem 1.5rem;
-  --padding-button: 0.25rem 0.5rem;
+  --padding-button: 0.5rem 1rem;
   --gap: 1rem;
   --gap-secondary: 0.5rem;
 }
@@ -429,7 +429,7 @@ form>.identity>div>input {
 }
 form>div>textarea {
     font-size: var(--text-body);
-    padding: 0.5rem;
+    padding: 0.75rem;
     height: 16rem;
     border: solid var(--border-color) 0.125rem;
     border-radius: var(--border-radius);
