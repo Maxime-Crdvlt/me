@@ -224,7 +224,8 @@ header>div {
     align-items: center;
     align-content: flex-start;
 }
-header>div>h1 {
+header>div>a>h1 {
+    color: var(--text-primary);
     font-size: var(--text-h2);
     line-height: var(--lg-body);
     margin-top: 0;
