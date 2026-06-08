@@ -12,7 +12,7 @@ try {
     $connexionDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     error_log("[Erreur] Echec de la connexion : " . $e->getMessage() . "...");
-    echo json_encode(['statut' => "erreur", 'message' => "Echec de la connexion a la base de donnees..."]);
+    echo json_encode(['statut' => "erreur", 'message' => "Echec de la connexion à la base de données..."]);
     exit;
 }
 
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_email = filter_var($user_email, FILTER_SANITIZE_EMAIL);
 } else {
     error_log("[Erreur] Aucun formulaire soumis...");
-    echo json_encode(['statut' => "erreur", 'message' => "Aucun formulaire reeu..."]);
+    echo json_encode(['statut' => "erreur", 'message' => "Aucun formulaire reçu..."]);
     exit;
 }
 
@@ -70,10 +70,10 @@ if (!empty($user_name) && !empty($user_email) && !empty($user_message)) {
             } catch (Exception $e) {
                 error_log("[$user_name - $user_email] [Erreur] Le mail n'a pas pu etre envoye. Erreur Mailer: {$mail->ErrorInfo}". "...");
             }
-            echo json_encode(['statut' => "succes", 'message' => "Merci ! Votre message a bien ete recu !"]);
+            echo json_encode(['statut' => "succes", 'message' => "Merci ! Votre message a bien été reçu !"]);
         } catch (PDOException $e) {
             error_log("[$user_name - $user_email] [Erreur] Echec de l'insertion : " . $e->getMessage() . "...");
-            echo json_encode(['statut' => "erreur", 'message' => "Echec lors de l'enregistrement des donnees..."]);
+            echo json_encode(['statut' => "erreur", 'message' => "Echec lors de l'enregistrement des données..."]);
         }
     } else {
         error_log("[$user_name - $user_email] [Erreur] Adresse email invalide...");
