@@ -3,7 +3,7 @@ header('Content-Type: application/json; charset=utf-8');
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-require 'vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 // CONNEXION A LA BASE DE DONNEES
 require_once 'config_portfolio.php'; //import $dsn, $user, $password
@@ -42,7 +42,7 @@ if (!empty($user_name) && !empty($user_email) && !empty($user_message)) {
             ]);
 
             // ENVOIE DE L'EMAIL
-            require_once 'config_email.php'; //import $mail_user, $mail_password
+            require_once 'config_mail.php'; //import $mail_user, $mail_password
             $mail = new PHPMailer(true);
             try {
                 /// Configuration du serveur SMTP d'OVH
