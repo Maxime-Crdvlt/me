@@ -505,7 +505,7 @@ form>button {
     border-radius: var(--border-radius);
     padding: var(--padding-element);
     width: auto;
-    text-align: center;
+    gap: 1rem;
     
     position: fixed;
     bottom: 1rem; 
@@ -521,7 +521,6 @@ form>button {
 }
 .popup-icon {
     font-size: 2rem;
-    margin: 1rem 0;
 }
 .icon-succes {
     color: var(--success-color);
