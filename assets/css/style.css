@@ -496,21 +496,20 @@ form>button {
 }
 .popup {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: nowrap;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: var(--bg-secondary);
     border: solid var(--border-color) var(--border-size);
     border-radius: var(--border-radius);
-    padding: 1rem;
+    padding: var(--padding-element);
     width: auto;
     text-align: center;
     
     position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 1rem; 
+    left: 1rem;   
     z-index: 900;
 }
 .popup-cache{
