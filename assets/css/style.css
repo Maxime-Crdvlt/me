@@ -495,22 +495,19 @@ form>button {
     pointer-events: auto;
 }
 .popup {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
     background-color: var(--bg-secondary);
     border: solid var(--border-color) var(--border-size);
     border-radius: var(--border-radius);
     padding: var(--padding-element);
     width: auto;
-    gap: 1rem;
     
     position: fixed;
     bottom: 1rem; 
     left: 1rem;   
     z-index: 900;
+}
+.popup > .text-icon {
+    gap: var(--padding-element);
 }
 .popup-cache{
     opacity: 0;
