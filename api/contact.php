@@ -12,7 +12,7 @@ try {
     $connexionDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     error_log("[Erreur] Echec de la connexion : " . $e->getMessage() . "...");
-    echo json_encode(['statut' => "erreur", 'message' => "Echec de la connexion à la base de données..."]);
+    echo json_encode(['statut' => "erreur", 'message' => "Echec de la connexion a la base de donnees..."]);
     exit;
 }
 
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user_email = filter_var($user_email, FILTER_SANITIZE_EMAIL);
 } else {
     error_log("[Erreur] Aucun formulaire soumis...");
-    echo json_encode(['statut' => "erreur", 'message' => "Aucun formulaire reçu..."]);
+    echo json_encode(['statut' => "erreur", 'message' => "Aucun formulaire reeu..."]);
     exit;
 }
 
@@ -45,17 +45,16 @@ if (!empty($user_name) && !empty($user_email) && !empty($user_message)) {
             require_once 'config_mail.php'; //import $mail_user, $mail_password
             $mail = new PHPMailer(true);
             try {
-                /// Configuration du serveur SMTP d'OVH
+                /// Configuration du serveur SMTP
                 $mail->isSMTP();
-                $mail->Host       = 'ssl0.ovh.net';             // Le serveur sécurisé d'OVH
+                $mail->Host       = 'ssl0.ovh.net';
                 $mail->SMTPAuth   = true;
-                $mail->Username   = $mail_user;   // Ton adresse email OVH complète
-                $mail->Password   = $mail_password;     // Le mot de passe que tu viens de créer
-                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; // Chiffrement SSL
-                $mail->Port       = 465;                        // Le port de sécurité d'OVH
-
+                $mail->Username   = $mail_user;
+                $mail->Password   = $mail_password;
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+                $mail->Port       = 465;
                 // Destinataires
-                $mail->setFrom($mail_user, 'Mon Portfolio'); // L'email qui expédie (doit être ton email OVH)
+                $mail->setFrom($mail_user, 'Mon Portfolio');
                 $mail->addAddress($mail_user);
                 $mail->addReplyTo($user_email, $user_name);
                 // Contenu de l'email
@@ -69,13 +68,12 @@ if (!empty($user_name) && !empty($user_email) && !empty($user_message)) {
                 ";
                 $mail->send();
             } catch (Exception $e) {
-                error_log("[$user_name - $user_email] [Erreur] L'email n'a pas pu être envoyé. Erreur Mailer: {$mail->ErrorInfo}". "...");
+                error_log("[$user_name - $user_email] [Erreur] Le mail n'a pas pu etre envoye. Erreur Mailer: {$mail->ErrorInfo}". "...");
             }
-
-            echo json_encode(['statut' => "succes", 'message' => "Merci ! Votre message a bien été reçu !"]);
+            echo json_encode(['statut' => "succes", 'message' => "Merci ! Votre message a bien ete recu !"]);
         } catch (PDOException $e) {
             error_log("[$user_name - $user_email] [Erreur] Echec de l'insertion : " . $e->getMessage() . "...");
-            echo json_encode(['statut' => "erreur", 'message' => "Echec lors de l'enregistrement des données..."]);
+            echo json_encode(['statut' => "erreur", 'message' => "Echec lors de l'enregistrement des donnees..."]);
         }
     } else {
         error_log("[$user_name - $user_email] [Erreur] Adresse email invalide...");
