@@ -5,17 +5,10 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
-
-
 <url>
   <loc>https://maximecourdavault.fr/</loc>
   <lastmod>2026-05-18T07:59:46+00:00</lastmod>
   <priority>1.00</priority>
-</url>
-<url>
-  <loc>https://maximecourdavault.fr/index.html</loc>
-  <lastmod>2026-05-18T07:59:46+00:00</lastmod>
-  <priority>0.80</priority>
 </url>
 <url>
   <loc>https://maximecourdavault.fr/about.html</loc>
@@ -33,15 +26,8 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://maximecourdavault.fr/assets/documents/MaximeCOURDAVAULT-CV.pdf</loc>
-  <lastmod>2026-05-17T09:37:07+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
   <loc>https://maximecourdavault.fr/mentions.html</loc>
   <lastmod>2026-05-18T07:59:46+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-
-
 </urlset>
