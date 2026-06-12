@@ -3,4 +3,3 @@ api/config_mail.php
 api/data_portfolio.sql
 api/init_portfolio.sql
 /vendor/
-hash.php

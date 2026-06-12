@@ -1,3 +1,7 @@
+<?php
+    require_once 'check-admin.php';
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 

@@ -36,7 +36,7 @@ if (!empty($username) && !empty($password)) {
         $admin = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($admin && password_verify($password, $admin['password'])) {
-            $_SESSION['admin_logged_in'] = true;
+            $_SESSION['admin_logged'] = true;
             $_SESSION['admin_id'] = $admin['id'];
             $_SESSION['admin_username'] = $admin['username'];
             echo json_encode(['statut' => "succes", 'message' => "Connexion réussie."]);
