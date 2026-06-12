@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const formulaire = document.getElementById('form-contact');
+    const formulaire = document.getElementById('form-admin');
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const popupIcon = document.getElementById('popup-icon');
@@ -19,9 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.statut === "succes") {
                     popupIcon.className = "fi fi-br-check popup-icon icon-succes";
                     formulaire.reset();
-                    setTimeout(() => {
-                        window.location.href = "admin.html";
-                    }, 1200);
+                    window.location.href = "admin.html";
+                    return;
                 }
                 if (data.statut === "erreur") {
                     popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
