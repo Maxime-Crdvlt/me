@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.statut === "succes") {
                     popupIcon.className = "fi fi-br-check popup-icon icon-succes";
                     formulaire.reset();
-                    window.location.href = "admin.html";
+                    window.location.href = "admin.php";
                     return;
                 }
                 if (data.statut === "erreur") {

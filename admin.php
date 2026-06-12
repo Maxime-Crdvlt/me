@@ -16,7 +16,7 @@
 <body>
     <header>
         <div class="container">
-            <a href="index.html">
+            <a href="admin.php">
                 <h1>Maxime Courdavault</h1>
             </a>
             <button id="button-nav" aria-label="Ouvrir le menu">
@@ -24,9 +24,10 @@
             </button>
             <nav id="nav" class="nav-hidden">
                 <ul class="actions">
-                    <li><a href="admin-formations.html" class="current-page">Mes formations</a></li>
-                    <li><a href="admin-experiences.html">Mes expériences</a></li>
-                    <li><a href="admin-projets.html">Mes projets</a></li>
+                    <li><a href="admin.php" class="current-page">Dashboard</a></li>
+                    <li><a href="admin-formations.php">Mes formations</a></li>
+                    <li><a href="admin-experiences.php">Mes expériences</a></li>
+                    <li><a href="admin-projets.php">Mes projets</a></li>
                     <li><a href="https://mail.ovh.net/roundcube/?_task=mail&_mbox=INBOX">Ma boîte mail</a></li>
                 </ul>
             </nav>
@@ -34,25 +35,7 @@
     </header>
 
     <main class="container">
-        <section class="hero">
-            <div>
-                <h2>Je suis étudiant et développeur junior</h2>
-                <p>Je m’appelle Maxime Courdavault, j’ai 20 ans et je suis actuellement étudiant en 2ème année de BUT
-                    Informatique. J’étudie actuellement à l’Université Paris Cité dans l’IUT de Paris - Rives de Seine
-                    dans le parcours réalisation d'applications : conception, développement, validation.</p>
-                <ul class="actions">
-                    <li><a href="about.html" class="button-primary">A propos de moi</a></li>
-                    <li><a href="contact.html" class="button-secondary">Me contacter</a></li>
-                    <li><a href="assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank"
-                            class="button-tertiary">Télécharger mon CV</a></li>
-                </ul>
-            </div>
-            <img src="assets/images/moi.png" alt="Photo portrait de Maxime" class="profile-pic" width="1344"
-                height="1338">
-        </section>
-        <section>
-            <h2>Mes dernières actualités</h2>
-        </section>
+        <h2>Ceci est la page d'accueil administrateur</h2>
     </main>
 
     <footer>
