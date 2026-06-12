@@ -86,25 +86,25 @@ body {
 h1 {
     font-size: var(--text-h1);
     line-height: var(--lg-heading);
-    margin-top: 4rem;
+    margin-top: 8rem;
     margin-bottom: 2rem;
 }
 h2 {
     font-size: var(--text-h2);
     line-height: var(--lg-heading);
-    margin-top: 2rem;
+    margin-top: 4rem;
     margin-bottom: 1rem;
 }
 h3 {
     font-size: var(--text-h3);
     line-height: var(--lg-heading);
-    margin-top: 1rem;
+    margin-top: 2rem;
     margin-bottom: 0.5rem;
 }
 h4 {
     font-size: var(--text-h4);
     line-height: var(--lg-heading);
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     margin-bottom: 0.25rem;
 }
 p {
@@ -338,6 +338,14 @@ main {
     border-radius: var(--border-radius);
     padding: var(--padding-element);
     gap: var(--gap-secondary);
+}
+.card h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+}
+.card h4 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.125rem;
 }
 .card-title {
     display: flex;
