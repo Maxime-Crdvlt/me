@@ -27,7 +27,7 @@
                     <li><a href="admin.php" class="current-page">Dashboard</a></li>
                     <li><a href="admin-formations.php">Mes formations</a></li>
                     <li><a href="admin-experiences.php">Mes expériences</a></li>
-                    <li><a href="admin-projets.php">Mes projets</a></li>
+                    <li><a href="admin-projets.php" class="current-page">Mes projets</a></li>
                     <li><a href="https://mail.ovh.net/roundcube/?_task=mail&_mbox=INBOX" target="_blank">Ma boîte mail</a></li>
                 </ul>
             </nav>
@@ -35,7 +35,7 @@
     </header>
 
     <main class="container">
-        <h2>Ceci est la page d'accueil administrateur</h2>
+        <h2>Ceci est la page des projets</h2>
     </main>
 
     <footer>
