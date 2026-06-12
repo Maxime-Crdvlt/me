@@ -24,7 +24,7 @@
             </button>
             <nav id="nav" class="nav-hidden">
                 <ul class="actions">
-                    <li><a href="admin.php" class="current-page">Dashboard</a></li>
+                    <li><a href="admin.php">Dashboard</a></li>
                     <li><a href="admin-formations.php">Mes formations</a></li>
                     <li><a href="admin-experiences.php">Mes expériences</a></li>
                     <li><a href="admin-projets.php" class="current-page">Mes projets</a></li>
@@ -32,6 +32,7 @@
                 </ul>
             </nav>
         </div>
+        <script src="assets/js/nav.js" defer></script>
     </header>
 
     <main class="container">

@@ -32,6 +32,7 @@
                 </ul>
             </nav>
         </div>
+        <script src="assets/js/nav.js" defer></script>
     </header>
 
     <main class="container">
