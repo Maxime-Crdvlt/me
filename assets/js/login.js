@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formulaire.addEventListener('submit', (event) => {
             event.preventDefault();
             const formData = new FormData(formulaire);
-            fetch('api/login.php', {
+            fetch('/api/login.php', {
                 method: 'POST',
                 body: formData
             })
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (data.statut === "succes") {
                     popupIcon.className = "fi fi-br-check popup-icon icon-succes";
                     formulaire.reset();
-                    window.location.href = "admin/admin.php";
+                    window.location.href = "/admin/admin.php";
                     return;
                 }
                 if (data.statut === "erreur") {

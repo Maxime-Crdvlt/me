@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
         formulaire.addEventListener('submit', (event) => {
             event.preventDefault();
             const formData = new FormData(formulaire);
-            fetch('api/contact.php', {
+            fetch('/api/contact.php', {
                 method: 'POST',
                 body: formData
             })

@@ -8,9 +8,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Panel Administrateur - Maxime Courdavault</title>
-    <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
     <link rel='stylesheet'
         href='https://cdn-uicons.flaticon.com/4.0.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
     <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/4.0.0/uicons-brands/css/uicons-brands.css'>
@@ -20,7 +20,7 @@
 <body>
     <header>
         <div class="container">
-            <a href="../index.html">
+            <a href="/index.html">
                 <h1>Maxime Courdavault</h1>
             </a>
             <button id="button-nav" aria-label="Ouvrir le menu">
@@ -36,7 +36,7 @@
                 </ul>
             </nav>
         </div>
-        <script src="../assets/js/nav.js" defer></script>
+        <script src="/assets/js/nav.js" defer></script>
     </header>
 
     <main class="container">
@@ -48,22 +48,22 @@
             <div>
                 <h2>Maxime Courdavault</h2>
                 <p>&copy; 2026 Maxime Courdavault. Tous droits réservés.</p>
-                <a href="../mentions.html">Mentions légales</a>
+                <a href="/mentions.html">Mentions légales</a>
             </div>
             <div>
                 <h3>Portfolio</h3>
                 <ul>
                     <li>
-                        <a href="../index.html">Accueil</a>
+                        <a href="/index.html">Accueil</a>
                     </li>
                     <li>
-                        <a href="../about.html">A propos de moi</a>
+                        <a href="/about.html">A propos de moi</a>
                     </li>
                     <li>
-                        <a href="../projects.html">Mes projets</a>
+                        <a href="/projects.html">Mes projets</a>
                     </li>
                     <li>
-                        <a href="../contact.html">Contact</a>
+                        <a href="/contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -79,7 +79,7 @@
                                 class="fi fi-brands-linkedin"></i> Mon LinkedIn</a>
                     </li>
                     <li>
-                        <a href="assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" rel="noopener" class="text-icon"><i
+                        <a href="/assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" rel="noopener" class="text-icon"><i
                                 class="fi fi-sr-resume"></i> Mon Curriculum Vitae</a>
                     </li>
                 </ul>

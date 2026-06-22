@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     // RECUPERATION DES DONNEES
-    const formations = fetch('api/getFormations.php');
+    const formations = fetch('/api/getFormations.php');
 
     //TRAITEMENT
     if (formations.length === 0) {
