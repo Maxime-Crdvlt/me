@@ -49,7 +49,7 @@ if (!empty($username) && !empty($password)) {
         echo json_encode(['statut' => "erreur", 'message' => "Echec lors de la recherche des données..."]);
     }
 } else {
-    error_log("[LOGIN ADMINI] [Erreur] Tous les champs sont obligatoires...");
+    error_log("[ADMIN] [Erreur] Tous les champs sont obligatoires...");
     echo json_encode(['statut' => "erreur", 'message' => "Tous les champs sont obligatoires..."]);
 }
 

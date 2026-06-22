@@ -20,7 +20,7 @@
 <body>
     <header>
         <div class="container">
-            <a href="admin.php">
+            <a href="../index.html">
                 <h1>Maxime Courdavault</h1>
             </a>
             <button id="button-nav" aria-label="Ouvrir le menu">
@@ -32,11 +32,11 @@
                     <li><a href="admin-formations.php">Mes formations</a></li>
                     <li><a href="admin-experiences.php">Mes expériences</a></li>
                     <li><a href="admin-projets.php">Mes projets</a></li>
-                    <li><a href="https://mail.ovh.net/roundcube/?_task=mail&_mbox=INBOX" target="_blank">Ma boîte mail</a></li>
+                    <li><a href="https://mail.ovh.net/roundcube/?_task=mail&_mbox=INBOX" target="_blank" rel="nofollow noopener">Ma boîte mail</a></li>
                 </ul>
             </nav>
         </div>
-        <script src="assets/js/nav.js" defer></script>
+        <script src="../assets/js/nav.js" defer></script>
     </header>
 
     <main class="container">
@@ -48,22 +48,22 @@
             <div>
                 <h2>Maxime Courdavault</h2>
                 <p>&copy; 2026 Maxime Courdavault. Tous droits réservés.</p>
-                <a href="mentions.html">Mentions légales</a>
+                <a href="../mentions.html">Mentions légales</a>
             </div>
             <div>
                 <h3>Portfolio</h3>
                 <ul>
                     <li>
-                        <a href="index.html">Accueil</a>
+                        <a href="../index.html">Accueil</a>
                     </li>
                     <li>
-                        <a href="about.html">A propos de moi</a>
+                        <a href="../about.html">A propos de moi</a>
                     </li>
                     <li>
-                        <a href="projects.html">Mes projets</a>
+                        <a href="../projects.html">Mes projets</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contact</a>
+                        <a href="../contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -71,15 +71,15 @@
                 <h3>Liens externes</h3>
                 <ul>
                     <li>
-                        <a href="https://github.com/Maxime-Crdvlt" target="_blank" class="text-icon">
+                        <a href="https://github.com/Maxime-Crdvlt" target="_blank" rel="nofollow noopener" class="text-icon">
                             <i class="fi fi-brands-github"></i> Mon GitHub</a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/maxime-crdvlt" target="_blank" class="text-icon"><i
+                        <a href="https://www.linkedin.com/in/maxime-crdvlt" target="_blank" rel="nofollow noopener" class="text-icon"><i
                                 class="fi fi-brands-linkedin"></i> Mon LinkedIn</a>
                     </li>
                     <li>
-                        <a href="assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" class="text-icon"><i
+                        <a href="assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" rel="noopener" class="text-icon"><i
                                 class="fi fi-sr-resume"></i> Mon Curriculum Vitae</a>
                     </li>
                 </ul>
