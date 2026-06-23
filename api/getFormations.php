@@ -18,7 +18,6 @@ try {
     $sql = "SELECT `id`, `degree`, `start`, `end`, `place`, `description` FROM formations";
     $stmt = $connexionDB->prepare($sql);
     $stmt->execute();
-
     $formations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     // ENVOIE DES DONNEES
