@@ -17,7 +17,7 @@ try {
 }
 
 // RECUPERATION DES DONNEES DU FORMULAIRE
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user_name = $_POST['user_name'] ?? '';
     $user_email = $_POST['user_email'] ?? '';
     $user_message = $_POST['user_message'] ?? '';
