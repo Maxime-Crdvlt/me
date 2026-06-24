@@ -44,6 +44,7 @@ require_once 'check-admin.php';
             <script src="/admin/admin-formations.js" defer></script>
         </div>
 
+        <h2>Ajouter une formation</h2>
         <form id="form-add-formation" action="/api/postFormation.php" method="POST">
             <div>
                 <label for="diplome">Diplôme</label>
