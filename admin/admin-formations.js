@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const buttonDelete = document.createElement('button');
             buttonDelete.classList.add('button-secondary');
             buttonDelete.setAttribute('type', 'button');
-            buttonSave.textContent = 'Supprimer';
+            buttonDelete.textContent = 'Supprimer';
             
             // CONSTRUCTION DU FORMULAIRE
             formationFormulaire.append(divDiplome);
