@@ -1,5 +1,5 @@
 <?php
-    require_once 'check-admin.php';
+require_once 'check-admin.php';
 ?>
 
 <!DOCTYPE html>
@@ -43,7 +43,34 @@
         <div id="formations-container">
             <script src="/admin/admin-formations.js" defer></script>
         </div>
-        
+
+        <form id="form-add-formation" action="/api/postFormation.php" method="POST">
+            <div>
+                <label for="diplome">Diplôme</label>
+                <input type="text" id="diplome" name="diplome" placeholder="BUT Informatique" required />
+            </div>
+            <div class="infos-supp">
+                <div class="place-div">
+                    <label for="place">Lieu</label>
+                    <input type="text" id="place" name="place" placeholder="Saint-Nicolas, Paris 6ème" required />
+                </div>
+                <div class="dates">
+                    <div class="date-debut-div">
+                        <label for="date-debut">Année de début</label>
+                        <input type="number" id="date-debut" name="date-debut" placeholder="2021" required />
+                    </div>
+                    <div class="date-fin-div">
+                        <label for="date-fin">Année de fin</label>
+                        <input type="number" id="date-fin" name="date-fin" placeholder="2027" required />
+                    </div>
+                </div>
+            </div>
+            <div class="description-div">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" placeholder="Diplôme obtenu, apports, etc..." required></textarea>
+            </div>
+            <button type="submit" class="button-primary">Ajouter une formation</button>
+        </form>
     </main>
 
     <footer>
