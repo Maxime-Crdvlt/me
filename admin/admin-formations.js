@@ -93,9 +93,9 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // CHAMP DATE DEBUT + CHAMP DATE FIN + PLACE
             const divInfosSupp = document.createElement('div');
-            divInfos.classList.add('infos-supp');
+            divInfosSupp.classList.add('infos-supp');
 
-            divInfos.append(divPlace, divDates);
+            divInfosSupp.append(divPlace, divDates);
 
             // CHAMP DESCRIPTION
             const divDescription = document.createElement('div');
