@@ -126,7 +126,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             
             // CONSTRUCTION DU FORMULAIRE
             formationFormulaire.append(divDiplome);
-            formationFormulaire.append(divInfos);
+            formationFormulaire.append(divInfosSupp);
             formationFormulaire.append(divDescription);
             formationFormulaire.append(buttonSave, buttonDelete);
 
