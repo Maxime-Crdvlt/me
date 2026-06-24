@@ -131,6 +131,14 @@ document.addEventListener('DOMContentLoaded', async () => {
             formationFormulaire.append(buttonSave, buttonDelete);
 
             formationsContainer.append(formationFormulaire);
+
+            // SEPARATEUR
+            const divSeparateur = document.createElement('div');
+            divSeparateur.classList.add('ou');
+            const hr = document.createElement('hr');
+            divSeparateur.append(hr);
+            
+            formationsContainer.append(divSeparateur);
         });
     }
 })

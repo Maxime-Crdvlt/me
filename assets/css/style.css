@@ -406,6 +406,8 @@ form {
     justify-content: flex-start;
     align-items: stretch;
     gap: var(--gap);
+    padding-top: var(--gap-secondary);
+    padding-bottom: var(--gap-secondary);
 }
 form>div,
 form>.identity>div,
@@ -435,7 +437,7 @@ form>.infos-supp>.place-div {
 form>div>input,
 form>.identity>div>input,
 form>.infos-supp>.dates>div>input,
-form>.infos-supp>div>input {
+form>.infos-supp>.place-div>input {
     font-size: var(--text-body);
     padding: 0.5rem;
     border: solid var(--border-color) 0.125rem;
@@ -460,7 +462,7 @@ form>div>textarea {
 }
 form>.identity>div>input:focus,
 form>.infos-supp>.dates>div>input:focus,
-form>.infos-supp>div>input:focus,
+form>.infos-supp>.place-div>input:focus,
 form textarea:focus {
     outline: none;
     border: solid var(--primary-color) 0.125rem;
