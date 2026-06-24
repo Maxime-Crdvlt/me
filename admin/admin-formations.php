@@ -40,8 +40,10 @@
     </header>
 
     <main class="container">
+        <h2>Mes formations</h2>
+        <hr></hr>
         <div id="formations-container">
-            <script src="/assets/js/admin-formations.js" defer></script>
+            <script src="/admin/admin-formations.js" defer></script>
         </div>
         
     </main>

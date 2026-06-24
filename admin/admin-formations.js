@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             // CHAMP DATE DEBUT + CHAMP DATE FIN
             const divDates = document.createElement('div');
             divDates.classList.add('dates');
+            divDates.classList.add('identity');
 
             divDates.append(divDateDebut, divDateFin);
 
@@ -106,12 +107,22 @@ document.addEventListener('DOMContentLoaded', async () => {
             inputDescription.required = true;
 
             divDescription.append(labelDescription, inputDescription);
+
+            // BOUTONS
+            const buttonSave = document.createElement('button');
+            buttonSave.classList.add('button-primary');
+            buttonSave.setAttribute('type', 'submit');
+
+            const buttonDelete = document.createElement('button');
+            buttonDelete.classList.add('button-secondary');
+            buttonDelete.setAttribute('type', 'button');
             
             // CONSTRUCTION DU FORMULAIRE
             formationFormulaire.append(divDiplome);
             formationFormulaire.append(divDates);
             formationFormulaire.append(divPlace);
             formationFormulaire.append(divDescription);
+            formationFormulaire.append(buttonSave, buttonDelete);
 
             formationsContainer.append(formationFormulaire);
         });
