@@ -407,7 +407,9 @@ form {
     align-items: stretch;
     gap: var(--gap);
 }
-.identity {
+.identity,
+.dates,
+.infos-supp {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -416,18 +418,24 @@ form {
     gap: var(--gap-secondary);
 }
 form>div,
-form>.identity>div {
+form>.identity>div,
+form>.infos-supp>.dates>div,
+form>.infos-supp>div {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: stretch;
 }
-form>.identity>div {
+form>.identity>div,
+form>.infos-supp>.dates>div,
+form>.infos-supp>div {
     flex: 1 1 auto;
 }
 form>div>input,
-form>.identity>div>input {
+form>.identity>div>input,
+form>.infos-supp>.dates>div>input,
+form>.infos-supp>div>input {
     font-size: var(--text-body);
     padding: 0.5rem;
     border: solid var(--border-color) 0.125rem;
@@ -451,6 +459,8 @@ form>div>textarea {
     color: var(--text-secondary);
 }
 form>.identity>div>input:focus,
+form>.infos-supp>.dates>div>input:focus,
+form>.infos-supp>div>input:focus,
 form textarea:focus {
     outline: none;
     border: solid var(--primary-color) 0.125rem;

@@ -71,7 +71,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             // CHAMP DATE DEBUT + CHAMP DATE FIN
             const divDates = document.createElement('div');
             divDates.classList.add('dates');
-            divDates.classList.add('identity');
 
             divDates.append(divDateDebut, divDateFin);
 
@@ -93,11 +92,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             divPlace.append(labelPlace, inputPlace);
 
             // CHAMP DATE DEBUT + CHAMP DATE FIN + PLACE
-            const divInfos = document.createElement('div');
+            const divInfosSupp = document.createElement('div');
             divInfos.classList.add('infos-supp');
-            divDates.classList.add('identity');
 
-            divInfos.append(divDates, divPlace);
+            divInfos.append(divPlace, divDates);
 
             // CHAMP DESCRIPTION
             const divDescription = document.createElement('div');
