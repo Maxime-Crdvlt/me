@@ -410,7 +410,7 @@ form {
 form>div,
 form>.identity>div,
 form>.infos-supp>.dates>div,
-form>.infos-supp>div {
+form>.infos-supp>.place-div {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -429,7 +429,7 @@ form>.infos-supp>div {
 }
 form>.identity>div,
 form>.infos-supp>.dates>div,
-form>.infos-supp>div {
+form>.infos-supp>.place-div {
     flex: 1 1 auto;
 }
 form>div>input,
