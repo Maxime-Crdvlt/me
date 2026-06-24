@@ -407,16 +407,6 @@ form {
     align-items: stretch;
     gap: var(--gap);
 }
-.identity,
-.dates,
-.infos-supp {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    align-content: flex-start;
-    gap: var(--gap-secondary);
-}
 form>div,
 form>.identity>div,
 form>.infos-supp>.dates>div,
@@ -426,6 +416,16 @@ form>.infos-supp>div {
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: stretch;
+}
+.identity,
+.dates,
+.infos-supp {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: flex-start;
+    gap: var(--gap-secondary);
 }
 form>.identity>div,
 form>.infos-supp>.dates>div,
