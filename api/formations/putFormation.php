@@ -2,12 +2,12 @@
 header('Content-Type: application/json; charset=utf-8');
 
 // CONNEXION A LA BASE DE DONNEES
-require_once 'config_portfolio.php'; //import $dsn, $user, $password
+require_once '/api/config_portfolio.php'; //import $dsn, $user, $password
 try {
     $connexionDB = new PDO($dsn, $user, $password);
     $connexionDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
-    error_log("[ADMIN-FORMATIONS] [Erreur] Echec de la connexion : " . $e->getMessage() . "...");
+    error_log("[ADMIN-FORMATIONS] Echec de la connexion : " . $e->getMessage() . "...");
     echo json_encode(['statut' => "erreur", 'message' => "Echec de la connexion à la base de données..."]);
     exit;
 }
@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $place = $_POST['place'] ?? '';
     $description = $_POST['description'] ?? '';
 } else {
-    error_log("[ADMIN-FORMATIONS] [Erreur] Aucun formulaire soumis...");
+    error_log("[ADMIN-FORMATIONS] Aucun formulaire soumis...");
     echo json_encode(['statut' => "erreur", 'message' => "Aucun formulaire reçu..."]);
     exit;
 }
@@ -43,11 +43,11 @@ if (!empty($id) && !empty($degree) && !empty($start) && !empty($end) && !empty($
 
         echo json_encode(['statut' => "succes", 'message' => "Formation modifiée avec succès !"]);
     } catch (PDOException $e) {
-        error_log("[ADMIN-FORMATIONS] [Erreur] Echec de la modification : " . $e->getMessage() . "...");
+        error_log("[ADMIN-FORMATIONS] Echec de la modification : " . $e->getMessage() . "...");
         echo json_encode(['statut' => "erreur", 'message' => "Echec lors de la modification..."]);
     }
 } else {
-    error_log("[ADMIN-FORMATIONS] [Erreur] Tous les champs sont obligatoires...");
+    error_log("[ADMIN-FORMATIONS] Tous les champs sont obligatoires...");
     echo json_encode(['statut' => "erreur", 'message' => "Tous les champs sont obligatoires..."]);
 }
 
