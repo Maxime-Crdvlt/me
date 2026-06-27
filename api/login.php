@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 header('Content-Type: application/json; charset=utf-8');
 
@@ -55,4 +55,3 @@ if (!empty($username) && !empty($password)) {
 
 // DECONNEXION DE LA BASE DE DONNEES
 $connexionDB = null;
-?>

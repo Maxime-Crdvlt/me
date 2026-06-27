@@ -68,7 +68,7 @@ if (!empty($user_name) && !empty($user_email) && !empty($user_message)) {
                 ";
                 $mail->send();
             } catch (Exception $e) {
-                error_log("[$user_name - $user_email] [Erreur] Le mail n'a pas pu etre envoye. Erreur Mailer: {$mail->ErrorInfo}". "...");
+                error_log("[$user_name - $user_email] [Erreur] Le mail n'a pas pu etre envoye. Erreur Mailer: {$mail->ErrorInfo}" . "...");
             }
             echo json_encode(['statut' => "succes", 'message' => "Merci ! Votre message a bien été reçu !"]);
         } catch (PDOException $e) {
@@ -86,4 +86,3 @@ if (!empty($user_name) && !empty($user_email) && !empty($user_message)) {
 
 // DECONNEXION DE LA BASE DE DONNEES
 $connexionDB = null;
-?>
