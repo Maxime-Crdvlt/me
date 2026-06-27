@@ -1,4 +1,8 @@
 document.addEventListener('DOMContentLoaded', async () => {
+    const popup = document.getElementById('popup');
+    const popupMessage = document.getElementById('popup-message');
+    const popupIcon = document.getElementById('popup-icon');
+    const overlay = document.getElementById('popup-overlay');
     // RECUPERATION DES DONNEES
     const response = await fetch('/api/getFormations.php');
     const formations = await response.json();
