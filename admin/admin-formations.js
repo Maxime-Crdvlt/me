@@ -130,6 +130,52 @@ document.addEventListener('DOMContentLoaded', async () => {
             formationFormulaire.append(divDescription);
             formationFormulaire.append(buttonSave, buttonDelete);
 
+            formationFormulaire.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const formData = new FormData(formationFormulaire);
+                formData.append('id', formation.id);
+                fetch('/api/putFormation.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(reponse => reponse.json())
+                .then(data => {
+                    popupMessage.textContent = data.message;
+                    if (data.statut === "succes") {
+                        popupIcon.className = "fi fi-br-check popup-icon icon-succes";
+                    }
+                    if (data.statut === "erreur") {
+                        popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
+                    }
+                    popup.classList.remove('popup-cache');
+                    popup.classList.add('popup-visible');
+                    overlay.classList.remove('overlay-cache');
+                    overlay.classList.add('overlay-visible');
+                    document.body.classList.add('bloquer-scroll');
+                })
+                .catch(erreur => {
+                    console.error("Erreur serveur :", erreur);
+                    popupMessage.textContent = "Erreur de connexion au serveur.";
+                    popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
+                    
+                    popup.classList.remove('popup-cache');
+                    popup.classList.add('popup-visible');
+                    overlay.classList.remove('overlay-cache');
+                    overlay.classList.add('overlay-visible');
+                    document.body.classList.add('bloquer-scroll');
+                });
+            })
+
+            if (overlay) {
+                overlay.addEventListener('click', () => {
+                    popup.classList.remove('popup-visible');
+                    popup.classList.add('popup-cache');
+                    overlay.classList.remove('overlay-visible');
+                    overlay.classList.add('overlay-cache');
+                    document.body.classList.remove('bloquer-scroll');
+                });
+            }
+
             formationsContainer.append(formationFormulaire);
 
             // SEPARATEUR

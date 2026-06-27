@@ -43,7 +43,7 @@ require_once 'check-admin.php';
         <div id="formations-container">
             <script src="/admin/admin-formations.js" defer></script>
         </div>
-
+        
         <h2 class="text-center">Ajouter une formation</h2>
         <form id="form-add-formation" action="/api/postFormation.php" method="POST">
             <div>
@@ -117,6 +117,13 @@ require_once 'check-admin.php';
             </div>
         </div>
     </footer>
+    <div id="popup-overlay" class="overlay-cache"></div>
+    <div id="popup" class="popup popup-cache">
+        <div class="text-icon">
+            <i id="popup-icon" class="fi fi-br-check popup-icon icon-succes"></i>
+            <p id="popup-message" class="popup-message"></p>
+        </div>
+    </div>
 </body>
 
 </html>
