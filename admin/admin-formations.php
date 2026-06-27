@@ -45,7 +45,7 @@ require_once 'check-admin.php';
         </div>
         
         <h2 class="text-center">Ajouter une formation</h2>
-        <form id="form-add-formation" action="/api/postFormation.php" method="POST">
+        <form id="form-add-formation" action="/api/formations/postFormation.php" method="POST">
             <div>
                 <label for="diplome">Diplôme</label>
                 <input type="text" id="diplome" name="diplome" placeholder="BUT Informatique" required />

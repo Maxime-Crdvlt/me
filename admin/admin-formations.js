@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const popupIcon = document.getElementById('popup-icon');
     const overlay = document.getElementById('popup-overlay');
     // RECUPERATION DES DONNEES
-    const response = await fetch('/api/getFormations.php');
+    const response = await fetch('/api/formations/getFormations.php');
     const formations = await response.json();
     const formationsContainer = document.getElementById('formations-container');
 
@@ -24,11 +24,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             // CHAMP DIPLOME
             const divDiplome = document.createElement('div');
             divDiplome.classList.add('diplome-div');
-
             const labelDiplome = document.createElement('label');
             labelDiplome.setAttribute('for', `diplome-${formation.id}`);
             labelDiplome.textContent = 'Diplôme';
-
             const inputDiplome = document.createElement('input');
             inputDiplome.setAttribute('type', 'text');
             inputDiplome.id = `diplome-${formation.id}`;
@@ -41,11 +39,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             // CHAMP DATE DEBUT
             const divDateDebut = document.createElement('div');
             divDateDebut.classList.add('date-debut-div');
-
             const labelDateDebut = document.createElement('label');
             labelDateDebut.setAttribute('for', `date-debut-${formation.id}`);
             labelDateDebut.textContent = 'Année de début';
-
             const inputDateDebut = document.createElement('input');
             inputDateDebut.setAttribute('type', 'number');
             inputDateDebut.id = `date-debut-${formation.id}`;
@@ -58,11 +54,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             // CHAMP DATE FIN
             const divDateFin = document.createElement('div');
             divDateFin.classList.add('date-fin-div');
-
             const labelDateFin = document.createElement('label');
             labelDateFin.setAttribute('for', `date-fin-${formation.id}`);
             labelDateFin.textContent = 'Année de fin';
-
             const inputDateFin = document.createElement('input');
             inputDateFin.setAttribute('type', 'number');
             inputDateFin.id = `date-fin-${formation.id}`;
@@ -81,11 +75,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             // CHAMP PLACE
             const divPlace = document.createElement('div');
             divPlace.classList.add('place-div');
-
             const labelPlace = document.createElement('label');
             labelPlace.setAttribute('for', `place-${formation.id}`);
             labelPlace.textContent = 'Lieu';
-
             const inputPlace = document.createElement('input');
             inputPlace.setAttribute('type', 'text');
             inputPlace.id = `place-${formation.id}`;
@@ -104,11 +96,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             // CHAMP DESCRIPTION
             const divDescription = document.createElement('div');
             divDescription.classList.add('description-div');
-
             const labelDescription = document.createElement('label');
             labelDescription.setAttribute('for', `description-${formation.id}`);
             labelDescription.textContent = 'Description';
-
             const inputDescription = document.createElement('textarea');
             inputDescription.id = `description-${formation.id}`;
             inputDescription.setAttribute('name', 'description');
@@ -134,11 +124,12 @@ document.addEventListener('DOMContentLoaded', async () => {
             formationFormulaire.append(divDescription);
             formationFormulaire.append(buttonSave, buttonDelete);
 
+            // EVENT LISTNER MODIFIER
             formationFormulaire.addEventListener('submit', (event) => {
                 event.preventDefault();
                 const formData = new FormData(formationFormulaire);
                 formData.append('id', formation.id);
-                fetch('/api/putFormation.php', {
+                fetch('/api/formations/putFormation.php', {
                     method: 'POST',
                     body: formData
                 })
@@ -170,15 +161,79 @@ document.addEventListener('DOMContentLoaded', async () => {
                 });
             })
 
-            if (overlay) {
-                overlay.addEventListener('click', () => {
-                    popup.classList.remove('popup-visible');
-                    popup.classList.add('popup-cache');
-                    overlay.classList.remove('overlay-visible');
-                    overlay.classList.add('overlay-cache');
-                    document.body.classList.remove('bloquer-scroll');
+            // EVENT LISTENER SUPPRIMER
+            buttonDelete.addEventListener('click', (event) => {
+                event.preventDefault();
+                const formData = new FormData(formationFormulaire);
+                formData.append('id', formation.id);
+                fetch('/api/formations/deleteFormation.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(reponse => reponse.json())
+                .then(data => {
+                    popupMessage.textContent = data.message;
+                    if (data.statut === "succes") {
+                        popupIcon.className = "fi fi-br-check popup-icon icon-succes";
+                    }
+                    if (data.statut === "erreur") {
+                        popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
+                    }
+                    popup.classList.remove('popup-cache');
+                    popup.classList.add('popup-visible');
+                    overlay.classList.remove('overlay-cache');
+                    overlay.classList.add('overlay-visible');
+                    document.body.classList.add('bloquer-scroll');
+                })
+                .catch(erreur => {
+                    console.error("Erreur serveur :", erreur);
+                    popupMessage.textContent = "Erreur de connexion au serveur.";
+                    popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
+                    
+                    popup.classList.remove('popup-cache');
+                    popup.classList.add('popup-visible');
+                    overlay.classList.remove('overlay-cache');
+                    overlay.classList.add('overlay-visible');
+                    document.body.classList.add('bloquer-scroll');
                 });
-            }
+            })
+
+            // EVENT LISTENER AJOUTER
+            const formAddFormation = document.getElementById('form-add-formation');
+            formAddFormation.addEventListener('submit', (event) => {
+                event.preventDefault();
+                const formData = new FormData(formAddFormation);
+                fetch('/api/formations/postFormation.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(reponse => reponse.json())
+                .then(data => {
+                    popupMessage.textContent = data.message;
+                    if (data.statut === "succes") {
+                        popupIcon.className = "fi fi-br-check popup-icon icon-succes";
+                    }
+                    if (data.statut === "erreur") {
+                        popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
+                    }
+                    popup.classList.remove('popup-cache');
+                    popup.classList.add('popup-visible');
+                    overlay.classList.remove('overlay-cache');
+                    overlay.classList.add('overlay-visible');
+                    document.body.classList.add('bloquer-scroll');
+                })
+                .catch(erreur => {
+                    console.error("Erreur serveur :", erreur);
+                    popupMessage.textContent = "Erreur de connexion au serveur.";
+                    popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
+                    
+                    popup.classList.remove('popup-cache');
+                    popup.classList.add('popup-visible');
+                    overlay.classList.remove('overlay-cache');
+                    overlay.classList.add('overlay-visible');
+                    document.body.classList.add('bloquer-scroll');
+                });
+            })
 
             formationsContainer.append(formationFormulaire);
 
@@ -189,6 +244,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             divSeparateur.append(hr);
             
             formationsContainer.append(divSeparateur);
+
+            // GESTION DE L'OVERLAY
+            if (overlay) {
+                overlay.addEventListener('click', () => {
+                    popup.classList.remove('popup-visible');
+                    popup.classList.add('popup-cache');
+                    overlay.classList.remove('overlay-visible');
+                    overlay.classList.add('overlay-cache');
+                    document.body.classList.remove('bloquer-scroll');
+                });
+            }
         });
     }
 })
