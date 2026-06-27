@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const formulaire = document.getElementById('form-admin');
+    const formulaire = document.getElementById('form-login-admin');
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const popupIcon = document.getElementById('popup-icon');

@@ -45,7 +45,7 @@ if (!empty($username) && !empty($password)) {
             echo json_encode(['statut' => "erreur", 'message' => "Identifiants incorrects."]);
         }
     } catch (PDOException $e) {
-        error_log("[LOGIN ADMINI] [Erreur] Echec de la selection : " . $e->getMessage() . "...");
+        error_log("[LOGIN ADMIN] [Erreur] Echec de la selection : " . $e->getMessage() . "...");
         echo json_encode(['statut' => "erreur", 'message' => "Echec lors de la recherche des données..."]);
     }
 } else {
