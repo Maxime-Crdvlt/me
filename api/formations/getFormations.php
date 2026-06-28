@@ -3,15 +3,7 @@ session_start();
 header('Content-Type: application/json; charset=utf-8');
 
 // CONNEXION A LA BASE DE DONNEES
-require_once '/api/config_portfolio.php'; //import $dsn, $user, $password
-try {
-    $connexionDB = new PDO($dsn, $user, $password);
-    $connexionDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    error_log("[ADMIN-FORMATIONS] Echec de la connexion : " . $e->getMessage() . "...");
-    echo json_encode(['statut' => "erreur", 'message' => "Echec de la connexion à la base de données..."]);
-    exit;
-}
+require_once '/api/db_connection.php';
 
 try {
     // SELECTION DANS LA BASE DE DONNEES
@@ -23,8 +15,8 @@ try {
     // ENVOIE DES DONNEES
     echo json_encode($formations);
 } catch (PDOException $e) {
-    error_log("[ADMIN-FORMATIONS] Echec de la selection : " . $e->getMessage() . "...");
-    echo json_encode(['statut' => "erreur", 'message' => "Echec lors de la recherche des données..."]);
+    error_log("[FORMATIONS] Failed selection: " . $e->getMessage());
+    echo json_encode(['status' => "error", 'message' => "Echec lors de la recherche des données"]);
 }
 
 // DECONNEXION DE LA BASE DE DONNEES

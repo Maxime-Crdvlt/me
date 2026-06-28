@@ -1,4 +1,4 @@
-api/config_portfolio.php
+api/db_connection.php
 api/config_mail.php
 api/data_portfolio.sql
 api/init_portfolio.sql

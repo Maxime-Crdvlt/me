@@ -6,15 +6,7 @@ use PHPMailer\PHPMailer\Exception;
 require __DIR__ . '/../vendor/autoload.php';
 
 // CONNEXION A LA BASE DE DONNEES
-require_once 'config_portfolio.php'; //import $dsn, $user, $password
-try {
-    $connexionDB = new PDO($dsn, $user, $password);
-    $connexionDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    error_log("[Erreur] Echec de la connexion : " . $e->getMessage() . "...");
-    echo json_encode(['statut' => "erreur", 'message' => "Echec de la connexion à la base de données..."]);
-    exit;
-}
+require_once '/api/db_connection.php';
 
 // RECUPERATION DES DONNEES DU FORMULAIRE
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -23,8 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user_message = $_POST['user_message'] ?? '';
     $user_email = filter_var($user_email, FILTER_SANITIZE_EMAIL);
 } else {
-    error_log("[Erreur] Aucun formulaire soumis...");
-    echo json_encode(['statut' => "erreur", 'message' => "Aucun formulaire reçu..."]);
+    error_log("[CONTACT] No forms received");
+    echo json_encode(['status' => "error", 'message' => "Aucun formulaire reçu"]);
     exit;
 }
 
@@ -68,20 +60,21 @@ if (!empty($user_name) && !empty($user_email) && !empty($user_message)) {
                 ";
                 $mail->send();
             } catch (Exception $e) {
-                error_log("[$user_name - $user_email] [Erreur] Le mail n'a pas pu etre envoye. Erreur Mailer: {$mail->ErrorInfo}" . "...");
+                error_log("[CONTACT] [$user_name - $user_email] The email could not be sent, mailer error: {$mail->ErrorInfo}");
+                // Pas de json_encode error car ce n'est pas bloquant, l'email est quand meme save.
             }
-            echo json_encode(['statut' => "succes", 'message' => "Merci ! Votre message a bien été reçu !"]);
+            echo json_encode(['status' => "success", 'message' => "Merci ! Votre message a bien été reçu"]);
         } catch (PDOException $e) {
-            error_log("[$user_name - $user_email] [Erreur] Echec de l'insertion : " . $e->getMessage() . "...");
-            echo json_encode(['statut' => "erreur", 'message' => "Echec lors de l'enregistrement des données..."]);
+            error_log("[CONTACT] [$user_name - $user_email] Failed insertion: " . $e->getMessage());
+            echo json_encode(['status' => "error", 'message' => "Echec lors de l'enregistrement des données"]);
         }
     } else {
-        error_log("[$user_name - $user_email] [Erreur] Adresse email invalide...");
-        echo json_encode(['statut' => "erreur", 'message' => "Adresse email invalide..."]);
+        error_log("[CONTACT] [$user_name - $user_email] Invalid email address");
+        echo json_encode(['status' => "error", 'message' => "Adresse email invalide"]);
     }
 } else {
-    error_log("[$user_name - $user_email] [Erreur] Tous les champs sont obligatoires...");
-    echo json_encode(['statut' => "erreur", 'message' => "Tous les champs sont obligatoires..."]);
+    // Pas de error_log car c'est une erreur utilisateur attendue.
+    echo json_encode(['status' => "error", 'message' => "Tous les champs sont obligatoires"]);
 }
 
 // DECONNEXION DE LA BASE DE DONNEES

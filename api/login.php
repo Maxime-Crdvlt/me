@@ -3,23 +3,15 @@ session_start();
 header('Content-Type: application/json; charset=utf-8');
 
 // CONNEXION A LA BASE DE DONNEES
-require_once 'config_portfolio.php'; //import $dsn, $user, $password
-try {
-    $connexionDB = new PDO($dsn, $user, $password);
-    $connexionDB->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    error_log("[Erreur] Echec de la connexion : " . $e->getMessage() . "...");
-    echo json_encode(['statut' => "erreur", 'message' => "Echec de la connexion à la base de données..."]);
-    exit;
-}
+require_once '/api/db_connection.php';
 
 // RECUPERATION DES DONNEES DU FORMULAIRE
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST['username'] ?? '';
     $password = $_POST['password'] ?? '';
 } else {
-    error_log("[Erreur] Aucun formulaire soumis...");
-    echo json_encode(['statut' => "erreur", 'message' => "Aucun formulaire reçu..."]);
+    error_log("[LOGIN] No forms received");
+    echo json_encode(['status' => "error", 'message' => "Aucun formulaire reçu"]);
     exit;
 }
 
@@ -39,18 +31,18 @@ if (!empty($username) && !empty($password)) {
             $_SESSION['admin_logged'] = true;
             $_SESSION['admin_id'] = $admin['id'];
             $_SESSION['admin_username'] = $admin['username'];
-            echo json_encode(['statut' => "succes", 'message' => "Connexion réussie."]);
+            echo json_encode(['status' => "success", 'message' => "Connexion réussie"]);
         } else {
-            error_log("[LOGIN ADMIN] [Erreur] Tentative échouée pour : " . $username);
-            echo json_encode(['statut' => "erreur", 'message' => "Identifiants incorrects."]);
+            // Pas de error_log car c'est une erreur utilisateur attendue.
+            echo json_encode(['status' => "error", 'message' => "Identifiants incorrects"]);
         }
     } catch (PDOException $e) {
-        error_log("[LOGIN ADMIN] [Erreur] Echec de la selection : " . $e->getMessage() . "...");
-        echo json_encode(['statut' => "erreur", 'message' => "Echec lors de la recherche des données..."]);
+        error_log("[LOGIN] Failed selection: " . $e->getMessage());
+        echo json_encode(['status' => "error", 'message' => "Echec lors de la recherche des données"]);
     }
 } else {
-    error_log("[ADMIN] [Erreur] Tous les champs sont obligatoires...");
-    echo json_encode(['statut' => "erreur", 'message' => "Tous les champs sont obligatoires..."]);
+    // Pas de error_log car c'est une erreur utilisateur attendue.
+    echo json_encode(['status' => "error", 'message' => "Tous les champs sont obligatoires"]);
 }
 
 // DECONNEXION DE LA BASE DE DONNEES
