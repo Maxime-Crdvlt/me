@@ -79,7 +79,7 @@
                                 class="fi fi-brands-linkedin"></i> Mon LinkedIn</a>
                     </li>
                     <li>
-                        <a href="/assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" rel="noopener" class="text-icon"><i
+                        <a href="../assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" rel="noopener" class="text-icon"><i
                                 class="fi fi-sr-resume"></i> Mon Curriculum Vitae</a>
                     </li>
                 </ul>
