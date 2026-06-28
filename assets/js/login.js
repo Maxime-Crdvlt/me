@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(reponse => reponse.json())
             .then(data => {
                 popupMessage.textContent = data.message;
-                if (data.statut === "success") {
+                if (data.status === "success") {
                     popupIcon.className = "fi fi-br-check popup-icon icon-succes";
                     formulaire.reset();
                     window.location.href = "/admin/admin.php";
                     return;
                 }
-                if (data.statut === "error") {
+                if (data.status === "error") {
                     popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
                 }
                 popup.classList.remove('popup-cache');
