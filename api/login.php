@@ -3,7 +3,7 @@ session_start();
 header('Content-Type: application/json; charset=utf-8');
 
 // CONNEXION A LA BASE DE DONNEES
-require_once '/api/db_connection.php';
+require_once 'db_connection.php';
 
 // RECUPERATION DES DONNEES DU FORMULAIRE
 if ($_SERVER["REQUEST_METHOD"] === "POST") {

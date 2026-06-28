@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const popupIcon = document.getElementById('popup-icon');
     const overlay = document.getElementById('popup-overlay');
     // RECUPERATION DES DONNEES
-    const response = await fetch('/api/formations/getFormations.php');
+    const response = await fetch('../api/formations/getFormations.php');
     const formations = await response.json();
     const formationsContainer = document.getElementById('formations-container');
 
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 event.preventDefault();
                 const formData = new FormData(formationFormulaire);
                 formData.append('id', formation.id);
-                fetch('/api/formations/putFormation.php', {
+                fetch('../api/formations/putFormation.php', {
                     method: 'POST',
                     body: formData
                 })
@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 event.preventDefault();
                 const formData = new FormData(formationFormulaire);
                 formData.append('id', formation.id);
-                fetch('/api/formations/deleteFormation.php', {
+                fetch('../api/formations/deleteFormation.php', {
                     method: 'POST',
                     body: formData
                 })
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             formAddFormation.addEventListener('submit', (event) => {
                 event.preventDefault();
                 const formData = new FormData(formAddFormation);
-                fetch('/api/formations/postFormation.php', {
+                fetch('../api/formations/postFormation.php', {
                     method: 'POST',
                     body: formData
                 })
