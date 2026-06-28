@@ -16,13 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(reponse => reponse.json())
             .then(data => {
                 popupMessage.textContent = data.message;
-                if (data.statut === "succes") {
+                if (data.statut === "success") {
                     popupIcon.className = "fi fi-br-check popup-icon icon-succes";
                     formulaire.reset();
                     window.location.href = "/admin/admin.php";
                     return;
                 }
-                if (data.statut === "erreur") {
+                if (data.statut === "error") {
                     popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
                 }
                 popup.classList.remove('popup-cache');
@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.body.classList.add('bloquer-scroll');
             })
             .catch(erreur => {
-                console.error("Erreur serveur :", erreur);
-                popupMessage.textContent = "Erreur de connexion au serveur.";
+                console.error("Server error: ", erreur);
+                popupMessage.textContent = "Erreur de connexion au serveur";
                 popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
                 
                 popup.classList.remove('popup-cache');
