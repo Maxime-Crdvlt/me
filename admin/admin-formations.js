@@ -1,9 +1,27 @@
 document.addEventListener('DOMContentLoaded', async () => {
+    // RECUPERATION DES DONNEES ET CONSTANTES NECESSAIRES
+    // Affichage
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const popupIcon = document.getElementById('popup-icon');
     const overlay = document.getElementById('popup-overlay');
-    // RECUPERATION DES DONNEES
+    function showPopup() {
+        popup.classList.remove('popup-cache');
+        popup.classList.add('popup-visible');
+        overlay.classList.remove('overlay-cache');
+        overlay.classList.add('overlay-visible');
+        document.body.classList.add('bloquer-scroll');
+    }
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            popup.classList.remove('popup-visible');
+            popup.classList.add('popup-cache');
+            overlay.classList.remove('overlay-visible');
+            overlay.classList.add('overlay-cache');
+            document.body.classList.remove('bloquer-scroll');
+        });
+    }
+    // Récupération des formations
     const response = await fetch('../api/formations/getFormations.php');
     const formations = await response.json();
     const formationsContainer = document.getElementById('formations-container');
@@ -16,7 +34,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     } else {
         formations.forEach(formation => {
-            // CREATION DU FORMULAIRE
+            // CREATION DU FORMULAIRE DE LA FORMATION
             const formationFormulaire = document.createElement('form');
             formationFormulaire.classList.add('formation');
             formationFormulaire.id = `formation-${formation.id}`;
@@ -124,7 +142,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             formationFormulaire.append(divDescription);
             formationFormulaire.append(buttonSave, buttonDelete);
 
-            // EVENT LISTNER MODIFIER
+            // EVENT LISTENER ENREGISTRER
             formationFormulaire.addEventListener('submit', (event) => {
                 event.preventDefault();
                 const formData = new FormData(formationFormulaire);
@@ -142,22 +160,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                     if (data.statut === "erreur") {
                         popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
                     }
-                    popup.classList.remove('popup-cache');
-                    popup.classList.add('popup-visible');
-                    overlay.classList.remove('overlay-cache');
-                    overlay.classList.add('overlay-visible');
-                    document.body.classList.add('bloquer-scroll');
+                    showPopup();
                 })
                 .catch(erreur => {
                     console.error("Erreur serveur :", erreur);
                     popupMessage.textContent = "Erreur de connexion au serveur.";
                     popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
-                    
-                    popup.classList.remove('popup-cache');
-                    popup.classList.add('popup-visible');
-                    overlay.classList.remove('overlay-cache');
-                    overlay.classList.add('overlay-visible');
-                    document.body.classList.add('bloquer-scroll');
+                    showPopup();
                 });
             })
 
@@ -179,59 +188,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                     if (data.statut === "erreur") {
                         popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
                     }
-                    popup.classList.remove('popup-cache');
-                    popup.classList.add('popup-visible');
-                    overlay.classList.remove('overlay-cache');
-                    overlay.classList.add('overlay-visible');
-                    document.body.classList.add('bloquer-scroll');
+                    showPopup();
                 })
                 .catch(erreur => {
                     console.error("Erreur serveur :", erreur);
                     popupMessage.textContent = "Erreur de connexion au serveur.";
                     popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
-                    
-                    popup.classList.remove('popup-cache');
-                    popup.classList.add('popup-visible');
-                    overlay.classList.remove('overlay-cache');
-                    overlay.classList.add('overlay-visible');
-                    document.body.classList.add('bloquer-scroll');
-                });
-            })
-
-            // EVENT LISTENER AJOUTER
-            const formAddFormation = document.getElementById('form-add-formation');
-            formAddFormation.addEventListener('submit', (event) => {
-                event.preventDefault();
-                const formData = new FormData(formAddFormation);
-                fetch('../api/formations/postFormation.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(reponse => reponse.json())
-                .then(data => {
-                    popupMessage.textContent = data.message;
-                    if (data.statut === "succes") {
-                        popupIcon.className = "fi fi-br-check popup-icon icon-succes";
-                    }
-                    if (data.statut === "erreur") {
-                        popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
-                    }
-                    popup.classList.remove('popup-cache');
-                    popup.classList.add('popup-visible');
-                    overlay.classList.remove('overlay-cache');
-                    overlay.classList.add('overlay-visible');
-                    document.body.classList.add('bloquer-scroll');
-                })
-                .catch(erreur => {
-                    console.error("Erreur serveur :", erreur);
-                    popupMessage.textContent = "Erreur de connexion au serveur.";
-                    popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
-                    
-                    popup.classList.remove('popup-cache');
-                    popup.classList.add('popup-visible');
-                    overlay.classList.remove('overlay-cache');
-                    overlay.classList.add('overlay-visible');
-                    document.body.classList.add('bloquer-scroll');
+                    showPopup();
                 });
             })
 
@@ -244,17 +207,34 @@ document.addEventListener('DOMContentLoaded', async () => {
             divSeparateur.append(hr);
             
             formationsContainer.append(divSeparateur);
-
-            // GESTION DE L'OVERLAY
-            if (overlay) {
-                overlay.addEventListener('click', () => {
-                    popup.classList.remove('popup-visible');
-                    popup.classList.add('popup-cache');
-                    overlay.classList.remove('overlay-visible');
-                    overlay.classList.add('overlay-cache');
-                    document.body.classList.remove('bloquer-scroll');
-                });
-            }
         });
     }
+    // FORMULAIRE D'AJOUT   
+    // EVENT LISTENER AJOUTER
+    const formAddFormation = document.getElementById('form-add-formation');
+    formAddFormation.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const formData = new FormData(formAddFormation);
+        fetch('../api/formations/postFormation.php', {
+            method: 'POST',
+            body: formData
+        })
+        .then(reponse => reponse.json())
+        .then(data => {
+            popupMessage.textContent = data.message;
+            if (data.statut === "succes") {
+                popupIcon.className = "fi fi-br-check popup-icon icon-succes";
+            }
+            if (data.statut === "erreur") {
+                popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
+            }
+            showPopup();
+        })
+        .catch(erreur => {
+            console.error("Erreur serveur :", erreur);
+            popupMessage.textContent = "Erreur de connexion au serveur.";
+            popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
+            showPopup();
+        });
+    })
 })
