@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     // RECUPERATION DES DONNEES ET CONSTANTES NECESSAIRES
-    // Affichage
+    let reloadPage = false;
+    // Affichage POPUP
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const popupIcon = document.getElementById('popup-icon');
@@ -19,6 +20,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             overlay.classList.remove('overlay-visible');
             overlay.classList.add('overlay-cache');
             document.body.classList.remove('bloquer-scroll');
+            if (rechargerPage) {
+                window.location.reload();
+            }
         });
     }
     // Récupération des formations
@@ -154,10 +158,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 .then(reponse => reponse.json())
                 .then(data => {
                     popupMessage.textContent = data.message;
-                    if (data.statut === "succes") {
+                    if (data.status === "success") {
                         popupIcon.className = "fi fi-br-check popup-icon icon-succes";
+                        rechargerPage = true;
                     }
-                    if (data.statut === "erreur") {
+                    if (data.status === "error") {
                         popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
                     }
                     showPopup();
@@ -182,10 +187,11 @@ document.addEventListener('DOMContentLoaded', async () => {
                 .then(reponse => reponse.json())
                 .then(data => {
                     popupMessage.textContent = data.message;
-                    if (data.statut === "succes") {
+                    if (data.status === "success") {
                         popupIcon.className = "fi fi-br-check popup-icon icon-succes";
+                        rechargerPage = true;
                     }
-                    if (data.statut === "erreur") {
+                    if (data.status === "error") {
                         popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
                     }
                     showPopup();
@@ -222,10 +228,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         .then(reponse => reponse.json())
         .then(data => {
             popupMessage.textContent = data.message;
-            if (data.statut === "succes") {
+            if (data.status === "success") {
                 popupIcon.className = "fi fi-br-check popup-icon icon-succes";
+                rechargerPage = true;
             }
-            if (data.statut === "erreur") {
+            if (data.status === "error") {
                 popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
             }
             showPopup();
