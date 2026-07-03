@@ -118,7 +118,7 @@ require_once 'check-admin.php';
         </div>
     </footer>
     <div id="popup-overlay" class="overlay-cache"></div>
-    <div id="popup" class="popup popup-cache">
+    <div id="popup-response" class="popup popup-cache">
         <div class="text-icon">
             <i id="popup-icon" class="fi fi-br-check popup-icon icon-succes"></i>
             <p id="popup-message" class="popup-message"></p>
