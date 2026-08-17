@@ -1,4 +1,6 @@
-<?php require_once 'check-admin.php';?>
+<?php
+require_once 'check-admin.php';
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -38,7 +40,38 @@
     </header>
 
     <main class="container">
-        <h2>Ceci est la page des expériences</h2>
+        <div id="experiences-container">
+            <script src="admin-experiences.js" defer></script>
+        </div>
+        
+        <h2 class="text-center">Ajouter une expérience</h2>
+        <form id="new-experience-form" action="../api/experiences/postExperience.php" method="POST">
+            <div>
+                <label for="title">Titre</label>
+                <input type="text" id="title" name="title" placeholder="Stage oppérationnel" required />
+            </div>
+            <div class="infos-supp-div">
+                <div class="place-div">
+                    <label for="place">Lieu</label>
+                    <input type="text" id="place" name="place" placeholder="LBPAM, Paris 4ème" required />
+                </div>
+                <div class="dates-div">
+                    <div class="start-div">
+                        <label for="date-debut">Date de début</label>
+                        <input type="date" id="start" name="start" required />
+                    </div>
+                    <div class="end-div">
+                        <label for="date-fin">Date de fin</label>
+                        <input type="date" id="end" name="end" required />
+                    </div>
+                </div>
+            </div>
+            <div class="description-div">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" placeholder="Retour d'expérience, apports, etc..." required></textarea>
+            </div>
+            <button type="submit" class="button-primary">Ajouter une expérience</button>
+        </form>
     </main>
 
     <footer>
@@ -51,10 +84,18 @@
             <div>
                 <h3>Portfolio</h3>
                 <ul>
-                    <li><a href="../index.html">Accueil</a></li>
-                    <li><a href="../about.html">A propos de moi</a></li>
-                    <li><a href="../projects.html">Mes projets</a></li>
-                    <li><a href="../contact.html">Contact</a></li>
+                    <li>
+                        <a href="../index.html">Accueil</a>
+                    </li>
+                    <li>
+                        <a href="../about.html">A propos de moi</a>
+                    </li>
+                    <li>
+                        <a href="../projects.html">Mes projets</a>
+                    </li>
+                    <li>
+                        <a href="../contact.html">Contact</a>
+                    </li>
                 </ul>
             </div>
             <div>
@@ -76,6 +117,13 @@
             </div>
         </div>
     </footer>
+    <div id="popup-overlay" class="overlay-cache"></div>
+    <div id="popup" class="popup popup-cache">
+        <div class="text-icon">
+            <i id="popup-icon" class="fi fi-br-check popup-icon icon-succes"></i>
+            <p id="popup-message" class="popup-message"></p>
+        </div>
+    </div>
 </body>
 
 </html>

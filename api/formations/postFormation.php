@@ -1,10 +1,10 @@
 <?php
 header('Content-Type: application/json; charset=utf-8');
 
-// CONNEXION A LA BASE DE DONNEES
+// CONNECTING TO THE DATABASE
 require_once '../db_connection.php';
 
-// RECUPERATION DES DONNEES DU FORMULAIRE
+// RETRIEVING DATA FROM THE FORM
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $degree = $_POST['diplome'] ?? '';
     $start = $_POST['date-debut'] ?? '';
@@ -17,10 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     exit;
 }
 
-// TRAITEMENT
+// TREATMENT
 if (!empty($degree) && !empty($start) && !empty($end) && !empty($place) && !empty($description)) {
     try {
-        // ENREGISTREMENT DANS LA BASE DE DONNEES
+        // ENTRY INTO THE DATABASE
         $sql = "INSERT INTO formations (degree, start, end, place, description) VALUES (:degree, :start, :end, :place, :description)";
         $stmt = $connexionDB->prepare($sql);
         $stmt->execute([
@@ -37,9 +37,9 @@ if (!empty($degree) && !empty($start) && !empty($end) && !empty($place) && !empt
         echo json_encode(['status' => "error", 'message' => "Echec lors de l'enregistrement des données"]);
     }
 } else {
-    // Pas de error_log car c'est une erreur utilisateur attendue.
+    // No error_log because this is an expected user error.
     echo json_encode(['status' => "error", 'message' => "Tous les champs sont obligatoires"]);
 }
 
-// DECONNEXION DE LA BASE DE DONNEES
+// DISCONNECTING FROM THE DATABASE
 $connexionDB = null;

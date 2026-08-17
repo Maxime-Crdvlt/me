@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     // RECUPERATION DES DONNEES ET CONSTANTES NECESSAIRES
     let reloadPage = false;
-    // Affichage POPUP
+        // Affichage POPUP
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const popupIcon = document.getElementById('popup-icon');

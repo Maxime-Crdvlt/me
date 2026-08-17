@@ -7,7 +7,7 @@ require_once '../db_connection.php';
 
 try {
     // DATA RECOVERY
-    $sql = "SELECT `id`, `degree`, `start`, `end`, `place`, `description` FROM formations ORDER BY `start` ASC";
+    $sql = "SELECT `id`, `title`, `start`, `end`, `place`, `description` FROM experiences ORDER BY `start` ASC";
     $stmt = $connexionDB->prepare($sql);
     $stmt->execute();
     $formations = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -15,7 +15,7 @@ try {
     // SEND DATA
     echo json_encode($formations);
 } catch (PDOException $e) {
-    error_log("[FORMATIONS] Failed selection: " . $e->getMessage());
+    error_log("[EXPERIENCES] Failed selection: " . $e->getMessage());
     echo json_encode(['status' => "error", 'message' => "Echec lors de la recherche des données"]);
 }
 
