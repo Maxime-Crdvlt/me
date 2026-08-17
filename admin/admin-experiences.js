@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             // CONSTRUCTION DU FORMULAIRE
             experienceFormulaire.append(titleDiv);
             experienceFormulaire.append(infosDiv);
-            experienceFormulaire.append(divDescription);
+            experienceFormulaire.append(descriptionDiv);
             experienceFormulaire.append(saveButton, deleteButton);
 
             // EVENT LISTENER SAVE
