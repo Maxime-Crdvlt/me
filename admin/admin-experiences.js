@@ -153,7 +153,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     popupMessage.textContent = data.message;
                     if (data.status === "success") {
                         popupIcon.className = "fi fi-br-check popup-icon icon-succes";
-                        rechargerPage = true;
+                        reloadPage = true;
                     }
                     if (data.status === "error") {
                         popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     popupMessage.textContent = data.message;
                     if (data.status === "success") {
                         popupIcon.className = "fi fi-br-check popup-icon icon-succes";
-                        rechargerPage = true;
+                        reloadPage = true;
                     }
                     if (data.status === "error") {
                         popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             popupMessage.textContent = data.message;
             if (data.status === "success") {
                 popupIcon.className = "fi fi-br-check popup-icon icon-succes";
-                rechargerPage = true;
+                reloadPage = true;
             }
             if (data.status === "error") {
                 popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
