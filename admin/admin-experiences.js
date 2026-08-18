@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const pVide = document.createElement('p');
         pVide.textContent = 'Aucune expérience trouvée dans la base de données...';
         experiencesContainer.append(pVide);
-        return;
     } else {
         experiences.forEach(experience => {
             // CREATING THE EXPERIENCE FORM

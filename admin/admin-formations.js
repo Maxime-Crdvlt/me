@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         const pVide = document.createElement('p');
         pVide.textContent = 'Aucune formation trouvée dans la base de données...';
         formationsContainer.append(pVide);
-        return;
     } else {
         formations.forEach(formation => {
             // CREATING THE FORMATION FORM
