@@ -57,11 +57,11 @@ require_once 'check-admin.php';
                 </div>
                 <div class="dates-div">
                     <div class="start-div">
-                        <label for="date-debut">Date de début</label>
+                        <label for="start">Date de début</label>
                         <input type="date" id="start" name="start" required />
                     </div>
                     <div class="end-div">
-                        <label for="date-fin">Date de fin</label>
+                        <label for="end">Date de fin</label>
                         <input type="date" id="end" name="end" required />
                     </div>
                 </div>
