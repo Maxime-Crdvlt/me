@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    // RECUPERATION DES DONNEES ET CONSTANTES NECESSAIRES
+    // RETRIEVING THE NECESSARY DATA AND CONSTANTS
     let reloadPage = false;
-        // Affichage POPUP
+        // Display POPUP
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const popupIcon = document.getElementById('popup-icon');
@@ -20,17 +20,17 @@ document.addEventListener('DOMContentLoaded', async () => {
             overlay.classList.remove('overlay-visible');
             overlay.classList.add('overlay-cache');
             document.body.classList.remove('bloquer-scroll');
-            if (rechargerPage) {
+            if (reloadPage) {
                 window.location.reload();
             }
         });
     }
-    // Récupération des formations
+    // Retrieving training courses
     const response = await fetch('../api/formations/getFormations.php');
     const formations = await response.json();
     const formationsContainer = document.getElementById('formations-container');
 
-    //TRAITEMENT
+    // TREATMENT
     if (formations.length === 0) {
         const pVide = document.createElement('p');
         pVide.textContent = 'Aucune formation trouvée dans la base de données...';
@@ -38,115 +38,108 @@ document.addEventListener('DOMContentLoaded', async () => {
         return;
     } else {
         formations.forEach(formation => {
-            // CREATION DU FORMULAIRE DE LA FORMATION
+            // CREATING THE FORMATION FORM
             const formationFormulaire = document.createElement('form');
             formationFormulaire.classList.add('formation');
-            formationFormulaire.id = `formation-${formation.id}`;
+            formationFormulaire.id = `${formation.id}`;
 
-            // CHAMP DIPLOME
-            const divDiplome = document.createElement('div');
-            divDiplome.classList.add('diplome-div');
-            const labelDiplome = document.createElement('label');
-            labelDiplome.setAttribute('for', `diplome-${formation.id}`);
-            labelDiplome.textContent = 'Diplôme';
-            const inputDiplome = document.createElement('input');
-            inputDiplome.setAttribute('type', 'text');
-            inputDiplome.id = `diplome-${formation.id}`;
-            inputDiplome.setAttribute('name', 'diplome');
-            inputDiplome.setAttribute('value', formation.degree);
-            inputDiplome.required = true;
+            // DEGREE FIELD
+            const degreeDiv = document.createElement('div');
+            degreeDiv.classList.add('degree-div');
+            const degreeLabel = document.createElement('label');
+            degreeLabel.setAttribute('for', `degree-${formation.id}`);
+            degreeLabel.textContent = 'Diplôme';
+            const degreeInput = document.createElement('input');
+            degreeInput.setAttribute('type', 'text');
+            degreeInput.id = `degree-${formation.id}`;
+            degreeInput.setAttribute('name', 'degree');
+            degreeInput.setAttribute('value', formation.degree);
+            degreeInput.required = true;
+            degreeDiv.append(degreeLabel, degreeInput);
 
-            divDiplome.append(labelDiplome, inputDiplome);
+            // START FIELD
+            const startDiv = document.createElement('div');
+            startDiv.classList.add('start-div');
+            const startLabel = document.createElement('label');
+            startLabel.setAttribute('for', `start-${formation.id}`);
+            startLabel.textContent = 'Année de début';
+            const startInput = document.createElement('input');
+            startInput.setAttribute('type', 'number');
+            startInput.id = `start-${formation.id}`;
+            startInput.setAttribute('name', 'start');
+            startInput.setAttribute('value', formation.start);
+            startInput.required = true;
+            startDiv.append(startLabel, startInput);
 
-            // CHAMP DATE DEBUT
-            const divDateDebut = document.createElement('div');
-            divDateDebut.classList.add('date-debut-div');
-            const labelDateDebut = document.createElement('label');
-            labelDateDebut.setAttribute('for', `date-debut-${formation.id}`);
-            labelDateDebut.textContent = 'Année de début';
-            const inputDateDebut = document.createElement('input');
-            inputDateDebut.setAttribute('type', 'number');
-            inputDateDebut.id = `date-debut-${formation.id}`;
-            inputDateDebut.setAttribute('name', 'date-debut');
-            inputDateDebut.setAttribute('value', formation.start);
-            inputDateDebut.required = true;
+            // END FIELD
+            const endDiv = document.createElement('div');
+            endDiv.classList.add('end-div');
+            const endLabel = document.createElement('label');
+            endLabel.setAttribute('for', `end-${formation.id}`);
+            endLabel.textContent = 'Année de fin';
+            const endInput = document.createElement('input');
+            endInput.setAttribute('type', 'number');
+            endInput.id = `end-${formation.id}`;
+            endInput.setAttribute('name', 'end');
+            endInput.setAttribute('value', formation.end);
+            endInput.required = true;
+            endDiv.append(endLabel, endInput);
 
-            divDateDebut.append(labelDateDebut, inputDateDebut);
+            // START + END FIELD
+            const datesDiv = document.createElement('div');
+            datesDiv.classList.add('dates');
+            datesDiv.append(startDiv, endDiv);
 
-            // CHAMP DATE FIN
-            const divDateFin = document.createElement('div');
-            divDateFin.classList.add('date-fin-div');
-            const labelDateFin = document.createElement('label');
-            labelDateFin.setAttribute('for', `date-fin-${formation.id}`);
-            labelDateFin.textContent = 'Année de fin';
-            const inputDateFin = document.createElement('input');
-            inputDateFin.setAttribute('type', 'number');
-            inputDateFin.id = `date-fin-${formation.id}`;
-            inputDateFin.setAttribute('name', 'date-fin');
-            inputDateFin.setAttribute('value', formation.end);
-            inputDateFin.required = true;
+            // PLACE FIELD
+            const placeDiv = document.createElement('div');
+            placeDiv.classList.add('place-div');
+            const placeLabel = document.createElement('label');
+            placeLabel.setAttribute('for', `place-${formation.id}`);
+            placeLabel.textContent = 'Lieu';
+            const placeInput = document.createElement('input');
+            placeInput.setAttribute('type', 'text');
+            placeInput.id = `place-${formation.id}`;
+            placeInput.setAttribute('name', 'place');
+            placeInput.setAttribute('value', formation.place);
+            placeInput.required = true;
+            placeDiv.append(placeLabel, placeInput);
 
-            divDateFin.append(labelDateFin, inputDateFin);
+            // PLACE + DATES FIELD
+            const infosDiv = document.createElement('div');
+            infosDiv.classList.add('infos-supp-div');
+            infosDiv.append(placeDiv, datesDiv);
 
-            // CHAMP DATE DEBUT + CHAMP DATE FIN
-            const divDates = document.createElement('div');
-            divDates.classList.add('dates');
+            // DESCRIPTION FIELD
+            const descriptionDiv = document.createElement('div');
+            descriptionDiv.classList.add('description-div');
+            const descriptionLabel = document.createElement('label');
+            descriptionLabel.setAttribute('for', `description-${formation.id}`);
+            descriptionLabel.textContent = 'Description';
+            const descriptionInput = document.createElement('textarea');
+            descriptionInput.id = `description-${formation.id}`;
+            descriptionInput.setAttribute('name', 'description');
+            descriptionInput.textContent = formation.description;
+            descriptionInput.required = true;
+            descriptionDiv.append(descriptionLabel, descriptionInput);
 
-            divDates.append(divDateDebut, divDateFin);
+            // BUTTONS
+            const saveButton = document.createElement('button');
+            saveButton.classList.add('button-primary');
+            saveButton.setAttribute('type', 'submit');
+            saveButton.textContent = 'Enregistrer';
 
-            // CHAMP PLACE
-            const divPlace = document.createElement('div');
-            divPlace.classList.add('place-div');
-            const labelPlace = document.createElement('label');
-            labelPlace.setAttribute('for', `place-${formation.id}`);
-            labelPlace.textContent = 'Lieu';
-            const inputPlace = document.createElement('input');
-            inputPlace.setAttribute('type', 'text');
-            inputPlace.id = `place-${formation.id}`;
-            inputPlace.setAttribute('name', 'place');
-            inputPlace.setAttribute('value', formation.place);
-            inputPlace.required = true;
-
-            divPlace.append(labelPlace, inputPlace);
-
-            // CHAMP DATE DEBUT + CHAMP DATE FIN + PLACE
-            const divInfosSupp = document.createElement('div');
-            divInfosSupp.classList.add('infos-supp');
-
-            divInfosSupp.append(divPlace, divDates);
-
-            // CHAMP DESCRIPTION
-            const divDescription = document.createElement('div');
-            divDescription.classList.add('description-div');
-            const labelDescription = document.createElement('label');
-            labelDescription.setAttribute('for', `description-${formation.id}`);
-            labelDescription.textContent = 'Description';
-            const inputDescription = document.createElement('textarea');
-            inputDescription.id = `description-${formation.id}`;
-            inputDescription.setAttribute('name', 'description');
-            inputDescription.textContent = formation.description;
-            inputDescription.required = true;
-
-            divDescription.append(labelDescription, inputDescription);
-
-            // BOUTONS
-            const buttonSave = document.createElement('button');
-            buttonSave.classList.add('button-primary');
-            buttonSave.setAttribute('type', 'submit');
-            buttonSave.textContent = 'Enregistrer';
-
-            const buttonDelete = document.createElement('button');
-            buttonDelete.classList.add('button-secondary');
-            buttonDelete.setAttribute('type', 'button');
-            buttonDelete.textContent = 'Supprimer';
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('button-secondary');
+            deleteButton.setAttribute('type', 'button');
+            deleteButton.textContent = 'Supprimer';
             
-            // CONSTRUCTION DU FORMULAIRE
-            formationFormulaire.append(divDiplome);
-            formationFormulaire.append(divInfosSupp);
-            formationFormulaire.append(divDescription);
-            formationFormulaire.append(buttonSave, buttonDelete);
+            // FORM CONSTRUCTION
+            formationFormulaire.append(degreeDiv);
+            formationFormulaire.append(infosDiv);
+            formationFormulaire.append(descriptionDiv);
+            formationFormulaire.append(saveButton, deleteButton);
 
-            // EVENT LISTENER ENREGISTRER
+            // EVENT LISTENER SAVE
             formationFormulaire.addEventListener('submit', (event) => {
                 event.preventDefault();
                 const formData = new FormData(formationFormulaire);
@@ -160,7 +153,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     popupMessage.textContent = data.message;
                     if (data.status === "success") {
                         popupIcon.className = "fi fi-br-check popup-icon icon-succes";
-                        rechargerPage = true;
+                        reloadPage = true;
                     }
                     if (data.status === "error") {
                         popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
@@ -175,8 +168,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 });
             })
 
-            // EVENT LISTENER SUPPRIMER
-            buttonDelete.addEventListener('click', (event) => {
+            // EVENT LISTENER DELETE
+            deleteButton.addEventListener('click', (event) => {
                 event.preventDefault();
                 const formData = new FormData(formationFormulaire);
                 formData.append('id', formation.id);
@@ -189,7 +182,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     popupMessage.textContent = data.message;
                     if (data.status === "success") {
                         popupIcon.className = "fi fi-br-check popup-icon icon-succes";
-                        rechargerPage = true;
+                        reloadPage = true;
                     }
                     if (data.status === "error") {
                         popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
@@ -207,20 +200,19 @@ document.addEventListener('DOMContentLoaded', async () => {
             formationsContainer.append(formationFormulaire);
 
             // SEPARATEUR
-            const divSeparateur = document.createElement('div');
-            divSeparateur.classList.add('ou');
+            const separatorDiv = document.createElement('div');
+            separatorDiv.classList.add('ou');
             const hr = document.createElement('hr');
-            divSeparateur.append(hr);
-            
-            formationsContainer.append(divSeparateur);
+            separatorDiv.append(hr);
+            formationsContainer.append(separatorDiv);
         });
     }
-    // FORMULAIRE D'AJOUT   
-    // EVENT LISTENER AJOUTER
-    const formAddFormation = document.getElementById('form-add-formation');
-    formAddFormation.addEventListener('submit', (event) => {
+    // ADDITION FORM  
+    // EVENT LISTENER ADD
+    const newFormationForm = document.getElementById('new-formation-form');
+    newFormationForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        const formData = new FormData(formAddFormation);
+        const formData = new FormData(newFormationForm);
         fetch('../api/formations/postFormation.php', {
             method: 'POST',
             body: formData
@@ -230,7 +222,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             popupMessage.textContent = data.message;
             if (data.status === "success") {
                 popupIcon.className = "fi fi-br-check popup-icon icon-succes";
-                rechargerPage = true;
+                reloadPage = true;
             }
             if (data.status === "error") {
                 popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";

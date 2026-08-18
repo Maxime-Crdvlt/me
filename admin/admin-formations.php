@@ -45,10 +45,10 @@ require_once 'check-admin.php';
         </div>
         
         <h2 class="text-center">Ajouter une formation</h2>
-        <form id="form-add-formation" action="../api/formations/postFormation.php" method="POST">
+        <form id="new-formation-form" action="../api/formations/postFormation.php" method="POST">
             <div>
-                <label for="diplome">Diplôme</label>
-                <input type="text" id="diplome" name="diplome" placeholder="BUT Informatique" required />
+                <label for="degree">Diplôme</label>
+                <input type="text" id="degree" name="degree" placeholder="BUT Informatique" required />
             </div>
             <div class="infos-supp">
                 <div class="place-div">
@@ -56,13 +56,13 @@ require_once 'check-admin.php';
                     <input type="text" id="place" name="place" placeholder="Saint-Nicolas, Paris 6ème" required />
                 </div>
                 <div class="dates">
-                    <div class="date-debut-div">
-                        <label for="date-debut">Année de début</label>
-                        <input type="number" id="date-debut" name="date-debut" placeholder="2021" required />
+                    <div class="start-div">
+                        <label for="start">Année de début</label>
+                        <input type="number" id="start" name="start" placeholder="2021" required />
                     </div>
-                    <div class="date-fin-div">
-                        <label for="date-fin">Année de fin</label>
-                        <input type="number" id="date-fin" name="date-fin" placeholder="2027" required />
+                    <div class="end-div">
+                        <label for="end">Année de fin</label>
+                        <input type="number" id="end" name="end" placeholder="2027" required />
                     </div>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
-    // RECUPERATION DES DONNEES ET CONSTANTES NECESSAIRES
+    // RETRIEVING THE NECESSARY DATA AND CONSTANTS
     let reloadPage = false;
-        // Affichage POPUP
+        // Display POPUP
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const popupIcon = document.getElementById('popup-icon');
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
     }
-    // Récupération des formations
+    // Retrieving training courses
     const response = await fetch('../api/experiences/getExperiences.php');
     const experiences = await response.json();
     const experiencesContainer = document.getElementById('experiences-container');
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             placeInput.required = true;
             placeDiv.append(placeLabel, placeInput);
 
-            // PLACE + END + START FIELD
+            // PLACE + DATES FIELD
             const infosDiv = document.createElement('div');
             infosDiv.classList.add('infos-supp-div');
             infosDiv.append(placeDiv, datesDiv);
@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             descriptionInput.required = true;
             descriptionDiv.append(descriptionLabel, descriptionInput);
 
-            // BOUTONS
+            // BUTTONS
             const saveButton = document.createElement('button');
             saveButton.classList.add('button-primary');
             saveButton.setAttribute('type', 'submit');
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             deleteButton.setAttribute('type', 'button');
             deleteButton.textContent = 'Supprimer';
             
-            // CONSTRUCTION DU FORMULAIRE
+            // FORM CONSTRUCTION
             experienceFormulaire.append(titleDiv);
             experienceFormulaire.append(infosDiv);
             experienceFormulaire.append(descriptionDiv);
@@ -207,8 +207,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             experiencesContainer.append(separatorDiv);
         });
     }
-    // FORMULAIRE D'AJOUT   
-    // EVENT LISTENER AJOUTER
+    // ADDITION FORM  
+    // EVENT LISTENER ADD
     const newExperienceForm = document.getElementById('new-experience-form');
     newExperienceForm.addEventListener('submit', (event) => {
         event.preventDefault();
