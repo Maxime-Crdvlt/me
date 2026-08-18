@@ -41,7 +41,6 @@ require_once 'check-admin.php';
 
     <main class="container">
         <div id="formations-container">
-            <script src="admin-formations.js" defer></script>
         </div>
         
         <h2 class="text-center">Ajouter une formation</h2>
@@ -124,6 +123,6 @@ require_once 'check-admin.php';
             <p id="popup-message" class="popup-message"></p>
         </div>
     </div>
+    <script src="admin-formations.js" defer></script>
 </body>
-
 </html>

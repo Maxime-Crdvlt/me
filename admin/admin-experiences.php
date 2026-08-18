@@ -41,7 +41,6 @@ require_once 'check-admin.php';
 
     <main class="container">
         <div id="experiences-container">
-            <script src="admin-experiences.js" defer></script>
         </div>
         
         <h2 class="text-center">Ajouter une expérience</h2>
@@ -124,6 +123,6 @@ require_once 'check-admin.php';
             <p id="popup-message" class="popup-message"></p>
         </div>
     </div>
+    <script src="admin-experiences.js" defer></script>
 </body>
-
 </html>
