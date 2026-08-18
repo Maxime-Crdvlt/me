@@ -6,9 +6,9 @@ require_once '../db_connection.php';
 
 // RETRIEVING DATA FROM THE FORM
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $degree = $_POST['diplome'] ?? '';
-    $start = $_POST['date-debut'] ?? '';
-    $end = $_POST['date-fin'] ?? '';
+    $degree = $_POST['degree'] ?? '';
+    $start = $_POST['start'] ?? '';
+    $end = $_POST['end'] ?? '';
     $place = $_POST['place'] ?? '';
     $description = $_POST['description'] ?? '';
 } else {
