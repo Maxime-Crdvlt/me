@@ -1,25 +1,13 @@
 @font-face {
-    font-family: 'Space';
-    src: url('../fonts/Space_Mono/SpaceMono-Regular.woff2') format('woff2');
-    font-weight: normal;
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu/UbuntuSans-VariableFont_wdth\,wght.woff2') format('woff2');
+    font-weight: 100 900; 
     font-style: normal;
 }
 @font-face {
-    font-family: 'Space';
-    src: url('../fonts/Space_Mono/SpaceMono-Bold.woff2') format('woff2');
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'Space';
-    src: url('../fonts/Space_Mono/SpaceMono-Italic.woff2') format('woff2');
-    font-weight: normal;
-    font-style: italic;
-}
-@font-face {
-    font-family: 'Space';
-    src: url('../fonts/Space_Mono/SpaceMono-BoldItalic.woff2') format('woff2');
-    font-weight: bold;
+    font-family: 'Ubuntu';
+    src: url('../fonts/Ubuntu/UbuntuSans-Italic-VariableFont_wdth\,wght.woff2') format('woff2');
+    font-weight: 100 900;
     font-style: italic;
 }
 :root {
@@ -42,7 +30,7 @@
   --warning-alt: #FFFF50;
   --success-color: #50FF50;
   
-  --font-main: 'Space', monospace;
+  --font-main: 'Ubuntu', system-ui, sans-serif;
   --text-detail: 0.75rem; /* 12px */
   --text-body: 1rem; /* 16px */
   --text-h4: 1.25rem; /* 20px */
@@ -50,8 +38,8 @@
   --text-h2: 1.75rem; /* 28px */
   --text-h1: 2rem; /* 32px */
   
-  --lg-body: 1.5;
-  --lg-heading: 1.25;
+  --lg-body: 1.75;
+  --lg-heading: 1.50;
 
   --padding-element: 1.5rem;
   --padding-button-mobile: 0.75rem 1.5rem;
@@ -79,9 +67,9 @@ body {
     overflow-x: hidden;
 }
 .container {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
-    max-width: 75rem;
+    max-width: 80rem;
 }
 h1 {
     font-size: var(--text-h1);
@@ -129,6 +117,10 @@ a:hover {
 }
 ul {
   list-style: none;
+}
+.list {
+    list-style:disc;
+    list-style-position: inside;
 }
 img {
     max-width: 100%;
@@ -396,6 +388,7 @@ main {
         height: 100%;
     }
 }
+/* FORMS */
 .text-center {
     text-align: center;
 }

@@ -1,3 +1,21 @@
-Copyright (c) 2026 Maxime Courdavault. Tous droits réservés.
+Copyright (c) 2026 Maxime Courdavault
 
-Ce code source est la propriété exclusive de Maxime Courdavault. Toute reproduction, modification, distribution ou utilisation de ce code, en tout ou en partie, est strictement interdite sans l'autorisation écrite préalable de l'auteur.
+L'autorisation est accordée, à titre gratuit, à toute personne obtenant une copie des fichiers de code de ce projet (HTML, CSS, JavaScript, PHP, configuration), de l'utiliser, le copier, le modifier, le fusionner, et le distribuer, sous réserve des conditions suivantes :
+
+========================================
+EXCEPTION DE CONTENU PERSONNEL :
+========================================
+La présente licence open-source s'applique UNIQUEMENT à l'ossature technique et au code source. Elle ne s'applique PAS au contenu éditorial et personnel. 
+
+Les éléments suivants sont strictement protégés par le droit d'auteur et demeurent la propriété exclusive de Maxime Courdavault :
+- L'identité "Maxime Courdavault"
+- Les photographies et images personnelles (ex: photo de profil)
+- Le curriculum vitae
+- Les descriptions des projets et l'ensemble des textes rédigés
+
+Toute personne réutilisant, clonant ou "forkant" ce code DOIT impérativement supprimer et remplacer l'intégralité de ces éléments personnels par les siens avant toute publication ou distribution.
+
+========================================
+GARANTIE :
+========================================
+LE CODE EST FOURNI "TEL QUEL", SANS GARANTIE D'AUCUNE SORTE, EXPLICITE OU IMPLICITE, Y COMPRIS LES GARANTIES DE COMMERCIALISATION, D'ADÉQUATION À UN USAGE PARTICULIER ET DE NON-CONTREFAÇON.
