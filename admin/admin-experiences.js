@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     // RETRIEVING THE NECESSARY DATA AND CONSTANTS
     let reloadPage = false;
-        // Display POPUP
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const popupIcon = document.getElementById('popup-icon');
@@ -25,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             }
         });
     }
-    // Retrieving training courses
+    // Retrieving Experiences
     const response = await fetch('../api/experiences/getExperiences.php');
     const experiences = await response.json();
     const experiencesContainer = document.getElementById('experiences-container');

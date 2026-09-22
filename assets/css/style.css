@@ -388,7 +388,6 @@ main {
     background-color: var(--color-secondary);
     color: var(--text-primary);
     border-radius: 1rem;
-    border: solid var(--color-secondary) var(--border-size);
     padding: 0.125rem 0.5rem;
 }
 .card-details {
