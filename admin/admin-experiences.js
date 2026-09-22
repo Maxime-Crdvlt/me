@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // DESCRIPTION FIELD
             const descriptionDiv = document.createElement('div');
-            descriptionDiv.classList.add('line');
+            descriptionDiv.classList.add('field');
             const descriptionLabel = document.createElement('label');
             descriptionLabel.setAttribute('for', `description-${experience.id}`);
             descriptionLabel.textContent = 'Description';
