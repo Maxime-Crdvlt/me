@@ -123,11 +123,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             // BUTTONS
             const saveButton = document.createElement('button');
             saveButton.classList.add('line');
+            saveButton.classList.add('button-primary');
             saveButton.setAttribute('type', 'submit');
             saveButton.textContent = 'Enregistrer';
 
             const deleteButton = document.createElement('button');
             deleteButton.classList.add('line');
+            deleteButton.classList.add('button-secondary');
             deleteButton.setAttribute('type', 'button');
             deleteButton.textContent = 'Supprimer';
             
