@@ -415,70 +415,55 @@ form {
     justify-content: flex-start;
     align-items: stretch;
     gap: var(--gap);
-    padding-top: var(--gap-secondary);
-    padding-bottom: var(--gap-secondary);
+    width: 100%;
 }
-form>div,
-form>.identity>div,
-form>.infos-supp>.dates>div,
-form>.infos-supp>.place-div {
+form .line{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: var(--gap-secondary);
+    width: 100%;
+}
+@media (min-width: 62rem) {
+    form .line {
+        flex-wrap: nowrap;
+    }
+}
+form .field{
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: stretch;
+    color: var(--text-secondary);
+    width: 100%;
 }
-.identity,
-.dates,
-.infos-supp {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    align-content: flex-start;
-    gap: var(--gap-secondary);
-}
-form>.identity>div,
-form>.infos-supp>.dates>div,
-form>.infos-supp>.place-div {
-    flex: 1 1 auto;
-}
-form>div>input,
-form>.identity>div>input,
-form>.infos-supp>.dates>div>input,
-form>.infos-supp>.place-div>input {
+.field input, textarea {
     font-size: var(--text-body);
-    padding: 0.5rem;
-    border: solid var(--border-color) 0.125rem;
+    font-family: var(--font-main);
+    padding: var(--space-sm);
+    border: solid var(--border-color) var(--border-size);
     border-radius: var(--border-radius);
-    font-family: Space, monospace;
     background-color: var(--bg-secondary);
     color: var(--text-primary);
 }
-form>div>textarea {
-    font-size: var(--text-body);
-    padding: 0.75rem;
+.field input:focus, textarea:focus {
+    outline: none;
+    border: solid var(--color-primary) var(--border-size);
+}
+.field textarea {
     height: 16rem;
-    border: solid var(--border-color) 0.125rem;
-    border-radius: var(--border-radius);
-    font-family: Space, monospace;
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
     resize: vertical;
 }
 ::placeholder {
-    color: var(--text-secondary);
+    color: var(--text-tertiary);
 }
-form>.identity>div>input:focus,
-form>.infos-supp>.dates>div>input:focus,
-form>.infos-supp>.place-div>input:focus,
-form textarea:focus {
-    outline: none;
-    border: solid var(--primary-color) 0.125rem;
-}
-form>button {
+form button {
     width: 100%;
 }
+
 .ou {
     display: flex;
     flex-direction: row;
@@ -487,6 +472,12 @@ form>button {
     align-items: center;
     margin: 1rem auto;
     gap: var(--gap);
+    color: var(--text-primary);
+}
+.ou p {
+    margin: 0;
+    line-height: 0;
+    font-size: var(--text-body);
     color: var(--text-primary);
 }
 .ou>hr {
