@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // TITLE FIELD
             const titleDiv = document.createElement('div');
-            titleDiv.classList.add('title-div');
+            titleDiv.classList.add('field');
             const titleLabel = document.createElement('label');
             titleLabel.setAttribute('for', `title-${experience.id}`);
             titleLabel.textContent = 'Titre';
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // START FIELD
             const startDiv = document.createElement('div');
-            startDiv.classList.add('start-div');
+            startDiv.classList.add('field');
             const startLabel = document.createElement('label');
             startLabel.setAttribute('for', `start-${experience.id}`);
             startLabel.textContent = 'Date de début';
@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // END FIELD
             const endDiv = document.createElement('div');
-            endDiv.classList.add('end-div');
+            endDiv.classList.add('field');
             const endLabel = document.createElement('label');
             endLabel.setAttribute('for', `end-${experience.id}`);
             endLabel.textContent = 'Date de fin';
@@ -85,12 +85,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // END + START FIELD
             const datesDiv = document.createElement('div');
-            datesDiv.classList.add('dates-div');
+            datesDiv.classList.add('line');
             datesDiv.append(startDiv, endDiv);
 
             // PLACE FIELD
             const placeDiv = document.createElement('div');
-            placeDiv.classList.add('place-div');
+            placeDiv.classList.add('field');
             const placeLabel = document.createElement('label');
             placeLabel.setAttribute('for', `place-${experience.id}`);
             placeLabel.textContent = 'Lieu';
@@ -104,12 +104,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // PLACE + DATES FIELD
             const infosDiv = document.createElement('div');
-            infosDiv.classList.add('infos-supp-div');
+            infosDiv.classList.add('line');
             infosDiv.append(placeDiv, datesDiv);
 
             // DESCRIPTION FIELD
             const descriptionDiv = document.createElement('div');
-            descriptionDiv.classList.add('description-div');
+            descriptionDiv.classList.add('field');
             const descriptionLabel = document.createElement('label');
             descriptionLabel.setAttribute('for', `description-${experience.id}`);
             descriptionLabel.textContent = 'Description';
@@ -122,12 +122,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // BUTTONS
             const saveButton = document.createElement('button');
-            saveButton.classList.add('button-primary');
+            saveButton.classList.add('line');
             saveButton.setAttribute('type', 'submit');
             saveButton.textContent = 'Enregistrer';
 
             const deleteButton = document.createElement('button');
-            deleteButton.classList.add('button-secondary');
+            deleteButton.classList.add('line');
             deleteButton.setAttribute('type', 'button');
             deleteButton.textContent = 'Supprimer';
             
