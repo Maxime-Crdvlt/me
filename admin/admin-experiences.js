@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // DESCRIPTION FIELD
             const descriptionDiv = document.createElement('div');
-            descriptionDiv.classList.add('field');
+            descriptionDiv.classList.add('line');
             const descriptionLabel = document.createElement('label');
             descriptionLabel.setAttribute('for', `description-${experience.id}`);
             descriptionLabel.textContent = 'Description';
@@ -121,23 +121,26 @@ document.addEventListener('DOMContentLoaded', async () => {
             descriptionDiv.append(descriptionLabel, descriptionInput);
 
             // BUTTONS
+            const buttonsDiv = document.createElement('div');
+            buttonsDiv.classList.add('line');
+
             const saveButton = document.createElement('button');
-            saveButton.classList.add('line');
             saveButton.classList.add('button-primary');
             saveButton.setAttribute('type', 'submit');
             saveButton.textContent = 'Enregistrer';
 
             const deleteButton = document.createElement('button');
-            deleteButton.classList.add('line');
             deleteButton.classList.add('button-secondary');
             deleteButton.setAttribute('type', 'button');
             deleteButton.textContent = 'Supprimer';
+
+            buttonsDiv.append(saveButton, deleteButton);
             
             // FORM CONSTRUCTION
             experienceFormulaire.append(titleDiv);
             experienceFormulaire.append(infosDiv);
             experienceFormulaire.append(descriptionDiv);
-            experienceFormulaire.append(saveButton, deleteButton);
+            experienceFormulaire.append(buttonsDiv);
 
             // EVENT LISTENER SAVE
             experienceFormulaire.addEventListener('submit', (event) => {
