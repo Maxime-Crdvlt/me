@@ -20,7 +20,7 @@ require_once 'check-admin.php';
 <body>
     <header>
         <div class="container">
-            <a href="../index.html">
+            <a href="admin.php">
                 <h1>Maxime Courdavault</h1>
             </a>
             <button id="button-nav" aria-label="Ouvrir le menu">
@@ -28,9 +28,9 @@ require_once 'check-admin.php';
             </button>
             <nav id="nav" class="nav-hidden">
                 <ul class="actions">
-                    <li><a href="admin.php">Dashboard</a></li>
                     <li><a href="admin-formations.php">Mes formations</a></li>
                     <li><a href="admin-experiences.php" class="current-page">Mes expériences</a></li>
+                    <li><a href="admin-skills.php">Mes compétences</a></li>
                     <li><a href="admin-projets.php">Mes projets</a></li>
                     <li><a href="https://mail.ovh.net/roundcube/?_task=mail&_mbox=INBOX" target="_blank" rel="nofollow noopener">Ma boîte mail</a></li>
                 </ul>

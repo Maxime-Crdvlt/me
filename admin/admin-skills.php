@@ -1,5 +1,5 @@
 <?php
-require_once 'check-admin.php';
+    require_once 'check-admin.php';
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +28,9 @@ require_once 'check-admin.php';
             </button>
             <nav id="nav" class="nav-hidden">
                 <ul class="actions">
-                    <li><a href="admin-formations.php" class="current-page">Mes formations</a></li>
+                    <li><a href="admin-formations.php">Mes formations</a></li>
                     <li><a href="admin-experiences.php">Mes expériences</a></li>
-                    <li><a href="admin-skills.php">Mes compétences</a></li>
+                    <li><a href="admin-skills.php" class="current-page">Mes compétences</a></li>
                     <li><a href="admin-projets.php">Mes projets</a></li>
                     <li><a href="https://mail.ovh.net/roundcube/?_task=mail&_mbox=INBOX" target="_blank" rel="nofollow noopener">Ma boîte mail</a></li>
                 </ul>
@@ -40,14 +40,14 @@ require_once 'check-admin.php';
     </header>
 
     <main class="container">
-        <div id="formations-container">
+        <div id="skills-container">
         </div>
         
-        <h2 class="text-center">Ajouter une formation</h2>
-        <form id="new-formation-form" action="../api/formations/postFormation.php" method="POST">
+        <h2 class="text-center">Ajouter une compétence</h2>
+        <form id="new-skill-form" action="../api/formations/postSkill.php" method="POST">
             <div class="field">
-                <label for="degree">Diplôme</label>
-                <input type="text" id="degree" name="degree" placeholder="BUT Informatique" required />
+                <label for="skill">Compétence</label>
+                <input type="text" id="skill" name="skill" placeholder="Java" required />
             </div>
             <div class="line">
                 <div class="field">
@@ -118,13 +118,6 @@ require_once 'check-admin.php';
             </div>
         </div>
     </footer>
-    <div id="popup-overlay" class="overlay-cache"></div>
-    <div id="popup" class="popup popup-cache">
-        <div class="text-icon">
-            <i id="popup-icon" class="fi fi-br-check popup-icon icon-succes"></i>
-            <p id="popup-message" class="popup-message"></p>
-        </div>
-    </div>
-    <script src="admin-formations.js" defer></script>
 </body>
+
 </html>
