@@ -45,31 +45,33 @@ require_once 'check-admin.php';
         
         <h2 class="text-center">Ajouter une expérience</h2>
         <form id="new-experience-form" action="../api/experiences/postExperience.php" method="POST">
-            <div>
+            <div class="field">
                 <label for="title">Titre</label>
                 <input type="text" id="title" name="title" placeholder="Stage oppérationnel" required />
             </div>
-            <div class="infos-supp-div">
-                <div class="place-div">
+            <div class="line">
+                <div class="field">
                     <label for="place">Lieu</label>
                     <input type="text" id="place" name="place" placeholder="LBPAM, Paris 4ème" required />
                 </div>
-                <div class="dates-div">
-                    <div class="start-div">
+                <div class="line">
+                    <div class="field">
                         <label for="start">Date de début</label>
                         <input type="date" id="start" name="start" required />
                     </div>
-                    <div class="end-div">
+                    <div class="field">
                         <label for="end">Date de fin</label>
                         <input type="date" id="end" name="end" required />
                     </div>
                 </div>
             </div>
-            <div class="description-div">
+            <div class="field">
                 <label for="description">Description</label>
                 <textarea id="description" name="description" placeholder="Retour d'expérience, apports, etc..." required></textarea>
             </div>
+            <div class="line">
             <button type="submit" class="button-primary">Ajouter une expérience</button>
+            </div>
         </form>
     </main>
 

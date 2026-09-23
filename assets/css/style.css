@@ -415,6 +415,7 @@ form {
     align-items: stretch;
     gap: var(--gap);
     width: 100%;
+    margin: 0;
 }
 form .line{
     display: flex;
@@ -485,7 +486,7 @@ form button {
 }
 @media (min-width: 62rem) {
     form {
-        width: 75%;
+        width: 80%;
         margin: 0 auto;
     }
     .ou {

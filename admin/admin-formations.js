@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     // RETRIEVING THE NECESSARY DATA AND CONSTANTS
     let reloadPage = false;
-        // Display POPUP
     const popup = document.getElementById('popup');
     const popupMessage = document.getElementById('popup-message');
     const popupIcon = document.getElementById('popup-icon');
@@ -44,7 +43,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // DEGREE FIELD
             const degreeDiv = document.createElement('div');
-            degreeDiv.classList.add('degree-div');
+            degreeDiv.classList.add('field');
             const degreeLabel = document.createElement('label');
             degreeLabel.setAttribute('for', `degree-${formation.id}`);
             degreeLabel.textContent = 'Diplôme';
@@ -58,7 +57,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // START FIELD
             const startDiv = document.createElement('div');
-            startDiv.classList.add('start-div');
+            startDiv.classList.add('field');
             const startLabel = document.createElement('label');
             startLabel.setAttribute('for', `start-${formation.id}`);
             startLabel.textContent = 'Année de début';
@@ -72,7 +71,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // END FIELD
             const endDiv = document.createElement('div');
-            endDiv.classList.add('end-div');
+            endDiv.classList.add('field');
             const endLabel = document.createElement('label');
             endLabel.setAttribute('for', `end-${formation.id}`);
             endLabel.textContent = 'Année de fin';
@@ -86,12 +85,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // START + END FIELD
             const datesDiv = document.createElement('div');
-            datesDiv.classList.add('dates');
+            datesDiv.classList.add('line');
             datesDiv.append(startDiv, endDiv);
 
             // PLACE FIELD
             const placeDiv = document.createElement('div');
-            placeDiv.classList.add('place-div');
+            placeDiv.classList.add('field');
             const placeLabel = document.createElement('label');
             placeLabel.setAttribute('for', `place-${formation.id}`);
             placeLabel.textContent = 'Lieu';
@@ -105,12 +104,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // PLACE + DATES FIELD
             const infosDiv = document.createElement('div');
-            infosDiv.classList.add('infos-supp-div');
+            infosDiv.classList.add('line');
             infosDiv.append(placeDiv, datesDiv);
 
             // DESCRIPTION FIELD
             const descriptionDiv = document.createElement('div');
-            descriptionDiv.classList.add('description-div');
+            descriptionDiv.classList.add('field');
             const descriptionLabel = document.createElement('label');
             descriptionLabel.setAttribute('for', `description-${formation.id}`);
             descriptionLabel.textContent = 'Description';
@@ -122,6 +121,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             descriptionDiv.append(descriptionLabel, descriptionInput);
 
             // BUTTONS
+            const buttonsDiv = document.createElement('div');
+            buttonsDiv.classList.add('line');
+
             const saveButton = document.createElement('button');
             saveButton.classList.add('button-primary');
             saveButton.setAttribute('type', 'submit');
@@ -131,12 +133,14 @@ document.addEventListener('DOMContentLoaded', async () => {
             deleteButton.classList.add('button-secondary');
             deleteButton.setAttribute('type', 'button');
             deleteButton.textContent = 'Supprimer';
+
+            buttonsDiv.append(saveButton, deleteButton);
             
             // FORM CONSTRUCTION
             formationFormulaire.append(degreeDiv);
             formationFormulaire.append(infosDiv);
             formationFormulaire.append(descriptionDiv);
-            formationFormulaire.append(saveButton, deleteButton);
+            formationFormulaire.append(buttonsDiv);
 
             // EVENT LISTENER SAVE
             formationFormulaire.addEventListener('submit', (event) => {

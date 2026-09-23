@@ -45,31 +45,33 @@ require_once 'check-admin.php';
         
         <h2 class="text-center">Ajouter une formation</h2>
         <form id="new-formation-form" action="../api/formations/postFormation.php" method="POST">
-            <div>
+            <div class="field">
                 <label for="degree">Diplôme</label>
                 <input type="text" id="degree" name="degree" placeholder="BUT Informatique" required />
             </div>
-            <div class="infos-supp">
-                <div class="place-div">
+            <div class="line">
+                <div class="field">
                     <label for="place">Lieu</label>
                     <input type="text" id="place" name="place" placeholder="Saint-Nicolas, Paris 6ème" required />
                 </div>
-                <div class="dates">
-                    <div class="start-div">
+                <div class="line">
+                    <div class="field">
                         <label for="start">Année de début</label>
                         <input type="number" id="start" name="start" placeholder="2021" required />
                     </div>
-                    <div class="end-div">
+                    <div class="field">
                         <label for="end">Année de fin</label>
                         <input type="number" id="end" name="end" placeholder="2027" required />
                     </div>
                 </div>
             </div>
-            <div class="description-div">
+            <div class="field">
                 <label for="description">Description</label>
                 <textarea id="description" name="description" placeholder="Diplôme obtenu, apports, etc..." required></textarea>
             </div>
+            <div class="line">
             <button type="submit" class="button-primary">Ajouter une formation</button>
+            </div>
         </form>
     </main>
 
