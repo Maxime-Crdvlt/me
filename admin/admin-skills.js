@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
     // Retrieving Types and Categories
-    const responseCategories = await fetch('../api/types/getCategories.php');
+    const responseCategories = await fetch('../api/categories/getCategories.php');
     const categories = await responseCategories.json();
     const responseTypes = await fetch('../api/types/getTypes.php');
     const types = await responseTypes.json();
