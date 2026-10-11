@@ -440,7 +440,7 @@ form .field{
     color: var(--text-secondary);
     width: 100%;
 }
-.field input, textarea {
+.field input, textarea, select {
     font-size: var(--text-body);
     font-family: var(--font-main);
     padding: var(--space-sm);
@@ -449,7 +449,7 @@ form .field{
     background-color: var(--bg-secondary);
     color: var(--text-primary);
 }
-.field input:focus, textarea:focus {
+.field input:focus, textarea:focus, select:focus {
     outline: none;
     border: solid var(--color-primary) var(--border-size);
 }
