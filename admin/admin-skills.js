@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     const responseTypes = await fetch('../api/types/getTypes.php');
     const types = await responseTypes.json();
     const skillsContainer = document.getElementById('skills-container');
-    const selectCategories = document.getElementById('categorie');
+    const selectCategories = document.getElementById('category');
     const selectTypes = document.getElementById('type');
 
     // TREATMENT

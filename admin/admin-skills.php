@@ -47,8 +47,8 @@
         <form id="new-skill-form" action="../api/formations/postSkill.php" method="POST">
             <div class="line">
                 <div class="field">
-                    <label for="categorie">Catégorie</label>
-                    <select type="" id="categorie" name="categorie" required>
+                    <label for="category">Catégorie</label>
+                    <select type="" id="category" name="category" required>
                         <option value="">Sélectionner une catégorie</option>
                     </select>
                 </div>
