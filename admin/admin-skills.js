@@ -34,195 +34,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     const selectTypes = document.getElementById('type');
 
     // TREATMENT
-    if (experiences.length === 0) {
-        const pVide = document.createElement('p');
-        pVide.textContent = 'Aucune expérience trouvée dans la base de données...';
-        experiencesContainer.append(pVide);
-    } else {
-        experiences.forEach(experience => {
-            // CREATING THE EXPERIENCE FORM
-            const experienceFormulaire = document.createElement('form');
-            experienceFormulaire.classList.add('experience');
-            experienceFormulaire.id = `${experience.id}`;
-
-            // TITLE FIELD
-            const titleDiv = document.createElement('div');
-            titleDiv.classList.add('field');
-            const titleLabel = document.createElement('label');
-            titleLabel.setAttribute('for', `title-${experience.id}`);
-            titleLabel.textContent = 'Titre';
-            const titleInput = document.createElement('input');
-            titleInput.setAttribute('type', 'text');
-            titleInput.id = `title-${experience.id}`;
-            titleInput.setAttribute('name', 'title');
-            titleInput.setAttribute('value', experience.title);
-            titleInput.required = true;
-            titleDiv.append(titleLabel, titleInput);
-
-            // START FIELD
-            const startDiv = document.createElement('div');
-            startDiv.classList.add('field');
-            const startLabel = document.createElement('label');
-            startLabel.setAttribute('for', `start-${experience.id}`);
-            startLabel.textContent = 'Date de début';
-            const startInput = document.createElement('input');
-            startInput.setAttribute('type', 'date');
-            startInput.id = `start-${experience.id}`;
-            startInput.setAttribute('name', 'start');
-            startInput.setAttribute('value', experience.start);
-            startInput.required = true;
-            startDiv.append(startLabel, startInput);
-
-            // END FIELD
-            const endDiv = document.createElement('div');
-            endDiv.classList.add('field');
-            const endLabel = document.createElement('label');
-            endLabel.setAttribute('for', `end-${experience.id}`);
-            endLabel.textContent = 'Date de fin';
-            const endInput = document.createElement('input');
-            endInput.setAttribute('type', 'date');
-            endInput.id = `end-${experience.id}`;
-            endInput.setAttribute('name', 'end');
-            endInput.setAttribute('value', experience.end);
-            endInput.required = true;
-            endDiv.append(endLabel, endInput);
-
-            // END + START FIELD
-            const datesDiv = document.createElement('div');
-            datesDiv.classList.add('line');
-            datesDiv.append(startDiv, endDiv);
-
-            // PLACE FIELD
-            const placeDiv = document.createElement('div');
-            placeDiv.classList.add('field');
-            const placeLabel = document.createElement('label');
-            placeLabel.setAttribute('for', `place-${experience.id}`);
-            placeLabel.textContent = 'Lieu';
-            const placeInput = document.createElement('input');
-            placeInput.setAttribute('type', 'text');
-            placeInput.id = `place-${experience.id}`;
-            placeInput.setAttribute('name', 'place');
-            placeInput.setAttribute('value', experience.place);
-            placeInput.required = true;
-            placeDiv.append(placeLabel, placeInput);
-
-            // PLACE + DATES FIELD
-            const infosDiv = document.createElement('div');
-            infosDiv.classList.add('line');
-            infosDiv.append(placeDiv, datesDiv);
-
-            // DESCRIPTION FIELD
-            const descriptionDiv = document.createElement('div');
-            descriptionDiv.classList.add('field');
-            const descriptionLabel = document.createElement('label');
-            descriptionLabel.setAttribute('for', `description-${experience.id}`);
-            descriptionLabel.textContent = 'Description';
-            const descriptionInput = document.createElement('textarea');
-            descriptionInput.id = `description-${experience.id}`;
-            descriptionInput.setAttribute('name', 'description');
-            descriptionInput.value = experience.description;
-            descriptionInput.required = true;
-            descriptionDiv.append(descriptionLabel, descriptionInput);
-
-            // BUTTONS
-            const buttonsDiv = document.createElement('div');
-            buttonsDiv.classList.add('line');
-
-            const saveButton = document.createElement('button');
-            saveButton.classList.add('button-primary');
-            saveButton.setAttribute('type', 'submit');
-            saveButton.textContent = 'Enregistrer';
-
-            const deleteButton = document.createElement('button');
-            deleteButton.classList.add('button-secondary');
-            deleteButton.setAttribute('type', 'button');
-            deleteButton.textContent = 'Supprimer';
-
-            buttonsDiv.append(saveButton, deleteButton);
-            
-            // FORM CONSTRUCTION
-            experienceFormulaire.append(titleDiv);
-            experienceFormulaire.append(infosDiv);
-            experienceFormulaire.append(descriptionDiv);
-            experienceFormulaire.append(buttonsDiv);
-
-            // EVENT LISTENER SAVE
-            experienceFormulaire.addEventListener('submit', (event) => {
-                event.preventDefault();
-                const formData = new FormData(experienceFormulaire);
-                formData.append('id', experience.id);
-                fetch('../api/experiences/putExperience.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(reponse => reponse.json())
-                .then(data => {
-                    popupMessage.textContent = data.message;
-                    if (data.status === "success") {
-                        popupIcon.className = "fi fi-br-check popup-icon icon-succes";
-                        reloadPage = true;
-                    }
-                    if (data.status === "error") {
-                        popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
-                    }
-                    showPopup();
-                })
-                .catch(erreur => {
-                    console.error("Erreur serveur :", erreur);
-                    popupMessage.textContent = "Erreur de connexion au serveur.";
-                    popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
-                    showPopup();
-                });
-            })
-
-            // EVENT LISTENER DELETE
-            deleteButton.addEventListener('click', (event) => {
-                event.preventDefault();
-                const formData = new FormData(experienceFormulaire);
-                formData.append('id', experience.id);
-                fetch('../api/experiences/deleteExperience.php', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(reponse => reponse.json())
-                .then(data => {
-                    popupMessage.textContent = data.message;
-                    if (data.status === "success") {
-                        popupIcon.className = "fi fi-br-check popup-icon icon-succes";
-                        reloadPage = true;
-                    }
-                    if (data.status === "error") {
-                        popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
-                    }
-                    showPopup();
-                })
-                .catch(erreur => {
-                    console.error("Erreur serveur :", erreur);
-                    popupMessage.textContent = "Erreur de connexion au serveur.";
-                    popupIcon.className = "fi fi-br-cross popup-icon icon-erreur";
-                    showPopup();
-                });
-            })
-
-            experiencesContainer.append(experienceFormulaire);
-
-            // SEPARATEUR
-            const separatorDiv = document.createElement('div');
-            separatorDiv.classList.add('ou');
-            const hr = document.createElement('hr');
-            separatorDiv.append(hr);
-            experiencesContainer.append(separatorDiv);
-        });
-    }
+    
     // ADDITION FORM  
-
     // ADD OPTIONS FOR SELECTS
     if (!categories.status) {
         categories.forEach(categorie => {
             const option = document.createElement('option');
             option.value = categorie.id;
             option.textContent = categorie.title;
-            selectCategorie.appendChild(option);
+            selectCategories.appendChild(option);
         });
     }
     if (!types.status) {
@@ -230,16 +50,15 @@ document.addEventListener('DOMContentLoaded', async () => {
             const option = document.createElement('option');
             option.value = type.id;
             option.textContent = type.libelle; //[cite: 1]
-            selectType.appendChild(option);
+            selectTypes.appendChild(option);
         });
-    }
-        
+    } 
     // EVENT LISTENER ADD
-    const newExperienceForm = document.getElementById('new-experience-form');
-    newExperienceForm.addEventListener('submit', (event) => {
+    const newSkillForm = document.getElementById('new-skill-form');
+    newSkillForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        const formData = new FormData(newExperienceForm);
-        fetch('../api/experiences/postExperience.php', {
+        const formData = new FormData(newSkillForm);
+        fetch('../api/skills/postSkill.php', {
             method: 'POST',
             body: formData
         })

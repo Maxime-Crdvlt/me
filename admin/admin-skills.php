@@ -112,6 +112,7 @@
             </div>
         </div>
     </footer>
+    <script src="chemin/vers/votre/fichier/app.js" defer></script>
 </body>
 
 </html>
