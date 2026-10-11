@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         types.forEach(type => {
             const option = document.createElement('option');
             option.value = type.id;
-            option.textContent = type.libelle; //[cite: 1]
+            option.textContent = type.libelle;
             selectTypes.appendChild(option);
         });
     } 

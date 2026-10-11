@@ -44,7 +44,7 @@
         </div>
         
         <h2 class="text-center">Ajouter une compétence</h2>
-        <form id="new-skill-form" action="../api/formations/postSkill.php" method="POST">
+        <form id="new-skill-form" action="../api/skills/postSkill.php" method="POST">
             <div class="line">
                 <div class="field">
                     <label for="category">Catégorie</label>
@@ -112,6 +112,13 @@
             </div>
         </div>
     </footer>
+        <div id="popup-overlay" class="overlay-cache"></div>
+    <div id="popup" class="popup popup-cache">
+        <div class="text-icon">
+            <i id="popup-icon" class="fi fi-br-check popup-icon icon-succes"></i>
+            <p id="popup-message" class="popup-message"></p>
+        </div>
+    </div>
     <script src="admin-skills.js" defer></script>
 </body>
 
