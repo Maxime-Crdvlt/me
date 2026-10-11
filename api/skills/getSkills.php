@@ -9,7 +9,7 @@ try {
     // DATA RECOVERY
     $sql = "
     SELECT 
-        t.id AS id
+        t.id AS id,
         t.name AS competence,
         ty.libelle AS type,
         ty.id AS type_id,
