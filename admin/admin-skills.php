@@ -45,32 +45,26 @@
         
         <h2 class="text-center">Ajouter une compétence</h2>
         <form id="new-skill-form" action="../api/formations/postSkill.php" method="POST">
-            <div class="field">
-                <label for="skill">Compétence</label>
-                <input type="text" id="skill" name="skill" placeholder="Java" required />
-            </div>
             <div class="line">
                 <div class="field">
-                    <label for="place">Lieu</label>
-                    <input type="text" id="place" name="place" placeholder="Saint-Nicolas, Paris 6ème" required />
+                    <label for="categorie">Catégorie</label>
+                    <select type="" id="categorie" name="categorie" required>
+                        <option value="">Sélectionner une catégorie</option>
+                    </select>
                 </div>
-                <div class="line">
-                    <div class="field">
-                        <label for="start">Année de début</label>
-                        <input type="number" id="start" name="start" placeholder="2021" required />
-                    </div>
-                    <div class="field">
-                        <label for="end">Année de fin</label>
-                        <input type="number" id="end" name="end" placeholder="2027" required />
-                    </div>
+                <div class="field">
+                    <label for="type">Type</label>
+                    <select type="" id="type" name="type" required>
+                        <option value="">Sélectionner un type</option>
+                    </select>
                 </div>
-            </div>
-            <div class="field">
-                <label for="description">Description</label>
-                <textarea id="description" name="description" placeholder="Diplôme obtenu, apports, etc..." required></textarea>
+                <div class="field">
+                    <label for="skill">Compétence</label>
+                    <input type="text" id="skill" name="skill" placeholder="Java" required />
+                </div>
             </div>
             <div class="line">
-            <button type="submit" class="button-primary">Ajouter une formation</button>
+                <button type="submit" class="button-primary">Ajouter une compétence</button>
             </div>
         </form>
     </main>
