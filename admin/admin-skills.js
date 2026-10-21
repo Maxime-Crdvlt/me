@@ -146,13 +146,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             skillFormulaire.append(lineDiv);
             skillsContainer.append(skillFormulaire);
 
-            // SEPARATEUR
-            const separatorDiv = document.createElement('div');
-            separatorDiv.classList.add('ou');
-            const hr = document.createElement('hr');
-            separatorDiv.append(hr);
-            skillsContainer.append(separatorDiv);
-
             // EVENT LISTENER SAVE (MODIFICATION)
             skillFormulaire.addEventListener('submit', (event) => {
                 event.preventDefault();
