@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         formations.forEach(formation => {
             // CREATING THE FORMATION FORM
             const formationFormulaire = document.createElement('form');
-            formationFormulaire.classList.add('formation');
             formationFormulaire.id = `${formation.id}`;
 
             // DEGREE FIELD

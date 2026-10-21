@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         experiences.forEach(experience => {
             // CREATING THE EXPERIENCE FORM
             const experienceFormulaire = document.createElement('form');
-            experienceFormulaire.classList.add('experience');
             experienceFormulaire.id = `${experience.id}`;
 
             // TITLE FIELD

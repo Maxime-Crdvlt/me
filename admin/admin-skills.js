@@ -44,32 +44,24 @@ document.addEventListener('DOMContentLoaded', async () => {
     } else {
         let currentCategoryId = null;
         let currentTypeId = null;
-
         skills.forEach(skill => {
-            // AJOUT DU TITRE DE LA CATÉGORIE SI ELLE CHANGE
             if (skill.categorie_id !== currentCategoryId) {
                 const categoryTitle = document.createElement('h2');
                 categoryTitle.textContent = skill.categorie;
-                categoryTitle.classList.add('text-center'); // Centré comme votre formulaire d'ajout
+                categoryTitle.classList.add('text-center');
                 skillsContainer.append(categoryTitle);
-                
                 currentCategoryId = skill.categorie_id;
-                currentTypeId = null; // Réinitialise le type quand la catégorie change
+                currentTypeId = null;
             }
-
-            // AJOUT DU TITRE DU TYPE S'IL CHANGE
             if (skill.type_id !== currentTypeId) {
                 const typeTitle = document.createElement('h3');
                 typeTitle.textContent = skill.type;
-                typeTitle.style.marginBottom = '15px'; // Petit espacement pour faire propre
                 skillsContainer.append(typeTitle);
-                
                 currentTypeId = skill.type_id;
             }
 
             // CREATING THE SKILL FORM
             const skillFormulaire = document.createElement('form');
-            skillFormulaire.classList.add('experience'); // On réutilise votre classe de carte
             skillFormulaire.id = `skill-${skill.id}`;
 
             // CATEGORY FIELD (Select)
@@ -82,7 +74,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             categorySelect.id = `category-${skill.id}`;
             categorySelect.setAttribute('name', 'category');
             categorySelect.required = true;
-            
             if (!categories.status) {
                 categories.forEach(cat => {
                     const option = document.createElement('option');
@@ -130,11 +121,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             nameInput.required = true;
             nameDiv.append(nameLabel, nameInput);
 
-            // REGROUPEMENT SUR UNE LIGNE
-            const lineDiv = document.createElement('div');
-            lineDiv.classList.add('line');
-            lineDiv.append(categoryDiv, typeDiv, nameDiv);
-
             // BUTTONS
             const buttonsDiv = document.createElement('div');
             buttonsDiv.classList.add('line');
@@ -151,9 +137,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             buttonsDiv.append(saveButton, deleteButton);
 
+            // REGROUPEMENT SUR UNE LIGNE
+            const lineDiv = document.createElement('div');
+            lineDiv.classList.add('line');
+            lineDiv.append(categoryDiv, typeDiv, nameDiv, buttonsDiv);
+
             // FORM CONSTRUCTION
             skillFormulaire.append(lineDiv);
-            skillFormulaire.append(buttonsDiv);
             skillsContainer.append(skillFormulaire);
 
             // SEPARATEUR
@@ -222,7 +212,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     showPopup();
                 });
             });
-        });
+        })
     }
     
     // ADDITION FORM  
