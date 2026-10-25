@@ -154,6 +154,7 @@ img {
 .text-icon img {
     width: var(--text-h4); 
     height: var(--text-h4);
+    flex-shrink: 0;
 }
 /* BUTTONS */
 .button-primary, .button-secondary, .button-tertiary, .button-primary:hover, .button-secondary:hover, .button-tertiary:hover {
