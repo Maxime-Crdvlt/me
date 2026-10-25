@@ -1,3 +1,6 @@
+<?php
+require_once 'db_connection.php'
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -68,218 +71,20 @@
         </section>
         <section>
             <h2>Mes formations</h2>
-            <ul class="liste-cards">
-                <li>
-                    <article class="card">
-                        <div class="card-title">
-                            <h3><a href="https://www.onisep.fr/ressources/univers-formation/formations/post-bac/but-informatique-parcours-realisation-d-applications-conception-developpement-validation"
-                                    target="_blank" rel="nofollow noopener">BUT Informatique</a></h3>
-                            <h4>2024 - Aujourd'hui</h4>
-                        </div>
-                        <p class="details">Université Paris Cité, Paris 16ème</p>
-                        <div class="card-description">
-                            <p>Je suis actuellement étudiant en 3ème année de Bachelor Universitaire de Technologie
-                                (BUT)
-                                Informatique à l’Institut Universitaire de Technologie (IUT) de Paris - Rives de Seine
-                                de
-                                l’Université Paris Cité, dans le parcours Réalisation d'applications : conception,
-                                développement, validation.</p>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article class="card">
-                        <div class="card-title">
-                            <h3><a href="https://www.onisep.fr/ressources/univers-formation/formations/lycees/bac-techno-sti2d-sciences-et-technologies-de-l-industrie-et-du-developpement-durable-enseignement-specifique-systemes-d-information-et-numerique"
-                                    target="_blank" rel="nofollow noopener">Baccalauréat Technologique STI2D</a></h3>
-                            <h4>2021 - 2024</h4>
-                        </div>
-                        <p class="details">Lycée Saint-Nicolas, Paris 6ème</p>
-                        <div class="card-description">
-                            <p>J’ai obtenu mon Baccalauréat de Sciences et Technologies de l’Industrie et du
-                                Développement
-                                Durable (STI2D) dans l’enseignement spécifique Systèmes d’Information et Numérique (SIN)
-                                en
-                                2024.</p>
-                        </div>
-                    </article>
-                </li>
+            <ul class="liste-cards" id="formations-list">
+
             </ul>
         </section>
         <section>
             <h2>Mes expériences</h2>
-            <ul>
-                <li>
-                    <article class="card">
-                        <div class="card-title">
-                            <h3><a href="https://www.onisep.fr/vers-l-emploi/stages-en-entreprises/les-stages-par-niveau-d-etudes/les-stages-de-2-en-lycee-general-et-technologique"
-                                    target="_blank" rel="nofollow noopener">Stage d'observation de 2de</a></h3>
-                            <h4>Juin 2022 - 2 semaines</h4>
-                        </div>
-                        <p class="details"><a href="https://www.cerbair.com/" target="_blank"
-                                rel="nofollow noopener">CERBAIR</a>, Montrouge</p>
-                        <div class="card-description">
-                            <p>Durant deux semaines j'ai pu observer pour la première fois le monde en entreprise et
-                                plus
-                                précisément dans une PME Informatique spécialisée dans la défense contre les drones
-                                militaires
-                                et malveillants.</p>
-                        </div>
-                    </article>
-                </li>
+            <ul class="liste-cards" id="experiences-list">
+
             </ul>
         </section>
         <section>
             <h2>Mes compétences</h2>
-            <ul class="grid-cards">
-                <li>
-                    <article class="card">
-                        <div class="card-title">
-                            <h3 class="text-icon"><i class="fi fi-sr-subtitles"></i> Programmation</h3>
-                        </div>
-                        <div class="card-description">
-                            <div class="card-categorie">
-                                <h4>Langages :</h4>
-                                <ul class="skills">
-                                    <li class="skill">C</li>
-                                    <li class="skill">Java</li>
-                                    <li class="skill">Python</li>
-                                    <li class="skill">VBA</li>
-                                </ul>
-                            </div>
-                            <div class="card-categorie">
-                                <h4>Framework/Library :</h4>
-                                <ul class="skills">
-                                    <li class="skill">JEE</li>
-                                    <li class="skill">VB.NET</li>
-                                    <li class="skill">React Native</li>
-                                    <li class="skill">Kotlin</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p class="card-details details">IDEs : Eclipse, Visual Studio Community 2022, IntelliJ, Android
-                            Studio</p>
-                    </article>
-                </li>
-                <li>
-                    <article class="card">
-                        <div class="card-title">
-                            <h3 class="text-icon"><i class="fi fi-sr-code-window"></i> Développement web</h3>
-                        </div>
-                        <div class="card-description">
-                            <div class="card-categorie">
-                                <h4>Langages :</h4>
-                                <ul class="skills">
-                                    <li class="skill">HTML5</li>
-                                    <li class="skill">CSS3</li>
-                                    <li class="skill">JavaScript</li>
-                                    <li class="skill">PHP</li>
-                                </ul>
-                            </div>
-                            <div class="card-categorie">
-                                <h4>Framework/Library :</h4>
-                                <ul class="skills">
-                                    <li class="skill">Bootstrap</li>
-                                    <li class="skill">Tailwind CSS</li>
-                                    <li class="skill">React</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p class="card-details details">IDEs : WebStorm, PHPStorm, Visual Studio Code</p>
-                    </article>
-                </li>
-                <li>
-                    <article class="card">
-                        <div class="card-title">
-                            <h3 class="text-icon"><i class="fi fi-sr-database"></i> Gérer une base de données</h3>
-                        </div>
-                        <div class="card-description">
-                            <div class="card-categorie">
-                                <h4>Langages :</h4>
-                                <ul class="skills">
-                                    <li class="skill">SQL</li>
-                                    <li class="skill">PL/SQL</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <p class="card-details details">IDEs : QBE Microsoft Access, Oracle Live SQL, phpMyAdmin,
-                            MariaDB Server
-                        </p>
-                    </article>
-                </li>
-                <li>
-                    <article class="card">
-                        <div class="card-title">
-                            <h3 class="text-icon"><i class="fi fi-sr-square-terminal"></i> Administrer des systèmes et
-                                réseaux</h3>
-                        </div>
-                        <div class="card-description">
-                            <div class="card-categorie">
-                                <h4>Compétences :</h4>
-                                <ul class="skills">
-                                    <li class="skill">Linux (Shell)</li>
-                                    <li class="skill">Virtualisation</li>
-                                    <li class="skill">Conteneurisation</li>
-                                    <li class="skill">Assembleur</li>
-                                </ul>
-                            </div>
-                            <div class="card-categorie">
-                                <h4>Outils :</h4>
-                                <ul class="skills">
-                                    <li class="skill">Virtual Private Server (VPS)</li>
-                                    <li class="skill">VirtualBox</li>
-                                    <li class="skill">Docker</li>
-                                    <li class="skill">DOSBox</li>
-                                    <li class="skill">Cisco Packet Tracer</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article class="card">
-                        <div class="card-title">
-                            <h3 class="text-icon"><i class="fi fi-sr-master-plan"></i> Conduire un projet</h3>
-                        </div>
-                        <div class="description">
-                            <div class="card-categorie">
-                                <h4>Compétences :</h4>
-                                <ul class="skills">
-                                    <li class="skill">Gestion de versions</li>
-                                    <li class="skill">Méthodes agiles</li>
-                                    <li class="skill">Modélisation des besoins</li>
-                                </ul>
-                            </div>
-                            <div class="card-categorie">
-                                <h4>Outils :</h4>
-                                <ul class="skills">
-                                    <li class="skill">Git</li>
-                                    <li class="skill">GitHub</li>
-                                    <li class="skill">GitLab</li>
-                                    <li class="skill">Trello</li>
-                                    <li class="skill">Mérise</li>
-                                    <li class="skill">Diagrammes UML</li>
-                                    <li class="skill">MCD/MLD</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </li>
-                <li>
-                    <article class="card">
-                        <div class="card-title">
-                            <h3 class="text-icon"><i class="fi fi-sr-language"></i> Langues</h3>
-                        </div>
-                        <div class="card-description">
-                            <div class="card-categorie">
-                                <ul class="skills">
-                                    <li class="skill">Français (natif)</li>
-                                    <li class="skill">Anglais (B2)</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </article>
-                </li>
+            <ul class="grid-cards" id="skills-list">
+
             </ul>
         </section>
     </main>
@@ -332,6 +137,7 @@
             </div>
         </div>
     </footer>
+    <script src="assets/js/about.js" defer></script>
 </body>
 
 </html>
