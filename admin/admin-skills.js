@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         skills.forEach(skill => {
             if (skill.categorie_id !== currentCategoryId) {
                 const categoryTitle = document.createElement('h2');
-                categoryTitle.innerHTML = `<img src="${skill.categorie_icon}" alt="" class="icon-categorie"> ${skill.categorie}`;
+                categoryTitle.textContent = skill.categorie;
                 categoryTitle.classList.add('text-center');
                 skillsContainer.append(categoryTitle);
                 currentCategoryId = skill.categorie_id;
