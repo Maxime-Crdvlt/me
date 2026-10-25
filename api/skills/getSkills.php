@@ -14,7 +14,7 @@ try {
         ty.libelle AS type,
         ty.id AS type_id,
         c.title AS categorie,
-        c.id AS categorie_id
+        c.id AS categorie_id,
         c.icon AS categorie_icon
     FROM 
         technologies t
