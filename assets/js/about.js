@@ -48,7 +48,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             containerSkills.innerHTML += `
                 <li>
                     <article class="card">
-                        <div class="card-title">
+                        <div class="card-title text-icon">
+                            <img src="${skill.categorie_icon}" alt="">
                             <h3 class="text-icon">${skill.categorie}</h3>
                         </div>
                         <div class="card-description" id="${catId}"></div>
