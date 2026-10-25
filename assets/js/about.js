@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     skills.forEach(skill => {
         const catId = `cat-${skill.categorie_id}`;
         const typeId = `cat-${skill.categorie_id}-type-${skill.type_id}`;
-        // 1. Si la carte de la catégorie n'existe pas encore, on la crée
         if (!document.getElementById(catId)) {
             containerSkills.innerHTML += `
                 <li>
@@ -57,7 +56,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </li>
             `;
         }
-        // 2. Si le sous-groupe (ex: Langages, Outils...) n'existe pas encore dans cette carte, on le crée
         if (!document.getElementById(typeId)) {
             document.getElementById(catId).innerHTML += `
                 <div class="card-categorie">
@@ -66,7 +64,6 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </div>
             `;
         }
-        // 3. On ajoute la compétence dans la liste correspondante
         document.getElementById(typeId).innerHTML += `
             <li class="skill">${skill.competence}</li>
         `;
