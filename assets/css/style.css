@@ -151,7 +151,7 @@ img {
     align-items: center;
     gap: var(--space-sm);
 }
-.text-icon svg {
+.text-icon img {
     width: var(--text-h4); 
     height: var(--text-h4);
     flex-shrink: 0;
