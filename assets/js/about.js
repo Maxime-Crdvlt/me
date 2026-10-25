@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                         <div class="card-title">
                             <h3 class="text-icon">
                                 <img src="${skill.categorie_icon}" alt="">
-                                <span>${skill.categorie}</span>
+                                ${skill.categorie}
                             </h3>
                         </div>
                         <div class="card-description" id="${catId}"></div>
