@@ -27,7 +27,18 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     experiences.forEach(experience => {
-
+        containerExperiences.innerHTML += `
+        <li>
+            <article class="card">
+                <div class="card-title">
+                    <h3>${experience.title}</h3>
+                    <h4>${experience.start} - ${experience.end}</h4>
+                </div>
+                <p class="details">${experience.place}</p>
+                <p class="card-description">${experience.description}</p>
+            </article>
+        </li>
+        `;
     });
 
     skills.forEach(skill => {
