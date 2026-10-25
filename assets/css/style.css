@@ -152,8 +152,8 @@ img {
     gap: var(--space-sm);
 }
 .text-icon img {
-    width: 1.3em; 
-    height: 1.3em;
+    width: 1.2em; 
+    height: 1.2em;
     flex-shrink: 0;
 }
 /* BUTTONS */
