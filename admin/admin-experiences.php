@@ -103,8 +103,7 @@ require_once 'check-admin.php';
                             <i class="fi fi-brands-github"></i> Mon GitHub</a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/maxime-crdvlt" target="_blank" rel="nofollow noopener" class="text-icon"><i
-                                class="fi fi-brands-linkedin"></i> Mon LinkedIn</a>
+                        <a href="https://www.linkedin.com/in/maxime-crdvlt" target="_blank" rel="nofollow noopener" class="text-icon"><img src="/assets/images/linkedin.svg" alt=""></i> Mon LinkedIn</a>
                     </li>
                     <li>
                         <a href="../assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" rel="noopener" class="text-icon"><i
