@@ -228,8 +228,8 @@ header {
     padding: 0.5rem 0;
 }
 header img {
-    width: var(--text-h2);
-    height: var(--text-h2);
+    width: 1.75rem;
+    height: 1.75rem;
 }
 header>div {
     display: flex;

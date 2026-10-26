@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             nav.classList.add('nav-hidden');
             nav.classList.remove('nav-visible');
-            icon.setAttribute('src', '/assets/images/check.svg');      
+            icon.setAttribute('src', '/assets/images/menu-burger.svg');      
         }
     })
 })
