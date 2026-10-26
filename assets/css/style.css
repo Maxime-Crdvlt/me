@@ -227,6 +227,10 @@ header {
     border-bottom: solid var(--border-color) 0.125rem;
     padding: 0.5rem 0;
 }
+header img {
+    width: var(--text-h1);
+    height: var(--text-h1);
+}
 header>div {
     display: flex;
     flex-direction: row;
