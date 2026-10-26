@@ -7,13 +7,11 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nav.classList.contains('nav-hidden')) {
             nav.classList.add('nav-visible');
             nav.classList.remove('nav-hidden');
-            icon.classList.add('fi-br-cross');
-            icon.classList.remove('fi-br-menu-burger');
+            icon.setAttribute('src', '/assets/images/cross.svg');
         } else {
             nav.classList.add('nav-hidden');
             nav.classList.remove('nav-visible');
-            icon.classList.add('fi-br-menu-burger');   
-            icon.classList.remove('fi-br-cross');       
+            icon.setAttribute('src', '/assets/images/check.svg');      
         }
     })
 })
