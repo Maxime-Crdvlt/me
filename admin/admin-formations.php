@@ -106,8 +106,7 @@ require_once 'check-admin.php';
                         <a href="https://www.linkedin.com/in/maxime-crdvlt" target="_blank" rel="nofollow noopener" class="text-icon"><img src="/assets/images/linkedin.svg" alt=""> Mon LinkedIn</a>
                     </li>
                     <li>
-                        <a href="../assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" rel="noopener" class="text-icon"><i
-                                class="fi fi-sr-resume"></i> Mon Curriculum Vitae</a>
+                        <a href="../assets/documents/MaximeCOURDAVAULT-CV.pdf" target="_blank" rel="noopener" class="text-icon"><img src="/assets/images/cv.svg" alt=""> Mon Curriculum Vitae</a>
                     </li>
                 </ul>
             </div>
