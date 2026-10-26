@@ -99,8 +99,7 @@ require_once 'check-admin.php';
                 <h3>Liens externes</h3>
                 <ul>
                     <li>
-                        <a href="https://github.com/Maxime-Crdvlt" target="_blank" rel="nofollow noopener" class="text-icon">
-                            <i class="fi fi-brands-github"></i> Mon GitHub</a>
+                        <a href="https://github.com/Maxime-Crdvlt" target="_blank" rel="nofollow noopener" class="text-icon"><img src="/assets/images/github.svg" alt=""> Mon GitHub</a>
                     </li>
                     <li>
                         <a href="https://www.linkedin.com/in/maxime-crdvlt" target="_blank" rel="nofollow noopener" class="text-icon"><img src="/assets/images/linkedin.svg" alt=""></i> Mon LinkedIn</a>
