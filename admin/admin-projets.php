@@ -36,7 +36,8 @@
     </header>
 
     <main class="container">
-        <h2>Ceci est la page des projets</h2>
+        <div id="projects-container">
+        </div>
     </main>
 
     <footer>
@@ -80,6 +81,7 @@
             </div>
         </div>
     </footer>
+    <script src="admin-projects.js" defer></script>
 </body>
 
 </html>
