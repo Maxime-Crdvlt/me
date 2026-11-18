@@ -81,7 +81,7 @@
             </div>
         </div>
     </footer>
-    <script src="admin-projects.js" defer></script>
+    <script src="admin-projets.js" defer></script>
 </body>
 
 </html>
