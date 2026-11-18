@@ -20,7 +20,7 @@ require_once 'check-admin.php';
                 <h1>Maxime Courdavault</h1>
             </a>
             <button id="button-nav" aria-label="Ouvrir le menu">
-                <img src="assets/images/menu-burger.svg" alt="" id="icon-button-nav">
+                <img src="../assets/images/menu-burger.svg" alt="" id="icon-button-nav">
             </button>
             <nav id="nav" class="nav-hidden">
                 <ul class="actions">
