@@ -7,7 +7,7 @@ require_once '../db_connection.php';
 
 try {
     // DATA RECOVERY
-    $sql = "SELECT `id`, `name`, `description`, `link`, `realization` FROM projects";
+    $sql = "SELECT `id`, `name`, `description`, `link` FROM projects";
     $stmt = $connexionDB->prepare($sql);
     $stmt->execute();
     $formations = $stmt->fetchAll(PDO::FETCH_ASSOC);

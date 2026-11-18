@@ -9,7 +9,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $name = $_POST['name'] ?? '';
     $description = $_POST['description'] ?? '';
     $link = $_POST['link'] ?? '';
-    $realization = $_POST['realization'] ?? '';
 } else {
     error_log("[PROJECTS] No forms received");
     echo json_encode(['status' => "error", 'message' => "Aucun formulaire reçu"]);
@@ -20,13 +19,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 if (!empty($name) && !empty($description) && !empty($link) && !empty($realization)) {
     try {
         // ENTRY INTO THE DATABASE
-        $sql = "INSERT INTO projects (name, description, link, realization) VALUES (:name, :description, :link, :realization)";
+        $sql = "INSERT INTO projects (name, description, link) VALUES (:name, :description, :link)";
         $stmt = $connexionDB->prepare($sql);
         $stmt->execute([
             ':name' => $name,
             ':description' => $description,
-            ':link' => $link,
-            ':realization' => $realization
+            ':link' => $link
         ]);
 
         echo json_encode(['status' => "success", 'message' => "Projet ajoutée avec succès"]);
