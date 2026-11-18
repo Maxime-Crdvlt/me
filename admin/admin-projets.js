@@ -105,9 +105,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             buttonsDiv.append(saveButton, deleteButton);
             
             // FORM CONSTRUCTION
-            projectFormulaire.append(degreeDiv);
-            projectFormulaire.append(infosDiv);
+            projectFormulaire.append(nameDiv);
             projectFormulaire.append(descriptionDiv);
+            projectFormulaire.append(linkDiv);
             projectFormulaire.append(buttonsDiv);
 
             // EVENT LISTENER SAVE
